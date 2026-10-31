@@ -80,6 +80,23 @@ Bounds outside this set (e.g. `2,5`) have no Crow's Foot symbol; rule CF001 flag
 Foot is never drawn with a double line. Crow's Foot is an engineering notation with several dialects; this tool
 implements a simplified style and does not reproduce a specific dialect.
 
+## Delete policy of generated foreign keys
+
+Only the dependent connection of a weak entity (an identifying relationship) deletes its rows with the owner:
+`ON DELETE CASCADE`. Every other generated foreign key (ordinary 1:N relationships, associative tables, multivalued
+attribute tables, specialization keys) uses the SQL default `NO ACTION`, so deleting a referenced row that still
+has referencing rows is rejected. The same policy is applied by the ORM targets:
+
+| Target | Dependent weak-entity key | All other keys |
+|---|---|---|
+| SQL (PostgreSQL, MySQL, MariaDB, SQLite) | `ON DELETE CASCADE` | no clause (`NO ACTION`) |
+| Laravel | `->onDelete('cascade')` | `->onDelete('no action')` |
+| Django | `models.CASCADE` | `models.DO_NOTHING` (Django has no `NO ACTION`; `DO_NOTHING` leaves the database constraint to reject the delete) |
+| Prisma | `onDelete: Cascade` | `onDelete: NoAction` |
+| GraphQL SDL, JSON Schema | not applicable (no referential actions) | not applicable |
+
+Versions before 2.3.1 wrote `ON DELETE CASCADE` on every foreign key.
+
 ## Validation rules and notation
 
 Rules R001–R012 apply to both notations, C001 only to Chen-style EER (attribute not attached to a parent) and CF001

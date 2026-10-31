@@ -93,7 +93,7 @@ saves; it is not transmitted over the network.
 - Generated ORM code: Django has no composite foreign keys, so such columns are plain fields with a comment;
   Laravel output concatenates one migration class per table in a single file (it must be split into files).
 - Reverse engineering recovers tables, columns, keys and foreign keys, but not CHECK, DEFAULT, indexes,
-  referential actions (the exporter writes `ON DELETE CASCADE` everywhere), UNIQUE on non-key columns,
+  referential actions (see the delete policy in docs/NOTATION.md), UNIQUE on non-key columns,
   specializations, categories, aggregations, composite/derived/multivalued attributes or role names
   (`evaluation/results/roundtrip_*.csv`).
 - Notation-specific limits (three-vertex specialization triangles, relationships to aggregations, and arbitrary

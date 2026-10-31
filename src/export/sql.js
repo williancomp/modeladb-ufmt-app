@@ -119,7 +119,7 @@ function generateGenericSQL(ir, dialect = 'postgres') {
       groups.get(key).push(fk);
     });
     for (const group of groups.values()) {
-      const clause = `FOREIGN KEY (${list(group.map((f) => f.column))}) REFERENCES ${q(group[0].referencesTable)}(${list(group.map((f) => f.referencesColumn))}) ON DELETE CASCADE`;
+      const clause = `FOREIGN KEY (${list(group.map((f) => f.column))}) REFERENCES ${q(group[0].referencesTable)}(${list(group.map((f) => f.referencesColumn))})${group[0].onDelete === 'CASCADE' ? ' ON DELETE CASCADE' : ''}`;
       if (dialect === 'sqlite') lines.push(`  ${clause}`);
       else deferredForeignKeys.push(`ALTER TABLE ${q(table.name)} ADD ${clause};`);
     }

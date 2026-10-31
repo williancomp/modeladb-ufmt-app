@@ -61,6 +61,7 @@ export function mapToRelational(ir) {
       group,
       unique = false,
       record = true,
+      cascade = false,
     } = {},
   ) => {
     if (record && !columns && group) {
@@ -76,7 +77,7 @@ export function mapToRelational(ir) {
       keyCopies.push({
         table,
         ref,
-        options: { prefix, columns, referenced, primary, nullable, group, unique, record: false },
+        options: { prefix, columns, referenced, primary, nullable, group, unique, record: false, cascade },
       });
     const keys = referenced || ref.primaryKeys;
     if (!keys.length) throw new Error(t(`A tabela ${ref.name} não tem chave para ser referenciada.`));
@@ -103,6 +104,8 @@ export function mapToRelational(ir) {
           referencesTable: ref.name,
           referencesColumn: pk,
           group: group || `${ref.name}:${prefix}`,
+          // Só a conexão dependente de uma entidade fraca remove os dependentes junto com o proprietário.
+          onDelete: cascade ? 'CASCADE' : 'NO ACTION',
         });
       }
     });
@@ -333,6 +336,7 @@ export function mapToRelational(ir) {
             primary: true,
             nullable: false,
             group: `${rel.id}:${owner.entityId}`,
+            cascade: true,
           });
         }
       }
@@ -402,6 +406,7 @@ export function mapToRelational(ir) {
         nullable: nSide.cardinality.min === 0,
         group: rel.id,
         unique: !isMany(nSide.cardinality.max),
+        cascade: primary,
       });
     }
   });

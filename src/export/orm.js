@@ -24,7 +24,7 @@ function foreignKeyGroups(table) {
   const groups = new Map();
   table.foreignKeys.forEach((fk) => {
     const key = `${fk.group ?? fk.column}|${fk.referencesTable}`;
-    if (!groups.has(key)) groups.set(key, { table: fk.referencesTable, columns: [], references: [] });
+    if (!groups.has(key)) groups.set(key, { table: fk.referencesTable, columns: [], references: [], cascade: fk.onDelete === 'CASCADE' });
     groups.get(key).columns.push(fk.column);
     groups.get(key).references.push(fk.referencesColumn);
   });
@@ -77,7 +77,7 @@ export function exportLaravel(ir) {
 
     foreignKeyGroups(table).forEach(fk => {
       const list = names => (names.length === 1 ? `'${names[0]}'` : `['${names.join("', '")}']`);
-      code += `            $table->foreign(${list(fk.columns)})->references(${list(fk.references)})->on('${fk.table}')->onDelete('cascade');\n`;
+      code += `            $table->foreign(${list(fk.columns)})->references(${list(fk.references)})->on('${fk.table}')->onDelete('${fk.cascade ? 'cascade' : 'no action'}');\n`;
     });
 
     code += `            $table->timestamps();\n`;
@@ -119,7 +119,7 @@ export function exportDjango(ir) {
         const refClass = pascal(fk.table);
         const target = schema.tables.find(x => x.name === fk.table);
         const toField = target && !(target.primaryKeys.length === 1 && target.primaryKeys[0] === 'id' && fk.references[0] === 'id') ? [`to_field='${fk.references[0]}'`] : [];
-        options.push(`'${refClass}'`, 'on_delete=models.CASCADE', ...toField, `db_column='${col.name}'`, "related_name='+'");
+        options.push(`'${refClass}'`, `on_delete=models.${fk.cascade ? 'CASCADE' : 'DO_NOTHING'}`, ...toField, `db_column='${col.name}'`, "related_name='+'");
         if (col.nullable) options.push('null=True', 'blank=True');
         if (table.primaryKeys.length === 1 && table.primaryKeys[0] === col.name) options.push('primary_key=True');
         code += `    ${col.name} = models.${fk.unique ? 'OneToOneField' : 'ForeignKey'}(${options.join(', ')})\n`;
@@ -172,7 +172,7 @@ export function exportPrisma(ir) {
       const relation = `${table.name}_${fk.columns.join('_')}`;
       const forward = claim(table.name, lowerFirst(pascal(fk.table)));
       const optional = fk.nullable ? '?' : '';
-      relationFields.get(table.name).push(`  ${forward} ${pascal(fk.table)}${optional} @relation("${relation}", fields: [${fk.columns.join(', ')}], references: [${fk.references.join(', ')}])`);
+      relationFields.get(table.name).push(`  ${forward} ${pascal(fk.table)}${optional} @relation("${relation}", fields: [${fk.columns.join(', ')}], references: [${fk.references.join(', ')}], onDelete: ${fk.cascade ? 'Cascade' : 'NoAction'})`);
       const backward = claim(fk.table, lowerFirst(pascal(table.name)));
       relationFields.get(fk.table).push(`  ${backward} ${pascal(table.name)}${fk.unique ? '?' : '[]'} @relation("${relation}")`);
     });

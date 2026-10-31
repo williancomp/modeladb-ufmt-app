@@ -61,7 +61,7 @@ describe('Multi-Export', () => {
     expect(code).toContain('class User(models.Model):');
     expect(code).toContain('email = models.CharField(max_length=255, null=True, blank=True)');
     expect(code).toContain('class Post(models.Model):');
-    expect(code).toContain("user_id = models.ForeignKey('User', on_delete=models.CASCADE, db_column='user_id', related_name='+'");
+    expect(code).toContain("user_id = models.ForeignKey('User', on_delete=models.DO_NOTHING, db_column='user_id', related_name='+'");
   });
 
   test('Export GraphQL', () => {
