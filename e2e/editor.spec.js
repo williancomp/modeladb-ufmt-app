@@ -432,14 +432,14 @@ test.describe('validation panel', () => {
 });
 
 /** Warning validation badges (#f59e0b) rendered inside a page-coordinate box on #canvas. */
-async function warningBadgeCountAt(page, x, y, half) {
+async function adviceBadgeCountAt(page, x, y, half) {
   return page.evaluate(
     ([bx, by, h]) => {
       const badges = [...document.querySelectorAll('#canvas .validation-badge')];
       let n = 0;
       for (const el of badges) {
         const bg = getComputedStyle(el).backgroundColor;
-        if (bg !== 'rgb(245, 158, 11)') continue;
+        if (bg !== 'rgb(59, 130, 246)') continue; // advice (info) markers are blue
         const r = el.getBoundingClientRect();
         const cx = r.left + r.width / 2;
         const cy = r.top + r.height / 2;
@@ -472,10 +472,10 @@ test.describe('validation markers on the canvas', () => {
     const canvas = await page.locator('#canvas').boundingBox();
     const at = (x, y) => [canvas.x + (x + panOffset.x) * zoom, canvas.y + (y + panOffset.y) * zoom];
     // The entity badge sits on its top-right corner; the attribute badge on its circle.
-    await expect.poll(() => warningBadgeCountAt(page, ...at(entity.x + entity.width, entity.y), 14)).toBe(1);
-    await expect.poll(() => warningBadgeCountAt(page, ...at(attribute.x, attribute.y), 45)).toBe(1);
+    await expect.poll(() => adviceBadgeCountAt(page, ...at(entity.x + entity.width, entity.y), 14)).toBe(1);
+    await expect.poll(() => adviceBadgeCountAt(page, ...at(attribute.x, attribute.y), 45)).toBe(1);
     // And no marker where neither element is: the entity's own centre.
-    expect(await warningBadgeCountAt(page, ...at(entity.x + entity.width / 2, entity.y + entity.height / 2), 20)).toBe(0);
+    expect(await adviceBadgeCountAt(page, ...at(entity.x + entity.width / 2, entity.y + entity.height / 2), 20)).toBe(0);
   });
 });
 
