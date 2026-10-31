@@ -53,7 +53,6 @@
   "Atributo Simples": "Atributo Simples",
   "Atributo Simples — arrastar ou pressionar A": "Atributo Simples — arrastar ou pressionar A",
   "Atributo com nome padrão": "Atributo com nome padrão",
-  "Atributo multivalorado requer normalização": "Atributo multivalorado requer normalização",
   "Atributo sem vínculo (EER estilo Chen)": "Atributo sem vínculo (EER estilo Chen)",
   "Aumentar Fonte (A+)": "Aumentar Fonte (A+)",
   "Aumentar tamanho da fonte": "Aumentar tamanho da fonte",
@@ -220,7 +219,6 @@
   "O atributo '__VAR0__' usa o rótulo genérico sugerido pela ferramenta. Em modelagem conceitual o identificador deve nomear o que identifica a entidade no minimundo (ex: 'CPF', 'matrícula', 'placa') ou ser qualificado (ex: 'idCliente').": "O atributo '__VAR0__' usa o rótulo genérico sugerido pela ferramenta. Em modelagem conceitual o identificador deve nomear o que identifica a entidade no minimundo (ex: 'CPF', 'matrícula', 'placa') ou ser qualificado (ex: 'idCliente').",
   "O atributo ainda está com o nome padrão '__VAR0__'. Renomeie com a propriedade que ele representa no minimundo (ex: 'nome', 'dataNascimento', 'placa').": "O atributo ainda está com o nome padrão '__VAR0__'. Renomeie com a propriedade que ele representa no minimundo (ex: 'nome', 'dataNascimento', 'placa').",
   "O atributo deve ser arrastado sobre uma entidade, relacionamento, outro atributo ou agregação.": "O atributo deve ser arrastado sobre uma entidade, relacionamento, outro atributo ou agregação.",
-  "O atributo multivalorado '__VAR0__' precisará ser convertido em uma nova relação na etapa do modelo lógico.": "O atributo multivalorado '__VAR0__' precisará ser convertido em uma nova relação na etapa do modelo lógico.",
   "O diagrama atual será substituído. Deseja continuar?": "O diagrama atual será substituído. Deseja continuar?",
   "O nome '__VAR0__' está repetido. Use nomes distintos para identificar as entidades.": "O nome '__VAR0__' está repetido. Use nomes distintos para identificar as entidades.",
   "O nome da entidade '__VAR0__' parece estar no plural. Recomenda-se o uso do singular, pois entidades representam tipos, não coleções.": "O nome da entidade '__VAR0__' parece estar no plural. Recomenda-se o uso do singular, pois entidades representam tipos, não coleções.",
@@ -384,5 +382,12 @@
   "Conexão dependente com participação parcial": "Conexão dependente com participação parcial",
   "A conexão dependente de '__VAR0__' tem cardinalidade mínima 0. Uma entidade fraca depende totalmente da proprietária: use mínimo 1.": "A conexão dependente de '__VAR0__' tem cardinalidade mínima 0. Uma entidade fraca depende totalmente da proprietária: use mínimo 1.",
   "Departamento de Computação e Tecnologia": "Departamento de Computação e Tecnologia",
-  "Mínimo,máximo: 0,N; 1,1; 2,5. N representa muitos.": "Mínimo,máximo: 0,N; 1,1; 2,5. N representa muitos."
+  "Mínimo,máximo: 0,N; 1,1; 2,5. N representa muitos.": "Mínimo,máximo: 0,N; 1,1; 2,5. N representa muitos.",
+  "Atributo multivalorado vira tabela separada no modelo lógico": "Atributo multivalorado vira tabela separada no modelo lógico",
+  "O atributo multivalorado '__VAR0__' é válido no EER; no modelo lógico ele se tornará uma tabela separada.": "O atributo multivalorado '__VAR0__' é válido no EER; no modelo lógico ele se tornará uma tabela separada.",
+  "__VAR0__ sugestão__VAR1__": "__VAR0__ sugestão__VAR1__",
+  "Sugestões": "Sugestões",
+  "Avisos": "Avisos",
+  "Erros": "Erros",
+  "sugestão": "sugestão"
 }

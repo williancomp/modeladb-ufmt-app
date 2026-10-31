@@ -53,7 +53,6 @@
   "Atributo Simples": "Simple Attribute",
   "Atributo Simples — arrastar ou pressionar A": "Simple Attribute — drag or press A",
   "Atributo com nome padrão": "Default attribute name",
-  "Atributo multivalorado requer normalização": "Multivalued attribute requires normalization",
   "Atributo sem vínculo (EER estilo Chen)": "Unattached attribute (Chen-style EER)",
   "Aumentar Fonte (A+)": "Increase Font (A+)",
   "Aumentar tamanho da fonte": "Increase font size",
@@ -220,7 +219,6 @@
   "O atributo '__VAR0__' usa o rótulo genérico sugerido pela ferramenta. Em modelagem conceitual o identificador deve nomear o que identifica a entidade no minimundo (ex: 'CPF', 'matrícula', 'placa') ou ser qualificado (ex: 'idCliente').": "The attribute '__VAR0__' uses a generic label suggested by the tool. In conceptual modeling, the identifier should describe what identifies the entity in the domain (e.g. 'SSN', 'registrationNumber', 'licensePlate') or be qualified (e.g. 'customerId').",
   "O atributo ainda está com o nome padrão '__VAR0__'. Renomeie com a propriedade que ele representa no minimundo (ex: 'nome', 'dataNascimento', 'placa').": "The attribute still has the default name '__VAR0__'. Rename it after the property it represents in the domain (e.g. 'name', 'dateOfBirth', 'licensePlate').",
   "O atributo deve ser arrastado sobre uma entidade, relacionamento, outro atributo ou agregação.": "An attribute must be dragged onto an entity, relationship, another attribute or aggregation.",
-  "O atributo multivalorado '__VAR0__' precisará ser convertido em uma nova relação na etapa do modelo lógico.": "The multivalued attribute '__VAR0__' will need a separate relation in the logical model.",
   "O diagrama atual será substituído. Deseja continuar?": "The current diagram will be replaced. Continue?",
   "O nome '__VAR0__' está repetido. Use nomes distintos para identificar as entidades.": "The name '__VAR0__' is duplicated. Use distinct names to identify the entities.",
   "O nome da entidade '__VAR0__' parece estar no plural. Recomenda-se o uso do singular, pois entidades representam tipos, não coleções.": "The entity name '__VAR0__' appears to be plural. A singular noun is recommended because entities represent types, not collections.",
@@ -384,5 +382,12 @@
   "Conexão dependente com participação parcial": "Dependent connection with partial participation",
   "A conexão dependente de '__VAR0__' tem cardinalidade mínima 0. Uma entidade fraca depende totalmente da proprietária: use mínimo 1.": "The dependent connection of '__VAR0__' has minimum cardinality 0. A weak entity depends totally on its owner: use a minimum of 1.",
   "Departamento de Computação e Tecnologia": "Department of Computing and Technology",
-  "Mínimo,máximo: 0,N; 1,1; 2,5. N representa muitos.": "Minimum,maximum: 0,N; 1,1; 2,5. N stands for many."
+  "Mínimo,máximo: 0,N; 1,1; 2,5. N representa muitos.": "Minimum,maximum: 0,N; 1,1; 2,5. N stands for many.",
+  "Atributo multivalorado vira tabela separada no modelo lógico": "Multivalued attribute becomes a separate table in the logical model",
+  "O atributo multivalorado '__VAR0__' é válido no EER; no modelo lógico ele se tornará uma tabela separada.": "The multivalued attribute '__VAR0__' is valid EER; in the logical model it will become a separate table.",
+  "__VAR0__ sugestão__VAR1__": "__VAR0__ suggestion__VAR1__",
+  "Sugestões": "Suggestions",
+  "Avisos": "Warnings",
+  "Erros": "Errors",
+  "sugestão": "suggestion"
 }

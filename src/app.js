@@ -1320,6 +1320,7 @@ function syncValidationDock(force = false) {
     if (counts[v.severity] !== undefined) counts[v.severity]++;
   });
   const total = currentViolations.length;
+  const problems = counts.error + counts.warning; // sugestões (info) são orientação, não problema
   const worst = counts.error
     ? 'error'
     : counts.warning
@@ -1333,10 +1334,11 @@ function syncValidationDock(force = false) {
   const title = document.getElementById('validationDockTitle');
   const countsEl = document.getElementById('validationDockCounts');
 
-  if (icon) icon.textContent = worst === 'clean' ? '✓' : worst === 'error' ? '✕' : '!';
+  if (icon)
+    icon.textContent = worst === 'clean' ? '✓' : worst === 'error' ? '✕' : worst === 'info' ? 'i' : '!';
   if (title) {
     title.textContent =
-      total === 0 ? 'Modelo sem problemas' : total === 1 ? '1 problema' : `${total} problemas`;
+      problems === 0 ? 'Modelo sem problemas' : problems === 1 ? '1 problema' : `${problems} problemas`;
   }
   if (countsEl) {
     const chips = [];
@@ -1349,7 +1351,9 @@ function syncValidationDock(force = false) {
         `<span class="vc vc-warning" title="Avisos">${counts.warning} aviso${counts.warning > 1 ? 's' : ''}</span>`
       );
     if (counts.info)
-      chips.push(`<span class="vc vc-info" title="Sugestões">${counts.info}</span>`);
+      chips.push(
+        `<span class="vc vc-info" title="Sugestões">${counts.info} sugest${counts.info > 1 ? 'ões' : 'ão'}</span>`
+      );
     countsEl.innerHTML = chips.join('');
   }
 
@@ -1381,7 +1385,7 @@ function syncValidationDock(force = false) {
             title="Clique para localizar no diagrama e ver a explicação">
           <span class="v-dot" aria-hidden="true"></span>
           <span class="v-text">
-            <span class="v-title">${escapeHTML(v.name)}<span class="v-rule">${escapeHTML(v.ruleId)}</span></span>
+            <span class="v-title">${escapeHTML(v.name)}<span class="v-rule">${escapeHTML(v.ruleId)}</span>${v.severity === 'info' ? '<span class="v-advice">sugestão</span>' : ''}</span>
             <span class="v-where">${escapeHTML(describeViolationTarget(v))}</span>
             <span class="v-msg">${escapeHTML(v.message)}</span>
           </span>

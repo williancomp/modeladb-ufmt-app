@@ -10,7 +10,7 @@
 export const R006 = {
   id: 'R006',
   name: 'Entidade nomeada no plural',
-  severity: 'warning',
+  severity: 'info',
   notation: 'common',
   literature: 'Diretriz de modelagem da ferramenta (sem atribuição a fonte)',
   check: (model) => {

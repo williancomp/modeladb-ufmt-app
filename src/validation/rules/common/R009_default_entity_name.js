@@ -14,7 +14,7 @@
 export const R009 = {
   id: 'R009',
   name: 'Entidade com nome padrão',
-  severity: 'warning',
+  severity: 'info',
   notation: 'common',
   literature: 'Diretriz de modelagem da ferramenta (sem atribuição a fonte)',
   check: (model) => {

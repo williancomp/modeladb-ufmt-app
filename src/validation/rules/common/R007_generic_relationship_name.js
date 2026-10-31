@@ -10,7 +10,7 @@
 export const R007 = {
   id: 'R007',
   name: 'Relacionamento com nome genérico',
-  severity: 'warning',
+  severity: 'info',
   notation: 'common',
   literature: 'Diretriz de modelagem da ferramenta (sem atribuição a fonte)',
   check: (model) => {

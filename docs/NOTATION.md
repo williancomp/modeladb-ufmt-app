@@ -105,3 +105,13 @@ only to Crow's Foot. The rule list with its detection logic is in `src/validatio
 Provenance of the rules: `literature` fields cite Chen (1976) with a section only where the paper supports the rule
 (partially: R002 participants, R004 weak entity identified through a relationship, R012 existence dependence;
 C001 attributes belong to entities and relationships). All other rules are modelling guidelines of this tool.
+
+### Severity: errors, warnings and advice
+
+Rules have three severities. `error` and `warning` report structural problems. `info` is advice: it is shown in the
+problems panel with a blue marker and the label *suggestion*, in a separate counter, and never blocks an export or
+a save. R005 (multivalued attribute becomes a separate table in the logical model), R006 (entity name looks plural),
+R007 (generic relationship name), R009 (default entity name) and R010 (default attribute name) are advice. R006,
+R007, R009 and R010 are name heuristics; R005 is information about the logical mapping, not a defect, because a
+multivalued attribute is valid EER. A legitimate name can trigger advice (for example a singular entity named
+`Compras`, or a domain term that matches a default label); this is expected and is not counted as a defect.

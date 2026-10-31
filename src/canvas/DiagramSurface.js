@@ -180,7 +180,8 @@ function DiagramSurfaceInner({ appCallbacks, registerRefresh }) {
   const violationMap = {};
   currentViolations.forEach((v) => {
     const key = `${v.elementType}:${v.elementId}`;
-    if (!violationMap[key] || v.severity === 'error') {
+    const rank = { error: 0, warning: 1, info: 2 };
+    if (!violationMap[key] || (rank[v.severity] ?? 3) < (rank[violationMap[key].severity] ?? 3)) {
       violationMap[key] = v;
     }
   });

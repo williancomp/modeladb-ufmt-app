@@ -733,6 +733,7 @@
     }
     #validationDock[data-severity="error"]   { border-color: #7f1d1d; }
     #validationDock[data-severity="warning"] { border-color: #78350f; }
+    #validationDock[data-severity="info"]    { border-color: #1e3a8a; }
     #validationDock[data-severity="clean"]   { border-color: #14532d; }
 
     #validationDockHeader {
@@ -813,6 +814,7 @@
     #validationDockList li.sev-error   { border-left-color: #ef4444; }
     #validationDockList li.sev-warning { border-left-color: #f59e0b; }
     #validationDockList li.sev-info    { border-left-color: #3b82f6; }
+    #validationDockList .v-advice { margin-left: 6px; padding: 0 6px; border-radius: 8px; font-size: 10px; background: rgba(59, 130, 246, 0.2); color: #93c5fd; }
 
     #validationDockList .v-dot {
       width: 7px;

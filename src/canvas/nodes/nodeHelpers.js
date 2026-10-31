@@ -33,7 +33,8 @@ export function renderNodeHandles() {
 export function renderValidationBadge(issue, type, id, stylePos = {}) {
   if (!issue) return null;
   const isError = issue.severity === 'error';
-  const bg = isError ? '#ef4444' : '#f59e0b';
+  const isInfo = issue.severity === 'info';
+  const bg = isError ? '#ef4444' : isInfo ? '#3b82f6' : '#f59e0b';
   return h(
     'div',
     {
@@ -63,7 +64,7 @@ export function renderValidationBadge(issue, type, id, stylePos = {}) {
         ...stylePos,
       },
     },
-    '!'
+    isInfo ? 'i' : '!'
   );
 }
 

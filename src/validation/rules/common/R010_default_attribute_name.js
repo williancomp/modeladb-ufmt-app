@@ -19,7 +19,7 @@
 export const R010 = {
   id: 'R010',
   name: 'Atributo com nome padrão',
-  severity: 'warning',
+  severity: 'info',
   notation: 'common',
   literature: 'Diretriz de modelagem da ferramenta (sem atribuição a fonte)',
   check: (model) => {
