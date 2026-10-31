@@ -18,7 +18,7 @@ export const universityModel = {
   domain: 'University enrolment (figure model)',
   entities: [
     { k: 'department', name: 'Department', at: [0, 0], attrs: ['dept_no:Int key', 'dept_name:Text'] },
-    { k: 'course', name: 'Course', at: [1, 0], attrs: ['course_no:Int key', 'title:Text'] },
+    { k: 'course', name: 'Course', at: [1.55, 0], attrs: ['course_no:Int key', 'title:Text'] },
     { k: 'student', name: 'Student', at: [1, 1], attrs: ['student_no:Int key', 'full_name:Text'] },
   ],
   rels: [
@@ -29,7 +29,7 @@ export const universityModel = {
 
 /**
  * Figure fixture: a small university model with a weak entity (Section, identified through Course), a
- * specialization (Student -> Undergraduate, Graduate), a multivalued attribute (Course.keywords) and, when `seeded`
+ * specialization (Student -> Undergrad, Graduate), a multivalued attribute (Course.keywords) and, when `seeded`
  * is true, one seeded defect: the dependent connection of the identifying relationship is partial (0,N), which
  * rule R012 reports (a weak entity depends totally on its owner). The repaired model differs only in that connection.
  */
@@ -38,16 +38,16 @@ export const eerFigureModel = (seeded) => ({
   domain: 'University (EER figure fixture)',
   entities: [
     { k: 'department', name: 'Department', at: [0, 0], attrs: ['dept_no:Int key', 'dept_name:Text'] },
-    { k: 'course', name: 'Course', at: [1, 0], attrs: ['course_no:Int key', 'title:Text', 'keywords:Text multi'] },
-    { k: 'section', name: 'Section', at: [2, 0], attrs: ['section_no:Int partial', 'semester:Text'] },
-    { k: 'student', name: 'Student', at: [2, 1.2], attrs: ['student_no:Int key', 'full_name:Text'] },
-    { k: 'undergrad', name: 'Undergraduate', at: [1.3, 2.3], attrs: ['major:Text'] },
-    { k: 'graduate', name: 'Graduate', at: [2.7, 2.3], attrs: ['thesis:Text'] },
+    { k: 'course', name: 'Course', at: [1.55, 0], attrs: ['course_no:Int key', 'title:Text', 'keywords:Text multi'] },
+    { k: 'section', name: 'Section', at: [2.9, 0], attrs: ['section_no:Int partial', 'semester:Text'] },
+    { k: 'student', name: 'Student', at: [2.9, 1.25], attrs: ['student_no:Int key', 'full_name:Text'] },
+    { k: 'undergrad', name: 'Undergrad', at: [2.1, 2.35], attrs: ['major:Text'] },
+    { k: 'graduate', name: 'Graduate', at: [3.7, 2.35], attrs: ['thesis:Text'] },
   ],
-  specs: [{ k: 's1', genType: 'P,D', sup: 'student', subs: ['undergrad', 'graduate'], at: [2, 1.85] }],
+  specs: [{ k: 's1', genType: 'P,D', sup: 'student', subs: ['undergrad', 'graduate'], at: [2.9, 1.9] }],
   rels: [
     { k: 'owns', name: 'owns', parts: [{ e: 'department', card: '0,1' }, { e: 'course', card: '1,N' }] },
-    { k: 'offered_as', name: 'offered as', parts: [{ e: 'course', card: '0,1' }, { e: 'section', card: seeded ? '0,N' : '1,N', weak: true }] },
+    { k: 'offered_as', name: 'offers', parts: [{ e: 'course', card: '0,1' }, { e: 'section', card: seeded ? '0,N' : '1,N', weak: true }] },
     { k: 'enrolls_in', name: 'enrolls in', parts: [{ e: 'student', card: '0,N' }, { e: 'section', card: '0,N' }] },
   ],
 });
