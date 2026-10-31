@@ -1,15 +1,15 @@
 Rule,Type,Defect mutants,Negative controls,TP,FN,FP,of which on unmutated models,Precision,Recall
-R001,structural,41,0,41,0,0,0,1.000,1.000
-R002,structural,66,0,66,0,0,0,1.000,1.000
-R003,structural,11,0,11,0,0,0,1.000,1.000
-R004,structural,31,0,31,0,0,0,1.000,1.000
-R005,heuristic (name list),41,0,41,0,0,0,1.000,1.000
+R001,structural,41,0,41,0,0,0,not assessed,1.000
+R002,structural,66,0,66,0,0,0,not assessed,1.000
+R003,structural,11,0,11,0,0,0,not assessed,1.000
+R004,structural,31,0,31,0,0,0,not assessed,1.000
+R005,heuristic (name list),41,0,41,0,0,0,not assessed,1.000
 R006,heuristic (name list),40,41,39,1,9,1,0.813,0.975
 R007,heuristic (name list),34,34,14,20,0,0,1.000,0.412
-R008,structural,9,0,9,0,0,0,1.000,1.000
+R008,structural,9,0,9,0,0,0,not assessed,1.000
 R009,heuristic (name list),41,41,19,22,35,0,0.352,0.463
 R010,heuristic (name list),42,42,23,19,34,0,0.404,0.548
-R011,structural,38,0,38,0,0,0,1.000,1.000
-R012,structural,5,0,5,0,0,0,1.000,1.000
-C001,structural,42,0,42,0,0,0,1.000,1.000
+R011,structural,38,0,38,0,0,0,not assessed,1.000
+R012,structural,5,0,5,0,0,0,not assessed,1.000
+C001,structural,42,0,42,0,0,0,not assessed,1.000
 CF001,structural,34,33,34,0,0,0,1.000,1.000

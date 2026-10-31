@@ -187,7 +187,7 @@ sqlite	m02_university	drop-not-null	false	true
 sqlite	m02_university	drop-foreign-keys	false	true
 sqlite	m02_university	drop-primary-keys	false	true
 sqlite	m02_university	widen-types-to-text	false	true
-sqlite	m03_hospital	drop-not-null	true	false
+sqlite	m03_hospital	drop-not-null	true	true
 sqlite	m03_hospital	drop-foreign-keys	false	true
 sqlite	m03_hospital	drop-primary-keys	false	true
 sqlite	m03_hospital	widen-types-to-text	false	true

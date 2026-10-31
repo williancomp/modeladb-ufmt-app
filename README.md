@@ -106,7 +106,7 @@ saves; it is not transmitted over the network.
 
 ## Citation
 
-See `CITATION.cff` (version 2.3.0, MIT, no DOI yet). Third-party components and fonts are listed in
+See `CITATION.cff` (version 2.3.1, MIT, no DOI yet). Third-party components and fonts are listed in
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Author and support

@@ -1,11 +1,21 @@
-Relational construct,Instances in input DDL,Changed or lost,Preserved
-table,392,0,100.0%
-column,1220,0,100.0%
-column type,1220,4,99.7%
-nullability,1220,0,100.0%
-primary key,288,0,100.0%
-composite primary key,104,0,100.0%
-foreign key,308,0,100.0%
-composite foreign key,24,0,100.0%
-unique,28,4,85.7%
-composite unique,4,4,0.0%
+DDL source,Relational construct,Instances in input DDL,Changed or lost,Preserved
+generated,table,308,0,100.0%
+generated,column,972,0,100.0%
+generated,column type,972,0,100.0%
+generated,nullability,972,0,100.0%
+generated,primary key,220,0,100.0%
+generated,composite primary key,88,0,100.0%
+generated,foreign key,252,0,100.0%
+generated,composite foreign key,20,0,100.0%
+generated,unique,20,0,100.0%
+generated,composite unique,0,0,n/a
+hand-written,table,84,0,100.0%
+hand-written,column,248,0,100.0%
+hand-written,column type,248,4,98.4%
+hand-written,nullability,248,0,100.0%
+hand-written,primary key,68,0,100.0%
+hand-written,composite primary key,16,0,100.0%
+hand-written,foreign key,56,0,100.0%
+hand-written,composite foreign key,4,0,100.0%
+hand-written,unique,8,4,50.0%
+hand-written,composite unique,4,4,0.0%

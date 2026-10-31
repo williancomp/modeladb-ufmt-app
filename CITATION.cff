@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use ModelaDB, please cite it using the metadata below."
 title: "ModelaDB"
 type: software
-version: 2.3.0
+version: 2.3.1
 license: MIT
 repository-code: "https://github.com/williancomp/modeladb-ufmt-app"
 abstract: >-

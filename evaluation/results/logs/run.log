@@ -2,3 +2,7 @@ postgres: container started
 mysql: container started
 mariadb: container started
 databases: {"postgres":"PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit","mysql":"8.4.13","mariadb":"11.8.9-MariaDB-ubu2404"}
+ddl: postgres
+ddl: mysql
+ddl: mariadb
+ddl: sqlite

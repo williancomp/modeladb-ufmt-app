@@ -1,16 +1,16 @@
 /**
- * Generates the five English screenshots (Chen notation unless noted) at 2x device scale:
+ * Generates the English screenshots (Chen notation unless noted; fig6-fig8 show the EER figure fixture) at 2x device scale:
  *   npm run figures
  * Output: evaluation/figures/*.png. The app is served by the Vite dev server and driven by Playwright.
  */
-import { readFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from '@playwright/test';
 import { createServer } from 'vite';
 import { buildDocument } from '../corpus/build.mjs';
 import { constructSet, placeConstructSet } from './construct-set.mjs';
-import { libraryModel, universityModel } from './figure-models.mjs';
+import { libraryModel, universityModel, eerFigureModel } from './figure-models.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const corpus = (id) => JSON.parse(readFileSync(join(here, '..', 'corpus', `${id}.merdb`), 'utf8'));
@@ -59,6 +59,22 @@ const NAVBAR = 52;
 /** Same entities, spread out so the relationship names and cardinality labels of the crow's foot notation do not crowd the tables. */
 const crowsFootModel = { ...universityModel, entities: universityModel.entities.map((e, i) => ({ ...e, at: [[0, 0], [1.55, 0], [1.55, 1.3]][i] })) };
 
+/** The figure fixture is stored as .merdb files next to the figures, so the captures can be reproduced and inspected. */
+function eerFixture(seeded) {
+  const doc = buildDocument(eerFigureModel(seeded));
+  const dir = join(here, 'fixtures');
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, `university_eer_${seeded ? 'defect' : 'repaired'}.merdb`), `${JSON.stringify(doc, null, 2)}\n`);
+  return doc;
+}
+/** Opens the problems panel the way a user does (click on its header) and lets it grow to show every item. */
+const openPanel = async (page) => {
+  const collapsed = await page.locator('#validationDock.collapsed').count();
+  if (collapsed) await page.locator('#validationDockHeader').click();
+  await page.waitForSelector('#validationDockList li');
+};
+const PANEL_FULL = '#validationDock, #validationDockList { max-height: none !important; }';
+
 const shots = [
   { file: 'fig1_full_interface.png', doc: universityForFigure, viewport: { width: 960, height: 620 }, css: HIDE_HINTS, inset: { bottom: 220 } },
   { file: 'fig2_validation_panel.png', doc: withViolations, viewport: { width: 900, height: 620 }, css: HIDE_OVERLAYS + '#validationDock, #validationDockList { max-height: none !important; }', inset: { left: 300 }, clip: 'canvas' },
@@ -68,6 +84,12 @@ const shots = [
       await page.addStyleTag({ content: '#sidePanel textarea, #sidePanel pre { height: 400px !important; max-height: none !important; }' });
     } },
   { file: 'fig4_crows_foot.png', doc: () => buildDocument(crowsFootModel), viewport: { width: 760, height: 560 }, css: HIDE_OVERLAYS + HIDE_DOCK, clip: 'canvas', before: async (page) => {
+      await page.locator('#btnNotationCrow').evaluate((el) => el.click());
+      await page.waitForTimeout(400);
+    } },
+  { file: 'fig6_eer_defect_chen.png', doc: () => eerFixture(true), viewport: { width: 1180, height: 760 }, css: HIDE_OVERLAYS + PANEL_FULL, inset: { left: 330 }, clip: 'canvas', after: openPanel },
+  { file: 'fig7_eer_repaired_chen.png', doc: () => eerFixture(false), viewport: { width: 1180, height: 760 }, css: HIDE_OVERLAYS + PANEL_FULL, inset: { left: 330 }, clip: 'canvas', after: openPanel },
+  { file: 'fig8_eer_crows_foot.png', doc: () => eerFixture(false), viewport: { width: 1000, height: 760 }, css: HIDE_OVERLAYS + HIDE_DOCK, clip: 'canvas', before: async (page) => {
       await page.locator('#btnNotationCrow').evaluate((el) => el.click());
       await page.waitForTimeout(400);
     } },

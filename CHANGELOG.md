@@ -1,5 +1,30 @@
 # Changelog
 
+## 2.3.1
+
+### Changed
+- Delete policy of generated foreign keys: `ON DELETE CASCADE` only on the dependent connection of a weak entity
+  (identifying relationship); every other foreign key uses the SQL default `NO ACTION`. Laravel emits
+  `onDelete('no action')`, Django `models.DO_NOTHING`, Prisma `onDelete: NoAction`; the weak-entity key uses
+  `cascade` / `models.CASCADE` / `onDelete: Cascade`. Previously every foreign key cascaded.
+- Rules R005, R006, R007, R009 and R010 now have severity `info` (advice). The problems panel shows them as
+  suggestions with a separate counter and a blue marker, and they never block an export. R005 now says that a
+  multivalued attribute is valid EER and becomes a separate table in the logical model (Portuguese and English texts
+  agree). An element with several findings is marked with the most severe one.
+- English UI shows specialization labels as `T,D`, `T,O`, `P,D`, `P,O` (disjoint/overlapping). The stored file
+  format (`T,C`, `P,C`, ...) is unchanged.
+
+### Added
+- Tests for the delete policy, rule severities, specialization labels and specializations with more than two subtypes.
+- `docs/NOTATION.md`: delete policy, severity, specialization labels; the triangle's two subtype vertices are a
+  drawing feature, not a limit on the number of subtypes.
+- Evaluation: precision is reported as `not assessed` for rules without negative controls; round-trip tables
+  separate generated from hand-written cases and list the catalogue fields compared
+  (`roundtrip_compared_fields`); `npm run evaluate` writes `results/reproduction_check.csv` comparing the fresh run
+  with the committed results (timings ignored).
+- `evaluation/figures`: an EER figure fixture (weak entity, specialization, multivalued attribute, one seeded defect)
+  with captures of the problems panel before and after repair and in Crow's Foot (`fig6`-`fig8`).
+
 ## 2.3.0
 
 ### Added

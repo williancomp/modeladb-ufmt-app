@@ -2,7 +2,7 @@
   "title": "ModelaDB",
   "upload_type": "software",
   "description": "ModelaDB is a browser-based editor for Chen-style and Crow's Foot ER/EER diagrams with rule-based validation and code generation for SQL (PostgreSQL, MySQL, MariaDB, SQLite), Laravel, Prisma, Django, GraphQL and JSON Schema.",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "license": "MIT",
   "creators": [
     {

@@ -19,8 +19,11 @@ export function snapshotResults(dir) {
   return copy;
 }
 
+/** Scratch directories of the target checkers (package caches), not results. */
+const SCRATCH = new Set(['.tmp']);
+
 const walk = (dir, base = dir) =>
-  readdirSync(dir).flatMap((name) => {
+  readdirSync(dir).filter((name) => !SCRATCH.has(name)).flatMap((name) => {
     const path = join(dir, name);
     return statSync(path).isDirectory() ? walk(path, base) : [relative(base, path)];
   });
