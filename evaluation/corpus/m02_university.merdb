@@ -1,0 +1,402 @@
+{
+  "version": "2.0",
+  "meta": {
+    "createdAt": "2026-10-30T00:00:00.000Z",
+    "lastModifiedAt": "2026-10-30T00:00:00.000Z",
+    "tool": "ModelaDB",
+    "toolVersion": "2.2.0",
+    "notation": "chen"
+  },
+  "domain": {
+    "entities": [
+      {
+        "id": 0,
+        "objType": "entity",
+        "name": "Department",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 1,
+        "objType": "entity",
+        "name": "Course",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 2,
+        "objType": "entity",
+        "name": "Section",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 3,
+        "objType": "entity",
+        "name": "Student",
+        "resizeHandles": [],
+        "selected": false
+      }
+    ],
+    "attributes": [
+      {
+        "id": 0,
+        "objType": "attribute",
+        "name": "dept_no",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 1,
+        "objType": "attribute",
+        "name": "dept_name",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 2,
+        "objType": "attribute",
+        "name": "course_no",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 3,
+        "objType": "attribute",
+        "name": "title",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 4,
+        "objType": "attribute",
+        "name": "credits",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 5,
+        "objType": "attribute",
+        "name": "section_no",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": false,
+        "derived": false,
+        "multivalued": false,
+        "partialKey": true
+      },
+      {
+        "id": 6,
+        "objType": "attribute",
+        "name": "semester",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 7,
+        "objType": "attribute",
+        "name": "seats_left",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": false,
+        "derived": true,
+        "multivalued": false
+      },
+      {
+        "id": 8,
+        "objType": "attribute",
+        "name": "student_no",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 9,
+        "objType": "attribute",
+        "name": "full_name",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 10,
+        "objType": "attribute",
+        "name": "birth_date",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 11,
+        "objType": "attribute",
+        "name": "age",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": false,
+        "derived": true,
+        "multivalued": false
+      },
+      {
+        "id": 12,
+        "objType": "attribute",
+        "name": "grade",
+        "parentType": "relationship",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Real",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      }
+    ],
+    "relationships": [
+      {
+        "id": 0,
+        "objType": "relationship",
+        "name": "owns",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 0,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 1,
+            "cardinality": "1,N",
+            "weak": false
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "objType": "relationship",
+        "name": "offered as",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 1,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 2,
+            "cardinality": "1,N",
+            "weak": true
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "objType": "relationship",
+        "name": "enrolls in",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 3,
+            "cardinality": "0,N",
+            "weak": false
+          },
+          {
+            "entityId": 2,
+            "cardinality": "0,N",
+            "weak": false
+          }
+        ]
+      }
+    ],
+    "specializations": [],
+    "aggregations": [],
+    "postits": [],
+    "counters": {
+      "entityIdCounter": 4,
+      "attributeIdCounter": 13,
+      "relationshipIdCounter": 3,
+      "specializationIdCounter": 0,
+      "aggregationIdCounter": 0,
+      "postitIdCounter": 0
+    }
+  },
+  "view": {
+    "positions": {
+      "entity_0": {
+        "x": 120,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_1": {
+        "x": 550,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_2": {
+        "x": 980,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_3": {
+        "x": 980,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "rel_0": {
+        "x": 415,
+        "y": 160,
+        "size": 120
+      },
+      "rel_1": {
+        "x": 845,
+        "y": 160,
+        "size": 120
+      },
+      "rel_2": {
+        "x": 1060,
+        "y": 330,
+        "size": 120
+      },
+      "attr_0": {
+        "x": 170,
+        "y": 263
+      },
+      "attr_1": {
+        "x": 170,
+        "y": 57
+      },
+      "attr_2": {
+        "x": 764,
+        "y": 227
+      },
+      "attr_3": {
+        "x": 630,
+        "y": 265
+      },
+      "attr_4": {
+        "x": 630,
+        "y": 55
+      },
+      "attr_5": {
+        "x": 1224,
+        "y": 196
+      },
+      "attr_6": {
+        "x": 1030,
+        "y": 57
+      },
+      "attr_7": {
+        "x": 1172,
+        "y": 80
+      },
+      "attr_8": {
+        "x": 1235,
+        "y": 500
+      },
+      "attr_9": {
+        "x": 1194,
+        "y": 567
+      },
+      "attr_10": {
+        "x": 1060,
+        "y": 605
+      },
+      "attr_11": {
+        "x": 1172,
+        "y": 420
+      },
+      "attr_12": {
+        "x": 1200,
+        "y": 330
+      }
+    },
+    "breakpoints": {},
+    "panOffset": {
+      "x": 0,
+      "y": 0
+    },
+    "zoom": 0.8,
+    "fontSize": 18
+  }
+}

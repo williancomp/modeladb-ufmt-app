@@ -1,0 +1,6 @@
+Injected fault,Cases,Detected,Equivalent (discarded)
+drop-not-null,48,48,8
+drop-foreign-keys,56,56,0
+drop-primary-keys,56,56,0
+drop-unique,16,16,0
+widen-types-to-text,56,56,0

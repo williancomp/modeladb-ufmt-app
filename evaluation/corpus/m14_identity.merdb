@@ -1,0 +1,327 @@
+{
+  "version": "2.0",
+  "meta": {
+    "createdAt": "2026-10-30T00:00:00.000Z",
+    "lastModifiedAt": "2026-10-30T00:00:00.000Z",
+    "tool": "ModelaDB",
+    "toolVersion": "2.2.0",
+    "notation": "chen"
+  },
+  "domain": {
+    "entities": [
+      {
+        "id": 0,
+        "objType": "entity",
+        "name": "Citizen",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 1,
+        "objType": "entity",
+        "name": "Passport",
+        "resizeHandles": [],
+        "selected": false
+      }
+    ],
+    "attributes": [
+      {
+        "id": 0,
+        "objType": "attribute",
+        "name": "citizen_uuid",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Identificador",
+        "primary": true,
+        "derived": false,
+        "multivalued": false,
+        "keyStyle": "filled"
+      },
+      {
+        "id": 1,
+        "objType": "attribute",
+        "name": "birth",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 2,
+        "objType": "attribute",
+        "name": "verified",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Booleano",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 3,
+        "objType": "attribute",
+        "name": "last_login",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data e Hora",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 4,
+        "objType": "attribute",
+        "name": "balance",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Real",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 5,
+        "objType": "attribute",
+        "name": "full_name",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 6,
+        "objType": "attribute",
+        "name": "contact",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": null,
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 7,
+        "objType": "attribute",
+        "name": "phone",
+        "parentType": "attribute",
+        "parentId": 6,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 8,
+        "objType": "attribute",
+        "name": "address",
+        "parentType": "attribute",
+        "parentId": 6,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": null,
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 9,
+        "objType": "attribute",
+        "name": "street",
+        "parentType": "attribute",
+        "parentId": 8,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 10,
+        "objType": "attribute",
+        "name": "number",
+        "parentType": "attribute",
+        "parentId": 8,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 11,
+        "objType": "attribute",
+        "name": "passport_seq",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": false,
+        "derived": false,
+        "multivalued": false,
+        "partialKey": true
+      },
+      {
+        "id": 12,
+        "objType": "attribute",
+        "name": "issued",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      }
+    ],
+    "relationships": [
+      {
+        "id": 0,
+        "objType": "relationship",
+        "name": "owns passport",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 0,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 1,
+            "cardinality": "1,1",
+            "weak": true
+          }
+        ]
+      }
+    ],
+    "specializations": [],
+    "aggregations": [],
+    "postits": [],
+    "counters": {
+      "entityIdCounter": 2,
+      "attributeIdCounter": 13,
+      "relationshipIdCounter": 1,
+      "specializationIdCounter": 0,
+      "aggregationIdCounter": 0,
+      "postitIdCounter": 0
+    }
+  },
+  "view": {
+    "positions": {
+      "entity_0": {
+        "x": 120,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_1": {
+        "x": 980,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "rel_0": {
+        "x": 630,
+        "y": 160,
+        "size": 120
+      },
+      "attr_0": {
+        "x": 421,
+        "y": 208
+      },
+      "attr_1": {
+        "x": 419,
+        "y": 317
+      },
+      "attr_2": {
+        "x": 280,
+        "y": 292
+      },
+      "attr_3": {
+        "x": 141,
+        "y": 361
+      },
+      "attr_4": {
+        "x": 159,
+        "y": 21
+      },
+      "attr_5": {
+        "x": 259,
+        "y": -41
+      },
+      "attr_6": {
+        "x": 351,
+        "y": 52
+      },
+      "attr_7": {
+        "x": 325,
+        "y": -17
+      },
+      "attr_8": {
+        "x": 447,
+        "y": -2
+      },
+      "attr_9": {
+        "x": 421,
+        "y": -71
+      },
+      "attr_10": {
+        "x": 543,
+        "y": -56
+      },
+      "attr_11": {
+        "x": 1235,
+        "y": 160
+      },
+      "attr_12": {
+        "x": 1060,
+        "y": 265
+      }
+    },
+    "breakpoints": {},
+    "panOffset": {
+      "x": 0,
+      "y": 0
+    },
+    "zoom": 0.8,
+    "fontSize": 18
+  }
+}

@@ -1,0 +1,71 @@
+Target,Model,Check,Result,First message
+Prisma 6.19.0,m01_library,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m02_university,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m03_hospital,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m04_airline,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m05_ecommerce,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m06_car_rental,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m07_music,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m08_timetable,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m09_projects,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m10_hotel,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m11_registry,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m12_league,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m13_academico,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Prisma 6.19.0,m14_identity,semantic (prisma validate),pass,Prisma schema loaded from schema.prisma
+Django 5.2.7,m01_library,semantic (manage check + makemigrations),pass,System check identified no issues (0 silenced).
+Django 5.2.7,m02_university,semantic (manage check + makemigrations),pass,System check identified no issues (0 silenced).
+Django 5.2.7,m03_hospital,semantic (manage check + makemigrations),pass,System check identified some issues:
+Django 5.2.7,m04_airline,semantic (manage check + makemigrations),pass,System check identified no issues (0 silenced).
+Django 5.2.7,m05_ecommerce,semantic (manage check + makemigrations),pass,System check identified no issues (0 silenced).
+Django 5.2.7,m06_car_rental,semantic (manage check + makemigrations),pass,System check identified some issues:
+Django 5.2.7,m07_music,semantic (manage check + makemigrations),pass,System check identified no issues (0 silenced).
+Django 5.2.7,m08_timetable,semantic (manage check + makemigrations),pass,System check identified no issues (0 silenced).
+Django 5.2.7,m09_projects,semantic (manage check + makemigrations),pass,System check identified no issues (0 silenced).
+Django 5.2.7,m10_hotel,semantic (manage check + makemigrations),pass,System check identified some issues:
+Django 5.2.7,m11_registry,semantic (manage check + makemigrations),pass,System check identified no issues (0 silenced).
+Django 5.2.7,m12_league,semantic (manage check + makemigrations),pass,System check identified no issues (0 silenced).
+Django 5.2.7,m13_academico,semantic (manage check + makemigrations),pass,System check identified no issues (0 silenced).
+Django 5.2.7,m14_identity,semantic (manage check + makemigrations),pass,System check identified no issues (0 silenced).
+Laravel (illuminate/database 11.46.1),m01_library,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 6 tables
+Laravel (illuminate/database 11.46.1),m02_university,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 5 tables
+Laravel (illuminate/database 11.46.1),m03_hospital,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 8 tables
+Laravel (illuminate/database 11.46.1),m04_airline,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 7 tables
+Laravel (illuminate/database 11.46.1),m05_ecommerce,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 6 tables
+Laravel (illuminate/database 11.46.1),m06_car_rental,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 8 tables
+Laravel (illuminate/database 11.46.1),m07_music,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 6 tables
+Laravel (illuminate/database 11.46.1),m08_timetable,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 5 tables
+Laravel (illuminate/database 11.46.1),m09_projects,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 6 tables
+Laravel (illuminate/database 11.46.1),m10_hotel,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 6 tables
+Laravel (illuminate/database 11.46.1),m11_registry,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 4 tables
+Laravel (illuminate/database 11.46.1),m12_league,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 4 tables
+Laravel (illuminate/database 11.46.1),m13_academico,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 4 tables
+Laravel (illuminate/database 11.46.1),m14_identity,"semantic (php -l + migrations run on SQLite, tables/columns compared with oracle)",pass,migrated 2 tables
+graphql 16.11.0,m01_library,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m02_university,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m03_hospital,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m04_airline,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m05_ecommerce,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m06_car_rental,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m07_music,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m08_timetable,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m09_projects,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m10_hotel,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m11_registry,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m12_league,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m13_academico,semantic (buildSchema),pass,schema built
+graphql 16.11.0,m14_identity,semantic (buildSchema),pass,schema built
+Ajv 8.17.1,m01_library,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m02_university,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m03_hospital,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m04_airline,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m05_ecommerce,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m06_car_rental,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m07_music,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m08_timetable,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m09_projects,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m10_hotel,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m11_registry,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m12_league,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m13_academico,semantic (ajv strict compile),pass,compiled; empty object valid=true
+Ajv 8.17.1,m14_identity,semantic (ajv strict compile),pass,compiled; empty object valid=true

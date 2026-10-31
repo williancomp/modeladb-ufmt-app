@@ -1,0 +1,652 @@
+{
+  "version": "2.0",
+  "meta": {
+    "createdAt": "2026-10-30T00:00:00.000Z",
+    "lastModifiedAt": "2026-10-30T00:00:00.000Z",
+    "tool": "ModelaDB",
+    "toolVersion": "2.2.0",
+    "notation": "chen"
+  },
+  "domain": {
+    "entities": [
+      {
+        "id": 0,
+        "objType": "entity",
+        "name": "Customer",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 1,
+        "objType": "entity",
+        "name": "Order",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 2,
+        "objType": "entity",
+        "name": "Order Line",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 3,
+        "objType": "entity",
+        "name": "Product",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 4,
+        "objType": "entity",
+        "name": "Category",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 5,
+        "objType": "entity",
+        "name": "Payment",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 6,
+        "objType": "entity",
+        "name": "Card Payment",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 7,
+        "objType": "entity",
+        "name": "Cash Payment",
+        "resizeHandles": [],
+        "selected": false
+      }
+    ],
+    "attributes": [
+      {
+        "id": 0,
+        "objType": "attribute",
+        "name": "customer_no",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 1,
+        "objType": "attribute",
+        "name": "email",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 2,
+        "objType": "attribute",
+        "name": "registered",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data e Hora",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 3,
+        "objType": "attribute",
+        "name": "order_no",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 4,
+        "objType": "attribute",
+        "name": "placed_at",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data e Hora",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 5,
+        "objType": "attribute",
+        "name": "total",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Real",
+        "primary": false,
+        "derived": true,
+        "multivalued": false
+      },
+      {
+        "id": 6,
+        "objType": "attribute",
+        "name": "line_no",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": false,
+        "derived": false,
+        "multivalued": false,
+        "partialKey": true
+      },
+      {
+        "id": 7,
+        "objType": "attribute",
+        "name": "quantity",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 8,
+        "objType": "attribute",
+        "name": "sku",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 9,
+        "objType": "attribute",
+        "name": "product_title",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 10,
+        "objType": "attribute",
+        "name": "unit_price",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Real",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 11,
+        "objType": "attribute",
+        "name": "category_no",
+        "parentType": "entity",
+        "parentId": 4,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 12,
+        "objType": "attribute",
+        "name": "label",
+        "parentType": "entity",
+        "parentId": 4,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 13,
+        "objType": "attribute",
+        "name": "payment_no",
+        "parentType": "entity",
+        "parentId": 5,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 14,
+        "objType": "attribute",
+        "name": "amount",
+        "parentType": "entity",
+        "parentId": 5,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Real",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 15,
+        "objType": "attribute",
+        "name": "paid_at",
+        "parentType": "entity",
+        "parentId": 5,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data e Hora",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 16,
+        "objType": "attribute",
+        "name": "card_last4",
+        "parentType": "entity",
+        "parentId": 6,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 17,
+        "objType": "attribute",
+        "name": "drawer",
+        "parentType": "entity",
+        "parentId": 7,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      }
+    ],
+    "relationships": [
+      {
+        "id": 0,
+        "objType": "relationship",
+        "name": "places",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 0,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 1,
+            "cardinality": "1,N",
+            "weak": false
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "objType": "relationship",
+        "name": "contains",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 1,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 2,
+            "cardinality": "1,N",
+            "weak": true
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "objType": "relationship",
+        "name": "refers to",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 3,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 2,
+            "cardinality": "1,N",
+            "weak": false
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "objType": "relationship",
+        "name": "classified in",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 4,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 3,
+            "cardinality": "0,N",
+            "weak": false
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "objType": "relationship",
+        "name": "parent of",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 4,
+            "cardinality": "0,1",
+            "weak": false,
+            "role": "parent"
+          },
+          {
+            "entityId": 4,
+            "cardinality": "0,N",
+            "weak": false,
+            "role": "child"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "objType": "relationship",
+        "name": "settles",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 1,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 5,
+            "cardinality": "0,N",
+            "weak": false
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "id": 0,
+        "objType": "specialization",
+        "genType": "T,D",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 5,
+            "vertex": 0,
+            "breakpoints": []
+          },
+          {
+            "entityId": 6,
+            "vertex": 1,
+            "breakpoints": []
+          },
+          {
+            "entityId": 7,
+            "vertex": 2,
+            "breakpoints": []
+          }
+        ]
+      }
+    ],
+    "aggregations": [],
+    "postits": [],
+    "counters": {
+      "entityIdCounter": 8,
+      "attributeIdCounter": 18,
+      "relationshipIdCounter": 6,
+      "specializationIdCounter": 1,
+      "aggregationIdCounter": 0,
+      "postitIdCounter": 0
+    }
+  },
+  "view": {
+    "positions": {
+      "entity_0": {
+        "x": 120,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_1": {
+        "x": 550,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_2": {
+        "x": 980,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_3": {
+        "x": 1410,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_4": {
+        "x": 1410,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "entity_5": {
+        "x": 550,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "entity_6": {
+        "x": 120,
+        "y": 800,
+        "width": 160,
+        "height": 80
+      },
+      "entity_7": {
+        "x": 980,
+        "y": 800,
+        "width": 160,
+        "height": 80
+      },
+      "rel_0": {
+        "x": 415,
+        "y": 160,
+        "size": 120
+      },
+      "rel_1": {
+        "x": 845,
+        "y": 160,
+        "size": 120
+      },
+      "rel_2": {
+        "x": 1275,
+        "y": 330,
+        "size": 120
+      },
+      "rel_3": {
+        "x": 1490,
+        "y": 330,
+        "size": 120
+      },
+      "rel_4": {
+        "x": 1920,
+        "y": 500,
+        "size": 120
+      },
+      "rel_5": {
+        "x": 630,
+        "y": 330,
+        "size": 120
+      },
+      "spec_0": {
+        "x": 630,
+        "y": 738,
+        "size": 100
+      },
+      "attr_0": {
+        "x": 312,
+        "y": 240
+      },
+      "attr_1": {
+        "x": 170,
+        "y": 263
+      },
+      "attr_2": {
+        "x": 170,
+        "y": 57
+      },
+      "attr_3": {
+        "x": 764,
+        "y": 227
+      },
+      "attr_4": {
+        "x": 630,
+        "y": 55
+      },
+      "attr_5": {
+        "x": 742,
+        "y": 80
+      },
+      "attr_6": {
+        "x": 1030,
+        "y": 263
+      },
+      "attr_7": {
+        "x": 1120,
+        "y": 61
+      },
+      "attr_8": {
+        "x": 1662,
+        "y": 178
+      },
+      "attr_9": {
+        "x": 1602,
+        "y": 240
+      },
+      "attr_10": {
+        "x": 1578,
+        "y": 69
+      },
+      "attr_11": {
+        "x": 1602,
+        "y": 580
+      },
+      "attr_12": {
+        "x": 1460,
+        "y": 603
+      },
+      "attr_13": {
+        "x": 805,
+        "y": 500
+      },
+      "attr_14": {
+        "x": 764,
+        "y": 567
+      },
+      "attr_15": {
+        "x": 742,
+        "y": 420
+      },
+      "attr_16": {
+        "x": 170,
+        "y": 943
+      },
+      "attr_17": {
+        "x": 1232,
+        "y": 858
+      }
+    },
+    "breakpoints": {},
+    "panOffset": {
+      "x": 0,
+      "y": 0
+    },
+    "zoom": 0.8,
+    "fontSize": 18
+  }
+}

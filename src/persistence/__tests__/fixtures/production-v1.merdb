@@ -1,0 +1,152 @@
+{
+  "entities": [
+    {
+      "id": 0,
+      "objType": "entity",
+      "name": "Cliente",
+      "x": 220,
+      "y": 250,
+      "width": 160,
+      "height": 70,
+      "resizeHandles": [],
+      "selected": false
+    },
+    {
+      "id": 1,
+      "objType": "entity",
+      "name": "Dependente",
+      "x": 760,
+      "y": 250,
+      "width": 180,
+      "height": 70,
+      "resizeHandles": [],
+      "selected": false
+    },
+    {
+      "id": 2,
+      "objType": "entity",
+      "name": "Curso",
+      "x": 1100,
+      "y": 500,
+      "width": 130,
+      "height": 65,
+      "resizeHandles": [],
+      "selected": false
+    }
+  ],
+  "attributes": [
+    {
+      "id": 0,
+      "objType": "attribute",
+      "name": "CPF",
+      "x": 240,
+      "y": 170,
+      "primary": true,
+      "dataType": "Texto",
+      "parentType": "entity",
+      "parentId": 0,
+      "hitBox": {
+        "x": 228,
+        "y": 158,
+        "width": 65.96998596191406,
+        "height": 24
+      },
+      "resizeHandles": [],
+      "selected": false
+    },
+    {
+      "id": 1,
+      "objType": "attribute",
+      "name": "Número",
+      "x": 790,
+      "y": 170,
+      "partialKey": true,
+      "dataType": "Numérico Inteiro",
+      "parentType": "entity",
+      "parentId": 1,
+      "hitBox": {
+        "x": 778,
+        "y": 158,
+        "width": 96.08396911621094,
+        "height": 24
+      },
+      "resizeHandles": [],
+      "selected": false
+    },
+    {
+      "id": 2,
+      "objType": "attribute",
+      "name": "Código (variante)",
+      "x": 1040,
+      "y": 420,
+      "primary": true,
+      "keyStyle": "filled",
+      "dataType": "Numérico Inteiro",
+      "parentType": "entity",
+      "parentId": 2,
+      "hitBox": {
+        "x": 1028,
+        "y": 408,
+        "width": 165.7338409423828,
+        "height": 24
+      },
+      "resizeHandles": [],
+      "selected": false
+    }
+  ],
+  "relationships": [
+    {
+      "id": 0,
+      "objType": "relationship",
+      "name": "possui",
+      "x": 560,
+      "y": 430,
+      "size": 100,
+      "connections": [
+        {
+          "entityId": 0,
+          "cardinality": "2,5",
+          "weak": false,
+          "role": "proprietário",
+          "labelRect": {
+            "x": 424.74563308592394,
+            "y": 340.9157054571458,
+            "width": 57.21797180175781,
+            "height": 57.21797180175781
+          }
+        },
+        {
+          "entityId": 1,
+          "cardinality": "1,N",
+          "weak": true,
+          "role": "dependente",
+          "labelRect": {
+            "x": 651.3443425496419,
+            "y": 342.84434254964196,
+            "width": 53.97798156738281,
+            "height": 53.97798156738281
+          }
+        }
+      ],
+      "resizeHandles": [],
+      "selected": false
+    }
+  ],
+  "specializations": [],
+  "aggregations": [],
+  "postits": [],
+  "entityIdCounter": 3,
+  "attributeIdCounter": 3,
+  "relationshipIdCounter": 1,
+  "specializationIdCounter": 0,
+  "aggregationIdCounter": 0,
+  "postitIdCounter": 0,
+  "fontSize": 18,
+  "panOffset": {
+    "x": 0,
+    "y": 0
+  },
+  "version": "1.0",
+  "appVersion": "2.1.1",
+  "notation": "chen"
+}

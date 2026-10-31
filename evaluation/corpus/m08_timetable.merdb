@@ -1,0 +1,354 @@
+{
+  "version": "2.0",
+  "meta": {
+    "createdAt": "2026-10-30T00:00:00.000Z",
+    "lastModifiedAt": "2026-10-30T00:00:00.000Z",
+    "tool": "ModelaDB",
+    "toolVersion": "2.2.0",
+    "notation": "chen"
+  },
+  "domain": {
+    "entities": [
+      {
+        "id": 0,
+        "objType": "entity",
+        "name": "Teacher",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 1,
+        "objType": "entity",
+        "name": "Room",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 2,
+        "objType": "entity",
+        "name": "Slot",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 3,
+        "objType": "entity",
+        "name": "Department",
+        "resizeHandles": [],
+        "selected": false
+      }
+    ],
+    "attributes": [
+      {
+        "id": 0,
+        "objType": "attribute",
+        "name": "teacher_no",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 1,
+        "objType": "attribute",
+        "name": "full_name",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 2,
+        "objType": "attribute",
+        "name": "room_no",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 3,
+        "objType": "attribute",
+        "name": "capacity",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 4,
+        "objType": "attribute",
+        "name": "slot_no",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 5,
+        "objType": "attribute",
+        "name": "weekday",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 6,
+        "objType": "attribute",
+        "name": "starts",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 7,
+        "objType": "attribute",
+        "name": "department_no",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 8,
+        "objType": "attribute",
+        "name": "title",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 9,
+        "objType": "attribute",
+        "name": "subject_title",
+        "parentType": "relationship",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      }
+    ],
+    "relationships": [
+      {
+        "id": 0,
+        "objType": "relationship",
+        "name": "mentors",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 0,
+            "cardinality": "0,1",
+            "weak": false,
+            "role": "mentor"
+          },
+          {
+            "entityId": 0,
+            "cardinality": "0,N",
+            "weak": false,
+            "role": "mentee"
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "objType": "relationship",
+        "name": "heads",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 0,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 3,
+            "cardinality": "1,1",
+            "weak": false
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "objType": "relationship",
+        "name": "schedules",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 0,
+            "cardinality": "0,N",
+            "weak": false
+          },
+          {
+            "entityId": 1,
+            "cardinality": "0,N",
+            "weak": false
+          },
+          {
+            "entityId": 2,
+            "cardinality": "0,N",
+            "weak": false
+          }
+        ]
+      }
+    ],
+    "specializations": [],
+    "aggregations": [],
+    "postits": [],
+    "counters": {
+      "entityIdCounter": 4,
+      "attributeIdCounter": 10,
+      "relationshipIdCounter": 3,
+      "specializationIdCounter": 0,
+      "aggregationIdCounter": 0,
+      "postitIdCounter": 0
+    }
+  },
+  "view": {
+    "positions": {
+      "entity_0": {
+        "x": 120,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_1": {
+        "x": 550,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "entity_2": {
+        "x": 980,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_3": {
+        "x": 120,
+        "y": 664,
+        "width": 160,
+        "height": 80
+      },
+      "rel_0": {
+        "x": -144,
+        "y": 160,
+        "size": 120
+      },
+      "rel_1": {
+        "x": 200,
+        "y": 432,
+        "size": 120
+      },
+      "rel_2": {
+        "x": 630,
+        "y": 279,
+        "size": 120
+      },
+      "attr_0": {
+        "x": 230,
+        "y": 57
+      },
+      "attr_1": {
+        "x": 352,
+        "y": 107
+      },
+      "attr_2": {
+        "x": 805,
+        "y": 500
+      },
+      "attr_3": {
+        "x": 630,
+        "y": 605
+      },
+      "attr_4": {
+        "x": 1120,
+        "y": 259
+      },
+      "attr_5": {
+        "x": 1030,
+        "y": 57
+      },
+      "attr_6": {
+        "x": 1224,
+        "y": 124
+      },
+      "attr_7": {
+        "x": 375,
+        "y": 704
+      },
+      "attr_8": {
+        "x": 200,
+        "y": 809
+      },
+      "attr_9": {
+        "x": 630,
+        "y": 169
+      }
+    },
+    "breakpoints": {},
+    "panOffset": {
+      "x": 0,
+      "y": 0
+    },
+    "zoom": 0.8,
+    "fontSize": 18
+  }
+}

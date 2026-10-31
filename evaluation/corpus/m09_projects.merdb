@@ -1,0 +1,427 @@
+{
+  "version": "2.0",
+  "meta": {
+    "createdAt": "2026-10-30T00:00:00.000Z",
+    "lastModifiedAt": "2026-10-30T00:00:00.000Z",
+    "tool": "ModelaDB",
+    "toolVersion": "2.2.0",
+    "notation": "chen"
+  },
+  "domain": {
+    "entities": [
+      {
+        "id": 0,
+        "objType": "entity",
+        "name": "Department",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 1,
+        "objType": "entity",
+        "name": "Employee",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 2,
+        "objType": "entity",
+        "name": "Project",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 3,
+        "objType": "entity",
+        "name": "Sponsor",
+        "resizeHandles": [],
+        "selected": false
+      }
+    ],
+    "attributes": [
+      {
+        "id": 0,
+        "objType": "attribute",
+        "name": "dept_no",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 1,
+        "objType": "attribute",
+        "name": "dept_name",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 2,
+        "objType": "attribute",
+        "name": "emp_no",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 3,
+        "objType": "attribute",
+        "name": "full_name",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 4,
+        "objType": "attribute",
+        "name": "address",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": null,
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 5,
+        "objType": "attribute",
+        "name": "street",
+        "parentType": "attribute",
+        "parentId": 4,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 6,
+        "objType": "attribute",
+        "name": "city",
+        "parentType": "attribute",
+        "parentId": 4,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 7,
+        "objType": "attribute",
+        "name": "project_no",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 8,
+        "objType": "attribute",
+        "name": "project_title",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 9,
+        "objType": "attribute",
+        "name": "sponsor_no",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 10,
+        "objType": "attribute",
+        "name": "sponsor_name",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 11,
+        "objType": "attribute",
+        "name": "hours",
+        "parentType": "relationship",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Real",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 12,
+        "objType": "attribute",
+        "name": "budget",
+        "parentType": "aggregation",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Real",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      }
+    ],
+    "relationships": [
+      {
+        "id": 0,
+        "objType": "relationship",
+        "name": "works for",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 0,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 1,
+            "cardinality": "1,N",
+            "weak": false
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "objType": "relationship",
+        "name": "supervises",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 1,
+            "cardinality": "0,1",
+            "weak": false,
+            "role": "supervisor"
+          },
+          {
+            "entityId": 1,
+            "cardinality": "0,N",
+            "weak": false,
+            "role": "subordinate"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "objType": "relationship",
+        "name": "works on",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 1,
+            "cardinality": "0,N",
+            "weak": false
+          },
+          {
+            "entityId": 2,
+            "cardinality": "1,N",
+            "weak": false
+          }
+        ]
+      }
+    ],
+    "specializations": [],
+    "aggregations": [
+      {
+        "id": 0,
+        "objType": "aggregation",
+        "name": "Sponsorship",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "relationshipId": 2,
+            "weak": false
+          },
+          {
+            "entityId": 3,
+            "weak": false
+          }
+        ]
+      }
+    ],
+    "postits": [],
+    "counters": {
+      "entityIdCounter": 4,
+      "attributeIdCounter": 13,
+      "relationshipIdCounter": 3,
+      "specializationIdCounter": 0,
+      "aggregationIdCounter": 1,
+      "postitIdCounter": 0
+    }
+  },
+  "view": {
+    "positions": {
+      "entity_0": {
+        "x": 120,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_1": {
+        "x": 550,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_2": {
+        "x": 980,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_3": {
+        "x": 1410,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "rel_0": {
+        "x": 415,
+        "y": 160,
+        "size": 120
+      },
+      "rel_1": {
+        "x": 630,
+        "y": -78,
+        "size": 120
+      },
+      "rel_2": {
+        "x": 845,
+        "y": 160,
+        "size": 120
+      },
+      "agg_0": {
+        "x": 1146,
+        "y": 602,
+        "size": 120
+      },
+      "attr_0": {
+        "x": 170,
+        "y": 263
+      },
+      "attr_1": {
+        "x": 170,
+        "y": 57
+      },
+      "attr_2": {
+        "x": 764,
+        "y": 227
+      },
+      "attr_3": {
+        "x": 630,
+        "y": 265
+      },
+      "attr_4": {
+        "x": 742,
+        "y": 80
+      },
+      "attr_5": {
+        "x": 716,
+        "y": 11
+      },
+      "attr_6": {
+        "x": 838,
+        "y": 26
+      },
+      "attr_7": {
+        "x": 1235,
+        "y": 160
+      },
+      "attr_8": {
+        "x": 1060,
+        "y": 265
+      },
+      "attr_9": {
+        "x": 1665,
+        "y": 500
+      },
+      "attr_10": {
+        "x": 1460,
+        "y": 603
+      },
+      "attr_11": {
+        "x": 845,
+        "y": 270
+      },
+      "attr_12": {
+        "x": 1306,
+        "y": 602
+      }
+    },
+    "breakpoints": {},
+    "panOffset": {
+      "x": 0,
+      "y": 0
+    },
+    "zoom": 0.8,
+    "fontSize": 18
+  }
+}

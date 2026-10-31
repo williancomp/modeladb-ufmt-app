@@ -1,0 +1,672 @@
+model	operator	notation	kind	outcome	description
+m03_hospital	(unmutated)	chen	baseline	intended-TP	R005 on attribute "phones"
+m03_hospital	(unmutated)	chen	baseline	FP	R006 on entity "Diagnosis"
+m04_airline	(unmutated)	crow	baseline	intended-TP	CF001 on relationship "crews"
+m07_music	(unmutated)	chen	baseline	intended-TP	R005 on attribute "genres"
+m10_hotel	(unmutated)	crow	baseline	intended-TP	CF001 on relationship "books"
+m01_library	R001-remove-key	chen	defect	TP	remove all key attributes of Publisher
+m01_library	R001-remove-key	chen	defect	TP	remove all key attributes of Author
+m01_library	R001-remove-key	chen	defect	TP	remove all key attributes of Member
+m02_university	R001-remove-key	chen	defect	TP	remove all key attributes of Course
+m02_university	R001-remove-key	chen	defect	TP	remove all key attributes of Department
+m02_university	R001-remove-key	chen	defect	TP	remove all key attributes of Section
+m03_hospital	R001-remove-key	chen	defect	TP	remove all key attributes of Diagnosis
+m03_hospital	R001-remove-key	chen	defect	TP	remove all key attributes of Staff
+m03_hospital	R001-remove-key	chen	defect	TP	remove all key attributes of Room
+m04_airline	R001-remove-key	chen	defect	TP	remove all key attributes of Aircraft
+m04_airline	R001-remove-key	chen	defect	TP	remove all key attributes of Pilot
+m04_airline	R001-remove-key	chen	defect	TP	remove all key attributes of Airport
+m05_ecommerce	R001-remove-key	chen	defect	TP	remove all key attributes of Order Line
+m05_ecommerce	R001-remove-key	chen	defect	TP	remove all key attributes of Product
+m05_ecommerce	R001-remove-key	chen	defect	TP	remove all key attributes of Payment
+m06_car_rental	R001-remove-key	chen	defect	TP	remove all key attributes of Branch
+m06_car_rental	R001-remove-key	chen	defect	TP	remove all key attributes of Customer
+m06_car_rental	R001-remove-key	chen	defect	TP	remove all key attributes of Vehicle
+m07_music	R001-remove-key	chen	defect	TP	remove all key attributes of Artist
+m07_music	R001-remove-key	chen	defect	TP	remove all key attributes of Playlist
+m07_music	R001-remove-key	chen	defect	TP	remove all key attributes of Track
+m08_timetable	R001-remove-key	chen	defect	TP	remove all key attributes of Department
+m08_timetable	R001-remove-key	chen	defect	TP	remove all key attributes of Slot
+m08_timetable	R001-remove-key	chen	defect	TP	remove all key attributes of Room
+m09_projects	R001-remove-key	chen	defect	TP	remove all key attributes of Sponsor
+m09_projects	R001-remove-key	chen	defect	TP	remove all key attributes of Department
+m09_projects	R001-remove-key	chen	defect	TP	remove all key attributes of Project
+m10_hotel	R001-remove-key	chen	defect	TP	remove all key attributes of Room
+m10_hotel	R001-remove-key	chen	defect	TP	remove all key attributes of Guest
+m10_hotel	R001-remove-key	chen	defect	TP	remove all key attributes of Floor
+m11_registry	R001-remove-key	chen	defect	TP	remove all key attributes of Vehicle
+m11_registry	R001-remove-key	chen	defect	TP	remove all key attributes of Company
+m11_registry	R001-remove-key	chen	defect	TP	remove all key attributes of Person
+m12_league	R001-remove-key	chen	defect	TP	remove all key attributes of Player
+m12_league	R001-remove-key	chen	defect	TP	remove all key attributes of Fixture
+m12_league	R001-remove-key	chen	defect	TP	remove all key attributes of Team
+m13_academico	R001-remove-key	chen	defect	TP	remove all key attributes of Aluno
+m13_academico	R001-remove-key	chen	defect	TP	remove all key attributes of Professor
+m13_academico	R001-remove-key	chen	defect	TP	remove all key attributes of Disciplina
+m14_identity	R001-remove-key	chen	defect	TP	remove all key attributes of Passport
+m14_identity	R001-remove-key	chen	defect	TP	remove all key attributes of Citizen
+m01_library	R002-drop-participant	chen	defect	TP	drop a participant of writes
+m01_library	R002-drop-participant	chen	defect	TP	drop a participant of borrows
+m01_library	R002-drop-participant	chen	defect	TP	drop a participant of publishes
+m02_university	R002-drop-participant	chen	defect	TP	drop a participant of offered as
+m02_university	R002-drop-participant	chen	defect	TP	drop a participant of owns
+m02_university	R002-drop-participant	chen	defect	TP	drop a participant of enrolls in
+m03_hospital	R002-drop-participant	chen	defect	TP	drop a participant of occupies
+m04_airline	R002-drop-participant	chen	defect	TP	drop a participant of crews
+m04_airline	R002-drop-participant	chen	defect	TP	drop a participant of installed in
+m04_airline	R002-drop-participant	chen	defect	TP	drop a participant of holds
+m05_ecommerce	R002-drop-participant	chen	defect	TP	drop a participant of contains
+m05_ecommerce	R002-drop-participant	chen	defect	TP	drop a participant of parent of
+m05_ecommerce	R002-drop-participant	chen	defect	TP	drop a participant of settles
+m06_car_rental	R002-drop-participant	chen	defect	TP	drop a participant of rents
+m06_car_rental	R002-drop-participant	chen	defect	TP	drop a participant of stationed at
+m07_music	R002-drop-participant	chen	defect	TP	drop a participant of has track
+m07_music	R002-drop-participant	chen	defect	TP	drop a participant of includes
+m07_music	R002-drop-participant	chen	defect	TP	drop a participant of releases
+m08_timetable	R002-drop-participant	chen	defect	TP	drop a participant of heads
+m08_timetable	R002-drop-participant	chen	defect	TP	drop a participant of mentors
+m09_projects	R002-drop-participant	chen	defect	TP	drop a participant of supervises
+m09_projects	R002-drop-participant	chen	defect	TP	drop a participant of works for
+m09_projects	R002-drop-participant	chen	defect	TP	drop a participant of works on
+m10_hotel	R002-drop-participant	chen	defect	TP	drop a participant of books
+m10_hotel	R002-drop-participant	chen	defect	TP	drop a participant of contains
+m11_registry	R002-drop-participant	chen	defect	TP	drop a participant of owned by
+m12_league	R002-drop-participant	chen	defect	TP	drop a participant of hosts
+m12_league	R002-drop-participant	chen	defect	TP	drop a participant of scores
+m12_league	R002-drop-participant	chen	defect	TP	drop a participant of visits
+m13_academico	R002-drop-participant	chen	defect	TP	drop a participant of ministra
+m13_academico	R002-drop-participant	chen	defect	TP	drop a participant of cursa
+m14_identity	R002-drop-participant	chen	defect	TP	drop a participant of owns passport
+m01_library	R002-invalid-cardinality	chen	defect	TP	cardinality "1," on writes
+m01_library	R002-invalid-cardinality	chen	defect	TP	cardinality "1," on borrows
+m01_library	R002-invalid-cardinality	chen	defect	TP	cardinality "1," on publishes
+m02_university	R002-invalid-cardinality	chen	defect	TP	cardinality "" on enrolls in
+m02_university	R002-invalid-cardinality	chen	defect	TP	cardinality "-1,N" on owns
+m02_university	R002-invalid-cardinality	chen	defect	TP	cardinality "1," on offered as
+m03_hospital	R002-invalid-cardinality	chen	defect	TP	cardinality "-1,N" on occupies
+m03_hospital	R002-invalid-cardinality	chen	defect	TP	cardinality "x,y" on treats
+m04_airline	R002-invalid-cardinality	chen	defect	TP	cardinality "5,2" on arrives at
+m04_airline	R002-invalid-cardinality	chen	defect	TP	cardinality "1," on departs from
+m04_airline	R002-invalid-cardinality	chen	defect	TP	cardinality "-1,N" on crews
+m05_ecommerce	R002-invalid-cardinality	chen	defect	TP	cardinality "1," on refers to
+m05_ecommerce	R002-invalid-cardinality	chen	defect	TP	cardinality "-1,N" on places
+m05_ecommerce	R002-invalid-cardinality	chen	defect	TP	cardinality "-1,N" on settles
+m06_car_rental	R002-invalid-cardinality	chen	defect	TP	cardinality "-1,N" on rents
+m06_car_rental	R002-invalid-cardinality	chen	defect	TP	cardinality "-1,N" on stationed at
+m07_music	R002-invalid-cardinality	chen	defect	TP	cardinality "5,2" on includes
+m07_music	R002-invalid-cardinality	chen	defect	TP	cardinality "-1,N" on has track
+m07_music	R002-invalid-cardinality	chen	defect	TP	cardinality "-1,N" on releases
+m08_timetable	R002-invalid-cardinality	chen	defect	TP	cardinality "x,y" on schedules
+m08_timetable	R002-invalid-cardinality	chen	defect	TP	cardinality "-1,N" on heads
+m08_timetable	R002-invalid-cardinality	chen	defect	TP	cardinality "x,y" on mentors
+m09_projects	R002-invalid-cardinality	chen	defect	TP	cardinality "" on supervises
+m09_projects	R002-invalid-cardinality	chen	defect	TP	cardinality "" on works on
+m09_projects	R002-invalid-cardinality	chen	defect	TP	cardinality "x,y" on works for
+m10_hotel	R002-invalid-cardinality	chen	defect	TP	cardinality "-1,N" on contains
+m10_hotel	R002-invalid-cardinality	chen	defect	TP	cardinality "x,y" on books
+m11_registry	R002-invalid-cardinality	chen	defect	TP	cardinality "5,2" on owned by
+m12_league	R002-invalid-cardinality	chen	defect	TP	cardinality "x,y" on hosts
+m12_league	R002-invalid-cardinality	chen	defect	TP	cardinality "1," on scores
+m12_league	R002-invalid-cardinality	chen	defect	TP	cardinality "" on plays for
+m13_academico	R002-invalid-cardinality	chen	defect	TP	cardinality "5,2" on ministra
+m13_academico	R002-invalid-cardinality	chen	defect	TP	cardinality "" on cursa
+m14_identity	R002-invalid-cardinality	chen	defect	TP	cardinality "5,2" on owns passport
+m03_hospital	R003-remove-supertype	chen	defect	TP	remove the supertype of specialization 0
+m05_ecommerce	R003-remove-supertype	chen	defect	TP	remove the supertype of specialization 0
+m06_car_rental	R003-remove-supertype	chen	defect	TP	remove the supertype of specialization 1
+m06_car_rental	R003-remove-supertype	chen	defect	TP	remove the supertype of specialization 0
+m10_hotel	R003-remove-supertype	chen	defect	TP	remove the supertype of specialization 0
+m11_registry	R003-remove-supertype	chen	defect	TP	remove the supertype of specialization 0
+m03_hospital	R003-remove-subtypes	chen	defect	TP	remove the subtypes of specialization 0
+m05_ecommerce	R003-remove-subtypes	chen	defect	TP	remove the subtypes of specialization 0
+m06_car_rental	R003-remove-subtypes	chen	defect	TP	remove the subtypes of specialization 1
+m06_car_rental	R003-remove-subtypes	chen	defect	TP	remove the subtypes of specialization 0
+m10_hotel	R003-remove-subtypes	chen	defect	TP	remove the subtypes of specialization 0
+m01_library	R004-all-dependent	chen	defect	TP	mark every participant of borrows dependent
+m01_library	R004-all-dependent	chen	defect	TP	mark every participant of writes dependent
+m01_library	R004-all-dependent	chen	defect	TP	mark every participant of publishes dependent
+m02_university	R004-all-dependent	chen	defect	TP	mark every participant of enrolls in dependent
+m02_university	R004-all-dependent	chen	defect	TP	mark every participant of owns dependent
+m03_hospital	R004-all-dependent	chen	defect	TP	mark every participant of occupies dependent
+m03_hospital	R004-all-dependent	chen	defect	TP	mark every participant of treats dependent
+m04_airline	R004-all-dependent	chen	defect	TP	mark every participant of departs from dependent
+m04_airline	R004-all-dependent	chen	defect	TP	mark every participant of crews dependent
+m04_airline	R004-all-dependent	chen	defect	TP	mark every participant of arrives at dependent
+m05_ecommerce	R004-all-dependent	chen	defect	TP	mark every participant of parent of dependent
+m05_ecommerce	R004-all-dependent	chen	defect	TP	mark every participant of places dependent
+m05_ecommerce	R004-all-dependent	chen	defect	TP	mark every participant of classified in dependent
+m06_car_rental	R004-all-dependent	chen	defect	TP	mark every participant of stationed at dependent
+m06_car_rental	R004-all-dependent	chen	defect	TP	mark every participant of rents dependent
+m07_music	R004-all-dependent	chen	defect	TP	mark every participant of includes dependent
+m07_music	R004-all-dependent	chen	defect	TP	mark every participant of releases dependent
+m08_timetable	R004-all-dependent	chen	defect	TP	mark every participant of mentors dependent
+m08_timetable	R004-all-dependent	chen	defect	TP	mark every participant of schedules dependent
+m08_timetable	R004-all-dependent	chen	defect	TP	mark every participant of heads dependent
+m09_projects	R004-all-dependent	chen	defect	TP	mark every participant of supervises dependent
+m09_projects	R004-all-dependent	chen	defect	TP	mark every participant of works for dependent
+m09_projects	R004-all-dependent	chen	defect	TP	mark every participant of works on dependent
+m10_hotel	R004-all-dependent	chen	defect	TP	mark every participant of contains dependent
+m10_hotel	R004-all-dependent	chen	defect	TP	mark every participant of books dependent
+m11_registry	R004-all-dependent	chen	defect	TP	mark every participant of owned by dependent
+m12_league	R004-all-dependent	chen	defect	TP	mark every participant of hosts dependent
+m12_league	R004-all-dependent	chen	defect	TP	mark every participant of plays for dependent
+m12_league	R004-all-dependent	chen	defect	TP	mark every participant of scores dependent
+m13_academico	R004-all-dependent	chen	defect	TP	mark every participant of ministra dependent
+m13_academico	R004-all-dependent	chen	defect	TP	mark every participant of cursa dependent
+m01_library	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Book
+m01_library	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Publisher
+m01_library	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Member
+m02_university	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Department
+m02_university	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Section
+m02_university	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Course
+m03_hospital	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Room
+m03_hospital	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Staff
+m03_hospital	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Nurse
+m04_airline	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Airport
+m04_airline	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Pilot
+m04_airline	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Aircraft
+m05_ecommerce	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Order
+m05_ecommerce	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Card Payment
+m05_ecommerce	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Cash Payment
+m06_car_rental	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Company
+m06_car_rental	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Individual
+m06_car_rental	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Car
+m07_music	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Artist
+m07_music	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Album
+m07_music	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Playlist
+m08_timetable	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Room
+m08_timetable	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Slot
+m08_timetable	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Teacher
+m09_projects	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Employee
+m09_projects	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Project
+m09_projects	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Department
+m10_hotel	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Accessible Room
+m10_hotel	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Suite
+m10_hotel	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Guest
+m11_registry	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Vehicle
+m11_registry	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Owner
+m11_registry	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Company
+m12_league	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Team
+m12_league	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Player
+m12_league	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Fixture
+m13_academico	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Aluno
+m13_academico	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Professor
+m13_academico	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Disciplina
+m14_identity	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Passport
+m14_identity	R005-add-multivalued	chen	defect	TP	add multivalued attribute to Citizen
+m01_library	R006-plural-name	chen	defect	TP	rename mice to plural "mice" (irregular)
+m01_library	R006-plural-name	chen	defect	TP	rename Books to plural "Books"
+m01_library	R006-plural-name	chen	defect	TP	rename lives to plural "lives" (irregular)
+m02_university	R006-plural-name	chen	defect	TP	rename Departments to plural "Departments"
+m02_university	R006-plural-name	chen	defect	TP	rename Students to plural "Students"
+m02_university	R006-plural-name	chen	defect	TP	rename knives to plural "knives" (irregular)
+m03_hospital	R006-plural-name	chen	defect	TP	rename teeth to plural "teeth" (irregular)
+m03_hospital	R006-plural-name	chen	defect	TP	rename Staffs to plural "Staffs"
+m03_hospital	R006-plural-name	chen	defect	TP	rename Diagnosises to plural "Diagnosises"
+m04_airline	R006-plural-name	chen	defect	TP	rename Aircrafts to plural "Aircrafts"
+m04_airline	R006-plural-name	chen	defect	TP	rename feet to plural "feet" (irregular)
+m04_airline	R006-plural-name	chen	defect	TP	rename Airports to plural "Airports"
+m05_ecommerce	R006-plural-name	chen	defect	TP	rename people to plural "people" (irregular)
+m05_ecommerce	R006-plural-name	chen	defect	TP	rename Payments to plural "Payments"
+m05_ecommerce	R006-plural-name	chen	defect	TP	rename mice to plural "mice" (irregular)
+m06_car_rental	R006-plural-name	chen	defect	TP	rename leaves to plural "leaves" (irregular)
+m06_car_rental	R006-plural-name	chen	defect	TP	rename indices to plural "indices" (irregular)
+m06_car_rental	R006-plural-name	chen	defect	TP	rename men to plural "men" (irregular)
+m07_music	R006-plural-name	chen	defect	TP	rename Artists to plural "Artists"
+m07_music	R006-plural-name	chen	defect	TP	rename Playlists to plural "Playlists"
+m07_music	R006-plural-name	chen	defect	TP	rename women to plural "women" (irregular)
+m08_timetable	R006-plural-name	chen	defect	TP	rename children to plural "children" (irregular)
+m08_timetable	R006-plural-name	chen	defect	TP	rename knives to plural "knives" (irregular)
+m08_timetable	R006-plural-name	chen	defect	TP	rename Departments to plural "Departments"
+m09_projects	R006-plural-name	chen	defect	TP	rename children to plural "children" (irregular)
+m09_projects	R006-plural-name	chen	defect	TP	rename Employees to plural "Employees"
+m09_projects	R006-plural-name	chen	defect	TP	rename Projects to plural "Projects"
+m10_hotel	R006-plural-name	chen	defect	TP	rename Floors to plural "Floors"
+m10_hotel	R006-plural-name	chen	defect	TP	rename Accessible Rooms to plural "Accessible Rooms"
+m10_hotel	R006-plural-name	chen	defect	FN	rename data to plural "data" (irregular)
+m11_registry	R006-plural-name	chen	defect	TP	rename Vehicles to plural "Vehicles"
+m11_registry	R006-plural-name	chen	defect	TP	rename Persons to plural "Persons"
+m11_registry	R006-plural-name	chen	defect	TP	rename feet to plural "feet" (irregular)
+m12_league	R006-plural-name	chen	defect	TP	rename Players to plural "Players"
+m12_league	R006-plural-name	chen	defect	TP	rename Fixtures to plural "Fixtures"
+m12_league	R006-plural-name	chen	defect	TP	rename Teams to plural "Teams"
+m13_academico	R006-plural-name	chen	defect	TP	rename Professors to plural "Professors"
+m13_academico	R006-plural-name	chen	defect	TP	rename Disciplinas to plural "Disciplinas"
+m13_academico	R006-plural-name	chen	defect	TP	rename lives to plural "lives" (irregular)
+m14_identity	R006-plural-name	chen	defect	TP	rename women to plural "women" (irregular)
+m01_library	R006-singular-ending-s	chen	control	TN	rename Process to singular "Process"
+m01_library	R006-singular-ending-s	chen	control	TN	rename Analysis to singular "Analysis"
+m01_library	R006-singular-ending-s	chen	control	TN	rename Series to singular "Series"
+m02_university	R006-singular-ending-s	chen	control	FP(control)	rename Diagnosis to singular "Diagnosis"
+m02_university	R006-singular-ending-s	chen	control	TN	rename Analysis to singular "Analysis"
+m02_university	R006-singular-ending-s	chen	control	TN	rename Class to singular "Class"
+m03_hospital	R006-singular-ending-s	chen	control	TN	rename Series to singular "Series"
+m03_hospital	R006-singular-ending-s	chen	control	TN	rename Basis to singular "Basis"
+m03_hospital	R006-singular-ending-s	chen	control	TN	rename Campus to singular "Campus"
+m04_airline	R006-singular-ending-s	chen	control	TN	rename Basis to singular "Basis"
+m04_airline	R006-singular-ending-s	chen	control	TN	rename Pais to singular "Pais"
+m04_airline	R006-singular-ending-s	chen	control	TN	rename Status to singular "Status"
+m05_ecommerce	R006-singular-ending-s	chen	control	TN	rename Bonus to singular "Bonus"
+m05_ecommerce	R006-singular-ending-s	chen	control	FP(control)	rename Lens to singular "Lens"
+m05_ecommerce	R006-singular-ending-s	chen	control	FP(control)	rename Lapis to singular "Lapis"
+m06_car_rental	R006-singular-ending-s	chen	control	TN	rename Atlas to singular "Atlas"
+m06_car_rental	R006-singular-ending-s	chen	control	TN	rename Series to singular "Series"
+m06_car_rental	R006-singular-ending-s	chen	control	FP(control)	rename Lapis to singular "Lapis"
+m07_music	R006-singular-ending-s	chen	control	FP(control)	rename Lens to singular "Lens"
+m07_music	R006-singular-ending-s	chen	control	TN	rename Class to singular "Class"
+m07_music	R006-singular-ending-s	chen	control	TN	rename Pais to singular "Pais"
+m08_timetable	R006-singular-ending-s	chen	control	FP(control)	rename Lapis to singular "Lapis"
+m08_timetable	R006-singular-ending-s	chen	control	TN	rename Analysis to singular "Analysis"
+m08_timetable	R006-singular-ending-s	chen	control	TN	rename Process to singular "Process"
+m09_projects	R006-singular-ending-s	chen	control	TN	rename Status to singular "Status"
+m09_projects	R006-singular-ending-s	chen	control	TN	rename Status to singular "Status"
+m09_projects	R006-singular-ending-s	chen	control	TN	rename Series to singular "Series"
+m10_hotel	R006-singular-ending-s	chen	control	TN	rename Process to singular "Process"
+m10_hotel	R006-singular-ending-s	chen	control	TN	rename Basis to singular "Basis"
+m10_hotel	R006-singular-ending-s	chen	control	TN	rename Campus to singular "Campus"
+m11_registry	R006-singular-ending-s	chen	control	TN	rename Address to singular "Address"
+m11_registry	R006-singular-ending-s	chen	control	TN	rename Business to singular "Business"
+m11_registry	R006-singular-ending-s	chen	control	TN	rename Bonus to singular "Bonus"
+m12_league	R006-singular-ending-s	chen	control	TN	rename Thesis to singular "Thesis"
+m12_league	R006-singular-ending-s	chen	control	TN	rename Pais to singular "Pais"
+m12_league	R006-singular-ending-s	chen	control	FP(control)	rename Axis to singular "Axis"
+m13_academico	R006-singular-ending-s	chen	control	TN	rename Analysis to singular "Analysis"
+m13_academico	R006-singular-ending-s	chen	control	TN	rename Canvas to singular "Canvas"
+m13_academico	R006-singular-ending-s	chen	control	TN	rename Pais to singular "Pais"
+m14_identity	R006-singular-ending-s	chen	control	TN	rename Status to singular "Status"
+m14_identity	R006-singular-ending-s	chen	control	FP(control)	rename Bus to singular "Bus"
+m01_library	R007-generic-relationship	chen	defect	TP	rename rel. to generic "rel."
+m01_library	R007-generic-relationship	chen	defect	FN	rename Relacao to generic "Relacao"
+m01_library	R007-generic-relationship	chen	defect	FN	rename Relação to generic "Relação"
+m02_university	R007-generic-relationship	chen	defect	TP	rename Relacionamento to generic "Relacionamento"
+m02_university	R007-generic-relationship	chen	defect	FN	rename Association to generic "Association"
+m02_university	R007-generic-relationship	chen	defect	TP	rename REL to generic "REL"
+m03_hospital	R007-generic-relationship	chen	defect	TP	rename  relationship  to generic " relationship "
+m03_hospital	R007-generic-relationship	chen	defect	FN	rename Association to generic "Association"
+m04_airline	R007-generic-relationship	chen	defect	TP	rename  relationship  to generic " relationship "
+m04_airline	R007-generic-relationship	chen	defect	FN	rename Relacao to generic "Relacao"
+m04_airline	R007-generic-relationship	chen	defect	FN	rename Relacao to generic "Relacao"
+m05_ecommerce	R007-generic-relationship	chen	defect	FN	rename Associa to generic "Associa"
+m05_ecommerce	R007-generic-relationship	chen	defect	TP	rename rel. to generic "rel."
+m05_ecommerce	R007-generic-relationship	chen	defect	FN	rename Relação to generic "Relação"
+m06_car_rental	R007-generic-relationship	chen	defect	TP	rename Rel to generic "Rel"
+m06_car_rental	R007-generic-relationship	chen	defect	TP	rename  relationship  to generic " relationship "
+m07_music	R007-generic-relationship	chen	defect	FN	rename Connection to generic "Connection"
+m07_music	R007-generic-relationship	chen	defect	FN	rename Relacao to generic "Relacao"
+m07_music	R007-generic-relationship	chen	defect	TP	rename Relationship to generic "Relationship"
+m08_timetable	R007-generic-relationship	chen	defect	FN	rename Association to generic "Association"
+m08_timetable	R007-generic-relationship	chen	defect	TP	rename Relationship to generic "Relationship"
+m08_timetable	R007-generic-relationship	chen	defect	FN	rename Has to generic "Has"
+m09_projects	R007-generic-relationship	chen	defect	FN	rename Relation to generic "Relation"
+m09_projects	R007-generic-relationship	chen	defect	FN	rename Associa to generic "Associa"
+m09_projects	R007-generic-relationship	chen	defect	FN	rename Relation to generic "Relation"
+m10_hotel	R007-generic-relationship	chen	defect	TP	rename Relacionamento to generic "Relacionamento"
+m10_hotel	R007-generic-relationship	chen	defect	FN	rename Associa to generic "Associa"
+m11_registry	R007-generic-relationship	chen	defect	FN	rename Has to generic "Has"
+m12_league	R007-generic-relationship	chen	defect	TP	rename Relacionamento to generic "Relacionamento"
+m12_league	R007-generic-relationship	chen	defect	TP	rename Relacionamento to generic "Relacionamento"
+m12_league	R007-generic-relationship	chen	defect	FN	rename Connection to generic "Connection"
+m13_academico	R007-generic-relationship	chen	defect	TP	rename REL to generic "REL"
+m13_academico	R007-generic-relationship	chen	defect	FN	rename Associa to generic "Associa"
+m14_identity	R007-generic-relationship	chen	defect	FN	rename Association to generic "Association"
+m01_library	R007-meaningful-relationship	chen	control	TN	rename supervises to "supervises"
+m01_library	R007-meaningful-relationship	chen	control	TN	rename employs to "employs"
+m01_library	R007-meaningful-relationship	chen	control	TN	rename cites to "cites"
+m02_university	R007-meaningful-relationship	chen	control	TN	rename attends to "attends"
+m02_university	R007-meaningful-relationship	chen	control	TN	rename schedules to "schedules"
+m02_university	R007-meaningful-relationship	chen	control	TN	rename approves to "approves"
+m03_hospital	R007-meaningful-relationship	chen	control	TN	rename attends to "attends"
+m03_hospital	R007-meaningful-relationship	chen	control	TN	rename employs to "employs"
+m04_airline	R007-meaningful-relationship	chen	control	TN	rename cites to "cites"
+m04_airline	R007-meaningful-relationship	chen	control	TN	rename attends to "attends"
+m04_airline	R007-meaningful-relationship	chen	control	TN	rename attends to "attends"
+m05_ecommerce	R007-meaningful-relationship	chen	control	TN	rename employs to "employs"
+m05_ecommerce	R007-meaningful-relationship	chen	control	TN	rename attends to "attends"
+m05_ecommerce	R007-meaningful-relationship	chen	control	TN	rename schedules to "schedules"
+m06_car_rental	R007-meaningful-relationship	chen	control	TN	rename attends to "attends"
+m06_car_rental	R007-meaningful-relationship	chen	control	TN	rename approves to "approves"
+m07_music	R007-meaningful-relationship	chen	control	TN	rename cites to "cites"
+m07_music	R007-meaningful-relationship	chen	control	TN	rename schedules to "schedules"
+m07_music	R007-meaningful-relationship	chen	control	TN	rename supervises to "supervises"
+m08_timetable	R007-meaningful-relationship	chen	control	TN	rename schedules to "schedules"
+m08_timetable	R007-meaningful-relationship	chen	control	TN	rename employs to "employs"
+m08_timetable	R007-meaningful-relationship	chen	control	TN	rename employs to "employs"
+m09_projects	R007-meaningful-relationship	chen	control	TN	rename employs to "employs"
+m09_projects	R007-meaningful-relationship	chen	control	TN	rename cites to "cites"
+m09_projects	R007-meaningful-relationship	chen	control	TN	rename employs to "employs"
+m10_hotel	R007-meaningful-relationship	chen	control	TN	rename approves to "approves"
+m10_hotel	R007-meaningful-relationship	chen	control	TN	rename approves to "approves"
+m11_registry	R007-meaningful-relationship	chen	control	TN	rename attends to "attends"
+m12_league	R007-meaningful-relationship	chen	control	TN	rename schedules to "schedules"
+m12_league	R007-meaningful-relationship	chen	control	TN	rename employs to "employs"
+m12_league	R007-meaningful-relationship	chen	control	TN	rename approves to "approves"
+m13_academico	R007-meaningful-relationship	chen	control	TN	rename cites to "cites"
+m13_academico	R007-meaningful-relationship	chen	control	TN	rename employs to "employs"
+m14_identity	R007-meaningful-relationship	chen	control	TN	rename employs to "employs"
+m02_university	R008-identification-cycle	chen	defect	TP	make entity 1 depend on weak entity 2
+m04_airline	R008-identification-cycle	chen	defect	TP	make entity 4 depend on weak entity 5
+m05_ecommerce	R008-identification-cycle	chen	defect	TP	make entity 1 depend on weak entity 2
+m07_music	R008-identification-cycle	chen	defect	TP	make entity 1 depend on weak entity 2
+m14_identity	R008-identification-cycle	chen	defect	TP	make entity 0 depend on weak entity 1
+m02_university	R008-three-entity-cycle	chen	defect	TP	identification cycle 2 -> 1 -> 0 -> 2
+m04_airline	R008-three-entity-cycle	chen	defect	TP	identification cycle 5 -> 4 -> 0 -> 5
+m05_ecommerce	R008-three-entity-cycle	chen	defect	TP	identification cycle 2 -> 1 -> 0 -> 2
+m07_music	R008-three-entity-cycle	chen	defect	TP	identification cycle 2 -> 1 -> 0 -> 2
+m01_library	R009-default-entity-name	chen	defect	TP	rename Entidade 1 to default "Entidade 1"
+m01_library	R009-default-entity-name	chen	defect	FN	rename New Entity 2 to default "New Entity 2"
+m01_library	R009-default-entity-name	chen	defect	TP	rename Tabela to default "Tabela"
+m02_university	R009-default-entity-name	chen	defect	TP	rename Table to default "Table"
+m02_university	R009-default-entity-name	chen	defect	FN	rename Nova entidade 3 to default "Nova entidade 3"
+m02_university	R009-default-entity-name	chen	defect	FN	rename Objeto to default "Objeto"
+m03_hospital	R009-default-entity-name	chen	defect	FN	rename Sem título to default "Sem título"
+m03_hospital	R009-default-entity-name	chen	defect	TP	rename Entidade to default "Entidade"
+m03_hospital	R009-default-entity-name	chen	defect	FN	rename Nova entidade 3 to default "Nova entidade 3"
+m04_airline	R009-default-entity-name	chen	defect	TP	rename Entidade1 to default "Entidade1"
+m04_airline	R009-default-entity-name	chen	defect	TP	rename Entidade 1 to default "Entidade 1"
+m04_airline	R009-default-entity-name	chen	defect	FN	rename Untitled to default "Untitled"
+m05_ecommerce	R009-default-entity-name	chen	defect	FN	rename Objeto to default "Objeto"
+m05_ecommerce	R009-default-entity-name	chen	defect	FN	rename New Entity 2 to default "New Entity 2"
+m05_ecommerce	R009-default-entity-name	chen	defect	FN	rename Sem título to default "Sem título"
+m06_car_rental	R009-default-entity-name	chen	defect	FN	rename Entity1 to default "Entity1"
+m06_car_rental	R009-default-entity-name	chen	defect	TP	rename Entidade to default "Entidade"
+m06_car_rental	R009-default-entity-name	chen	defect	FN	rename Objeto to default "Objeto"
+m07_music	R009-default-entity-name	chen	defect	TP	rename Entidade 1 to default "Entidade 1"
+m07_music	R009-default-entity-name	chen	defect	FN	rename Entity1 to default "Entity1"
+m07_music	R009-default-entity-name	chen	defect	TP	rename Entity to default "Entity"
+m08_timetable	R009-default-entity-name	chen	defect	FN	rename Objeto to default "Objeto"
+m08_timetable	R009-default-entity-name	chen	defect	FN	rename Sem título to default "Sem título"
+m08_timetable	R009-default-entity-name	chen	defect	FN	rename Objeto to default "Objeto"
+m09_projects	R009-default-entity-name	chen	defect	FN	rename New Entity 2 to default "New Entity 2"
+m09_projects	R009-default-entity-name	chen	defect	TP	rename Entidade to default "Entidade"
+m09_projects	R009-default-entity-name	chen	defect	TP	rename Nova Entidade to default "Nova Entidade"
+m10_hotel	R009-default-entity-name	chen	defect	TP	rename New Entity to default "New Entity"
+m10_hotel	R009-default-entity-name	chen	defect	TP	rename Entity to default "Entity"
+m10_hotel	R009-default-entity-name	chen	defect	TP	rename Tabela to default "Tabela"
+m11_registry	R009-default-entity-name	chen	defect	TP	rename New Entity to default "New Entity"
+m11_registry	R009-default-entity-name	chen	defect	FN	rename Objeto to default "Objeto"
+m11_registry	R009-default-entity-name	chen	defect	TP	rename Nova Entidade to default "Nova Entidade"
+m12_league	R009-default-entity-name	chen	defect	FN	rename Untitled to default "Untitled"
+m12_league	R009-default-entity-name	chen	defect	FN	rename Entity1 to default "Entity1"
+m12_league	R009-default-entity-name	chen	defect	FN	rename Sem título to default "Sem título"
+m13_academico	R009-default-entity-name	chen	defect	TP	rename Entidade 1 to default "Entidade 1"
+m13_academico	R009-default-entity-name	chen	defect	TP	rename Tabela to default "Tabela"
+m13_academico	R009-default-entity-name	chen	defect	TP	rename Entidade 1 to default "Entidade 1"
+m14_identity	R009-default-entity-name	chen	defect	FN	rename Entidade2 to default "Entidade2"
+m14_identity	R009-default-entity-name	chen	defect	FN	rename Sem título to default "Sem título"
+m01_library	R009-domain-word-as-entity	chen	control	FP(control)	rename Entity to the legitimate domain word "Entity"
+m01_library	R009-domain-word-as-entity	chen	control	TN	rename Objeto to the legitimate domain word "Objeto"
+m01_library	R009-domain-word-as-entity	chen	control	FP(control)	rename Tabela to the legitimate domain word "Tabela"
+m02_university	R009-domain-word-as-entity	chen	control	FP(control)	rename Tabela to the legitimate domain word "Tabela"
+m02_university	R009-domain-word-as-entity	chen	control	FP(control)	rename Entity to the legitimate domain word "Entity"
+m02_university	R009-domain-word-as-entity	chen	control	FP(control)	rename Tabela to the legitimate domain word "Tabela"
+m03_hospital	R009-domain-word-as-entity	chen	control	TN	rename Objeto to the legitimate domain word "Objeto"
+m03_hospital	R009-domain-word-as-entity	chen	control	FP(control)	rename Tabela to the legitimate domain word "Tabela"
+m03_hospital	R009-domain-word-as-entity	chen	control	FP(control)	rename Nome to the legitimate domain word "Nome"
+m04_airline	R009-domain-word-as-entity	chen	control	FP(control)	rename Table to the legitimate domain word "Table"
+m04_airline	R009-domain-word-as-entity	chen	control	FP(control)	rename Nome to the legitimate domain word "Nome"
+m04_airline	R009-domain-word-as-entity	chen	control	FP(control)	rename Entity to the legitimate domain word "Entity"
+m05_ecommerce	R009-domain-word-as-entity	chen	control	FP(control)	rename Nome to the legitimate domain word "Nome"
+m05_ecommerce	R009-domain-word-as-entity	chen	control	FP(control)	rename Table to the legitimate domain word "Table"
+m05_ecommerce	R009-domain-word-as-entity	chen	control	FP(control)	rename Entity to the legitimate domain word "Entity"
+m06_car_rental	R009-domain-word-as-entity	chen	control	FP(control)	rename Table to the legitimate domain word "Table"
+m06_car_rental	R009-domain-word-as-entity	chen	control	FP(control)	rename Table to the legitimate domain word "Table"
+m06_car_rental	R009-domain-word-as-entity	chen	control	TN	rename Objeto to the legitimate domain word "Objeto"
+m07_music	R009-domain-word-as-entity	chen	control	FP(control)	rename Entity to the legitimate domain word "Entity"
+m07_music	R009-domain-word-as-entity	chen	control	FP(control)	rename Tabela to the legitimate domain word "Tabela"
+m07_music	R009-domain-word-as-entity	chen	control	FP(control)	rename Tabela to the legitimate domain word "Tabela"
+m08_timetable	R009-domain-word-as-entity	chen	control	FP(control)	rename Nome to the legitimate domain word "Nome"
+m08_timetable	R009-domain-word-as-entity	chen	control	FP(control)	rename Tabela to the legitimate domain word "Tabela"
+m08_timetable	R009-domain-word-as-entity	chen	control	FP(control)	rename Tabela to the legitimate domain word "Tabela"
+m09_projects	R009-domain-word-as-entity	chen	control	FP(control)	rename Entity to the legitimate domain word "Entity"
+m09_projects	R009-domain-word-as-entity	chen	control	TN	rename Objeto to the legitimate domain word "Objeto"
+m09_projects	R009-domain-word-as-entity	chen	control	FP(control)	rename Entity to the legitimate domain word "Entity"
+m10_hotel	R009-domain-word-as-entity	chen	control	FP(control)	rename Entity to the legitimate domain word "Entity"
+m10_hotel	R009-domain-word-as-entity	chen	control	FP(control)	rename Nome to the legitimate domain word "Nome"
+m10_hotel	R009-domain-word-as-entity	chen	control	FP(control)	rename Table to the legitimate domain word "Table"
+m11_registry	R009-domain-word-as-entity	chen	control	FP(control)	rename Nome to the legitimate domain word "Nome"
+m11_registry	R009-domain-word-as-entity	chen	control	FP(control)	rename Nome to the legitimate domain word "Nome"
+m11_registry	R009-domain-word-as-entity	chen	control	FP(control)	rename Table to the legitimate domain word "Table"
+m12_league	R009-domain-word-as-entity	chen	control	TN	rename Objeto to the legitimate domain word "Objeto"
+m12_league	R009-domain-word-as-entity	chen	control	FP(control)	rename Entity to the legitimate domain word "Entity"
+m12_league	R009-domain-word-as-entity	chen	control	TN	rename Objeto to the legitimate domain word "Objeto"
+m13_academico	R009-domain-word-as-entity	chen	control	FP(control)	rename Table to the legitimate domain word "Table"
+m13_academico	R009-domain-word-as-entity	chen	control	FP(control)	rename Tabela to the legitimate domain word "Tabela"
+m13_academico	R009-domain-word-as-entity	chen	control	FP(control)	rename Table to the legitimate domain word "Table"
+m14_identity	R009-domain-word-as-entity	chen	control	FP(control)	rename Tabela to the legitimate domain word "Tabela"
+m14_identity	R009-domain-word-as-entity	chen	control	FP(control)	rename Tabela to the legitimate domain word "Tabela"
+m01_library	R010-default-attribute-name	chen	defect	FN	rename attribute Valor to default "Valor"
+m01_library	R010-default-attribute-name	chen	defect	TP	rename attribute Derived to default "Derived"
+m01_library	R010-default-attribute-name	chen	defect	TP	rename attribute Novo Atributo to default "Novo Atributo"
+m02_university	R010-default-attribute-name	chen	defect	TP	rename attribute Atributo to default "Atributo"
+m02_university	R010-default-attribute-name	chen	defect	FN	rename attribute atributo1 to default "atributo1"
+m02_university	R010-default-attribute-name	chen	defect	FN	rename attribute Attribute 1 to default "Attribute 1"
+m03_hospital	R010-default-attribute-name	chen	defect	TP	rename attribute Novo Atributo to default "Novo Atributo"
+m03_hospital	R010-default-attribute-name	chen	defect	TP	rename attribute New Attribute to default "New Attribute"
+m03_hospital	R010-default-attribute-name	chen	defect	TP	rename attribute Derived to default "Derived"
+m04_airline	R010-default-attribute-name	chen	defect	TP	rename attribute Derived to default "Derived"
+m04_airline	R010-default-attribute-name	chen	defect	FN	rename attribute field1 to default "field1"
+m04_airline	R010-default-attribute-name	chen	defect	FN	rename attribute Attribute 1 to default "Attribute 1"
+m05_ecommerce	R010-default-attribute-name	chen	defect	TP	rename attribute Field to default "Field"
+m05_ecommerce	R010-default-attribute-name	chen	defect	TP	rename attribute Derived to default "Derived"
+m05_ecommerce	R010-default-attribute-name	chen	defect	FN	rename attribute field1 to default "field1"
+m06_car_rental	R010-default-attribute-name	chen	defect	FN	rename attribute novo_atributo to default "novo_atributo"
+m06_car_rental	R010-default-attribute-name	chen	defect	TP	rename attribute Derived to default "Derived"
+m06_car_rental	R010-default-attribute-name	chen	defect	TP	rename attribute Multivalued to default "Multivalued"
+m07_music	R010-default-attribute-name	chen	defect	FN	rename attribute Prop to default "Prop"
+m07_music	R010-default-attribute-name	chen	defect	TP	rename attribute New Attribute to default "New Attribute"
+m07_music	R010-default-attribute-name	chen	defect	FN	rename attribute atributo1 to default "atributo1"
+m08_timetable	R010-default-attribute-name	chen	defect	TP	rename attribute Multivalued to default "Multivalued"
+m08_timetable	R010-default-attribute-name	chen	defect	FN	rename attribute Attribute 1 to default "Attribute 1"
+m08_timetable	R010-default-attribute-name	chen	defect	FN	rename attribute novo_atributo to default "novo_atributo"
+m09_projects	R010-default-attribute-name	chen	defect	TP	rename attribute Multivalued to default "Multivalued"
+m09_projects	R010-default-attribute-name	chen	defect	TP	rename attribute Novo Atributo to default "Novo Atributo"
+m09_projects	R010-default-attribute-name	chen	defect	FN	rename attribute Prop to default "Prop"
+m10_hotel	R010-default-attribute-name	chen	defect	TP	rename attribute Atributo to default "Atributo"
+m10_hotel	R010-default-attribute-name	chen	defect	FN	rename attribute field1 to default "field1"
+m10_hotel	R010-default-attribute-name	chen	defect	FN	rename attribute field1 to default "field1"
+m11_registry	R010-default-attribute-name	chen	defect	TP	rename attribute Coluna to default "Coluna"
+m11_registry	R010-default-attribute-name	chen	defect	FN	rename attribute novo_atributo to default "novo_atributo"
+m11_registry	R010-default-attribute-name	chen	defect	FN	rename attribute Propriedade to default "Propriedade"
+m12_league	R010-default-attribute-name	chen	defect	TP	rename attribute Novo Atributo to default "Novo Atributo"
+m12_league	R010-default-attribute-name	chen	defect	TP	rename attribute Attribute to default "Attribute"
+m12_league	R010-default-attribute-name	chen	defect	TP	rename attribute Atributo to default "Atributo"
+m13_academico	R010-default-attribute-name	chen	defect	TP	rename attribute Derived to default "Derived"
+m13_academico	R010-default-attribute-name	chen	defect	TP	rename attribute Multivalued to default "Multivalued"
+m13_academico	R010-default-attribute-name	chen	defect	FN	rename attribute field1 to default "field1"
+m14_identity	R010-default-attribute-name	chen	defect	TP	rename attribute Novo Atributo to default "Novo Atributo"
+m14_identity	R010-default-attribute-name	chen	defect	FN	rename attribute Valor to default "Valor"
+m14_identity	R010-default-attribute-name	chen	defect	FN	rename attribute Attribute 1 to default "Attribute 1"
+m01_library	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Key to the legitimate word "Key"
+m01_library	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Chave to the legitimate word "Chave"
+m01_library	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Id to the legitimate word "Id"
+m02_university	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Key to the legitimate word "Key"
+m02_university	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Field to the legitimate word "Field"
+m02_university	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Field to the legitimate word "Field"
+m03_hospital	R010-domain-word-as-attribute	chen	control	TN	rename attribute Code to the legitimate word "Code"
+m03_hospital	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Id to the legitimate word "Id"
+m03_hospital	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Key to the legitimate word "Key"
+m04_airline	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Coluna to the legitimate word "Coluna"
+m04_airline	R010-domain-word-as-attribute	chen	control	TN	rename attribute Code to the legitimate word "Code"
+m04_airline	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Codigo to the legitimate word "Codigo"
+m05_ecommerce	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Coluna to the legitimate word "Coluna"
+m05_ecommerce	R010-domain-word-as-attribute	chen	control	TN	rename attribute Code to the legitimate word "Code"
+m05_ecommerce	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Id to the legitimate word "Id"
+m06_car_rental	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Codigo to the legitimate word "Codigo"
+m06_car_rental	R010-domain-word-as-attribute	chen	control	TN	rename attribute Code to the legitimate word "Code"
+m06_car_rental	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Field to the legitimate word "Field"
+m07_music	R010-domain-word-as-attribute	chen	control	TN	rename attribute Code to the legitimate word "Code"
+m07_music	R010-domain-word-as-attribute	chen	control	TN	rename attribute Code to the legitimate word "Code"
+m07_music	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Field to the legitimate word "Field"
+m08_timetable	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Coluna to the legitimate word "Coluna"
+m08_timetable	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Column to the legitimate word "Column"
+m08_timetable	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Column to the legitimate word "Column"
+m09_projects	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Campo to the legitimate word "Campo"
+m09_projects	R010-domain-word-as-attribute	chen	control	TN	rename attribute Code to the legitimate word "Code"
+m09_projects	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Chave to the legitimate word "Chave"
+m10_hotel	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Column to the legitimate word "Column"
+m10_hotel	R010-domain-word-as-attribute	chen	control	TN	rename attribute Code to the legitimate word "Code"
+m10_hotel	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Column to the legitimate word "Column"
+m11_registry	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Coluna to the legitimate word "Coluna"
+m11_registry	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Id to the legitimate word "Id"
+m11_registry	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Coluna to the legitimate word "Coluna"
+m12_league	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Id to the legitimate word "Id"
+m12_league	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Key to the legitimate word "Key"
+m12_league	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Coluna to the legitimate word "Coluna"
+m13_academico	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Coluna to the legitimate word "Coluna"
+m13_academico	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Campo to the legitimate word "Campo"
+m13_academico	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Codigo to the legitimate word "Codigo"
+m14_identity	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Key to the legitimate word "Key"
+m14_identity	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Key to the legitimate word "Key"
+m14_identity	R010-domain-word-as-attribute	chen	control	FP(control)	rename attribute Chave to the legitimate word "Chave"
+m01_library	R011-duplicate-entity-name	chen	defect	TP	rename publisher to duplicate "publisher"
+m01_library	R011-duplicate-entity-name	chen	defect	TP	rename Publisher  to duplicate "Publisher "
+m01_library	R011-duplicate-entity-name	chen	defect	TP	rename publisher to duplicate "publisher"
+m02_university	R011-duplicate-entity-name	chen	defect	TP	rename department to duplicate "department"
+m02_university	R011-duplicate-entity-name	chen	defect	TP	rename Department  to duplicate "Department "
+m02_university	R011-duplicate-entity-name	chen	defect	TP	rename department to duplicate "department"
+m03_hospital	R011-duplicate-entity-name	chen	defect	TP	rename Staff to duplicate "Staff"
+m03_hospital	R011-duplicate-entity-name	chen	defect	TP	rename Staff  to duplicate "Staff "
+m03_hospital	R011-duplicate-entity-name	chen	defect	TP	rename STAFF to duplicate "STAFF"
+m04_airline	R011-duplicate-entity-name	chen	defect	TP	rename Airport  to duplicate "Airport "
+m04_airline	R011-duplicate-entity-name	chen	defect	TP	rename Airport to duplicate "Airport"
+m04_airline	R011-duplicate-entity-name	chen	defect	TP	rename Airport to duplicate "Airport"
+m05_ecommerce	R011-duplicate-entity-name	chen	defect	TP	rename customer to duplicate "customer"
+m05_ecommerce	R011-duplicate-entity-name	chen	defect	TP	rename customer to duplicate "customer"
+m05_ecommerce	R011-duplicate-entity-name	chen	defect	TP	rename Customer to duplicate "Customer"
+m06_car_rental	R011-duplicate-entity-name	chen	defect	TP	rename VEHICLE to duplicate "VEHICLE"
+m06_car_rental	R011-duplicate-entity-name	chen	defect	TP	rename VEHICLE to duplicate "VEHICLE"
+m06_car_rental	R011-duplicate-entity-name	chen	defect	TP	rename Vehicle to duplicate "Vehicle"
+m07_music	R011-duplicate-entity-name	chen	defect	TP	rename Artist to duplicate "Artist"
+m07_music	R011-duplicate-entity-name	chen	defect	TP	rename ARTIST to duplicate "ARTIST"
+m07_music	R011-duplicate-entity-name	chen	defect	TP	rename Artist  to duplicate "Artist "
+m08_timetable	R011-duplicate-entity-name	chen	defect	TP	rename teacher to duplicate "teacher"
+m08_timetable	R011-duplicate-entity-name	chen	defect	TP	rename Teacher to duplicate "Teacher"
+m08_timetable	R011-duplicate-entity-name	chen	defect	TP	rename TEACHER to duplicate "TEACHER"
+m09_projects	R011-duplicate-entity-name	chen	defect	TP	rename Department to duplicate "Department"
+m09_projects	R011-duplicate-entity-name	chen	defect	TP	rename Department to duplicate "Department"
+m09_projects	R011-duplicate-entity-name	chen	defect	TP	rename DEPARTMENT to duplicate "DEPARTMENT"
+m10_hotel	R011-duplicate-entity-name	chen	defect	TP	rename floor to duplicate "floor"
+m10_hotel	R011-duplicate-entity-name	chen	defect	TP	rename FLOOR to duplicate "FLOOR"
+m10_hotel	R011-duplicate-entity-name	chen	defect	TP	rename Floor to duplicate "Floor"
+m11_registry	R011-duplicate-entity-name	chen	defect	TP	rename Person to duplicate "Person"
+m11_registry	R011-duplicate-entity-name	chen	defect	TP	rename Person to duplicate "Person"
+m11_registry	R011-duplicate-entity-name	chen	defect	TP	rename person to duplicate "person"
+m12_league	R011-duplicate-entity-name	chen	defect	TP	rename Team to duplicate "Team"
+m12_league	R011-duplicate-entity-name	chen	defect	TP	rename Team to duplicate "Team"
+m13_academico	R011-duplicate-entity-name	chen	defect	TP	rename ALUNO to duplicate "ALUNO"
+m13_academico	R011-duplicate-entity-name	chen	defect	TP	rename Aluno to duplicate "Aluno"
+m14_identity	R011-duplicate-entity-name	chen	defect	TP	rename citizen to duplicate "citizen"
+m02_university	R012-dependent-partial	chen	defect	TP	dependent connection of offered as set to 0,1
+m04_airline	R012-dependent-partial	chen	defect	TP	dependent connection of installed in set to 0,1
+m05_ecommerce	R012-dependent-partial	chen	defect	TP	dependent connection of contains set to 0,1
+m07_music	R012-dependent-partial	chen	defect	TP	dependent connection of has track set to 0,N
+m14_identity	R012-dependent-partial	chen	defect	TP	dependent connection of owns passport set to 0,N
+m01_library	C001-floating-attribute	chen	defect	TP	detach attribute country
+m01_library	C001-floating-attribute	chen	defect	TP	detach attribute published
+m01_library	C001-floating-attribute	chen	defect	TP	detach attribute email
+m02_university	C001-floating-attribute	chen	defect	TP	detach attribute age
+m02_university	C001-floating-attribute	chen	defect	TP	detach attribute credits
+m02_university	C001-floating-attribute	chen	defect	TP	detach attribute dept_no
+m03_hospital	C001-floating-attribute	chen	defect	TP	detach attribute full_name
+m03_hospital	C001-floating-attribute	chen	defect	TP	detach attribute label
+m03_hospital	C001-floating-attribute	chen	defect	TP	detach attribute patient_no
+m04_airline	C001-floating-attribute	chen	defect	TP	detach attribute cabin
+m04_airline	C001-floating-attribute	chen	defect	TP	detach attribute model
+m04_airline	C001-floating-attribute	chen	defect	TP	detach attribute city
+m05_ecommerce	C001-floating-attribute	chen	defect	TP	detach attribute total
+m05_ecommerce	C001-floating-attribute	chen	defect	TP	detach attribute customer_no
+m05_ecommerce	C001-floating-attribute	chen	defect	TP	detach attribute category_no
+m06_car_rental	C001-floating-attribute	chen	defect	TP	detach attribute birth_date
+m06_car_rental	C001-floating-attribute	chen	defect	TP	detach attribute payload
+m06_car_rental	C001-floating-attribute	chen	defect	TP	detach attribute city
+m07_music	C001-floating-attribute	chen	defect	TP	detach attribute playlist_no
+m07_music	C001-floating-attribute	chen	defect	TP	detach attribute seconds
+m07_music	C001-floating-attribute	chen	defect	TP	detach attribute stage_name
+m08_timetable	C001-floating-attribute	chen	defect	TP	detach attribute full_name
+m08_timetable	C001-floating-attribute	chen	defect	TP	detach attribute slot_no
+m08_timetable	C001-floating-attribute	chen	defect	TP	detach attribute teacher_no
+m09_projects	C001-floating-attribute	chen	defect	TP	detach attribute project_no
+m09_projects	C001-floating-attribute	chen	defect	TP	detach attribute emp_no
+m09_projects	C001-floating-attribute	chen	defect	TP	detach attribute dept_name
+m10_hotel	C001-floating-attribute	chen	defect	TP	detach attribute email
+m10_hotel	C001-floating-attribute	chen	defect	TP	detach attribute beds
+m10_hotel	C001-floating-attribute	chen	defect	TP	detach attribute guest_no
+m11_registry	C001-floating-attribute	chen	defect	TP	detach attribute plate
+m11_registry	C001-floating-attribute	chen	defect	TP	detach attribute cpf
+m11_registry	C001-floating-attribute	chen	defect	TP	detach attribute color
+m12_league	C001-floating-attribute	chen	defect	TP	detach attribute shirt
+m12_league	C001-floating-attribute	chen	defect	TP	detach attribute venue
+m12_league	C001-floating-attribute	chen	defect	TP	detach attribute team_code
+m13_academico	C001-floating-attribute	chen	defect	TP	detach attribute siape
+m13_academico	C001-floating-attribute	chen	defect	TP	detach attribute matrícula
+m13_academico	C001-floating-attribute	chen	defect	TP	detach attribute data_nascimento
+m14_identity	C001-floating-attribute	chen	defect	TP	detach attribute issued
+m14_identity	C001-floating-attribute	chen	defect	TP	detach attribute balance
+m14_identity	C001-floating-attribute	chen	defect	TP	detach attribute passport_seq
+m01_library	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,N on borrows
+m01_library	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,5 on publishes
+m01_library	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 0,3 on writes
+m02_university	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,5 on enrolls in
+m02_university	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,N on owns
+m02_university	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,5 on offered as
+m03_hospital	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,N on treats
+m03_hospital	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,N on occupies
+m04_airline	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,N on departs from
+m04_airline	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 3,3 on arrives at
+m04_airline	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,5 on holds
+m05_ecommerce	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,5 on refers to
+m05_ecommerce	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,5 on contains
+m05_ecommerce	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,N on places
+m06_car_rental	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,5 on stationed at
+m06_car_rental	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 0,3 on rents
+m07_music	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,5 on has track
+m07_music	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,N on includes
+m07_music	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 3,3 on releases
+m08_timetable	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 3,3 on heads
+m08_timetable	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 1,4 on schedules
+m08_timetable	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 0,3 on mentors
+m09_projects	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 1,4 on works on
+m09_projects	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,N on supervises
+m09_projects	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,5 on works for
+m10_hotel	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 0,3 on books
+m10_hotel	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,5 on contains
+m11_registry	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,N on owned by
+m12_league	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 0,3 on plays for
+m12_league	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 0,3 on visits
+m12_league	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,N on hosts
+m13_academico	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,5 on cursa
+m13_academico	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 3,3 on ministra
+m14_identity	CF001-arbitrary-cardinality	crow	defect	TP	cardinality 2,N on owns passport
+m01_library	CF001-standard-cardinality	crow	control	TN	cardinality 1,N on writes
+m01_library	CF001-standard-cardinality	crow	control	TN	cardinality 0,1 on borrows
+m01_library	CF001-standard-cardinality	crow	control	TN	cardinality 0,N on publishes
+m02_university	CF001-standard-cardinality	crow	control	TN	cardinality 1,1 on enrolls in
+m02_university	CF001-standard-cardinality	crow	control	TN	cardinality 1,1 on owns
+m02_university	CF001-standard-cardinality	crow	control	TN	cardinality 0,1 on offered as
+m03_hospital	CF001-standard-cardinality	crow	control	TN	cardinality 1,1 on occupies
+m03_hospital	CF001-standard-cardinality	crow	control	TN	cardinality 0,N on treats
+m04_airline	CF001-standard-cardinality	crow	control	TN	cardinality 1,N on arrives at
+m04_airline	CF001-standard-cardinality	crow	control	TN	cardinality 1,1 on departs from
+m04_airline	CF001-standard-cardinality	crow	control	TN	cardinality 0,N on installed in
+m05_ecommerce	CF001-standard-cardinality	crow	control	TN	cardinality 1,N on classified in
+m05_ecommerce	CF001-standard-cardinality	crow	control	TN	cardinality 0,1 on places
+m05_ecommerce	CF001-standard-cardinality	crow	control	TN	cardinality 0,1 on refers to
+m06_car_rental	CF001-standard-cardinality	crow	control	TN	cardinality 1,1 on stationed at
+m06_car_rental	CF001-standard-cardinality	crow	control	TN	cardinality 1,N on rents
+m07_music	CF001-standard-cardinality	crow	control	TN	cardinality 0,1 on includes
+m07_music	CF001-standard-cardinality	crow	control	TN	cardinality 1,N on has track
+m07_music	CF001-standard-cardinality	crow	control	TN	cardinality 1,N on releases
+m08_timetable	CF001-standard-cardinality	crow	control	TN	cardinality 0,1 on schedules
+m08_timetable	CF001-standard-cardinality	crow	control	TN	cardinality 1,N on heads
+m08_timetable	CF001-standard-cardinality	crow	control	TN	cardinality 0,N on mentors
+m09_projects	CF001-standard-cardinality	crow	control	TN	cardinality 0,N on works on
+m09_projects	CF001-standard-cardinality	crow	control	TN	cardinality 0,1 on works for
+m09_projects	CF001-standard-cardinality	crow	control	TN	cardinality 0,1 on supervises
+m10_hotel	CF001-standard-cardinality	crow	control	TN	cardinality 1,N on contains
+m11_registry	CF001-standard-cardinality	crow	control	TN	cardinality 1,1 on owned by
+m12_league	CF001-standard-cardinality	crow	control	TN	cardinality 1,1 on plays for
+m12_league	CF001-standard-cardinality	crow	control	TN	cardinality 0,1 on visits
+m12_league	CF001-standard-cardinality	crow	control	TN	cardinality 1,N on hosts
+m13_academico	CF001-standard-cardinality	crow	control	TN	cardinality 1,N on cursa
+m13_academico	CF001-standard-cardinality	crow	control	TN	cardinality 1,N on ministra
+m14_identity	CF001-standard-cardinality	crow	control	TN	cardinality 1,1 on owns passport

@@ -1,0 +1,33 @@
+source	input	dialect	construct	detail
+hand-written	h04_unique_one_to_one	postgres	unique	person: UNIQUE(email) lost
+hand-written	h04_unique_one_to_one	postgres	composite unique	person: UNIQUE(first_name,last_name) lost
+generated	m03_hospital	mysql	redundant unique on primary key (no semantic change)	doctor: UNIQUE(staff_no) added
+generated	m03_hospital	mysql	redundant unique on primary key (no semantic change)	nurse: UNIQUE(staff_no) added
+generated	m06_car_rental	mysql	redundant unique on primary key (no semantic change)	car: UNIQUE(plate) added
+generated	m06_car_rental	mysql	redundant unique on primary key (no semantic change)	company: UNIQUE(license_no) added
+generated	m06_car_rental	mysql	redundant unique on primary key (no semantic change)	individual: UNIQUE(license_no) added
+generated	m06_car_rental	mysql	redundant unique on primary key (no semantic change)	truck: UNIQUE(plate) added
+generated	m10_hotel	mysql	redundant unique on primary key (no semantic change)	accessible_room: UNIQUE(room_no) added
+generated	m10_hotel	mysql	redundant unique on primary key (no semantic change)	suite: UNIQUE(room_no) added
+hand-written	h04_unique_one_to_one	mysql	unique	person: UNIQUE(email) lost
+hand-written	h04_unique_one_to_one	mysql	composite unique	person: UNIQUE(first_name,last_name) lost
+generated	m03_hospital	mariadb	redundant unique on primary key (no semantic change)	doctor: UNIQUE(staff_no) added
+generated	m03_hospital	mariadb	redundant unique on primary key (no semantic change)	nurse: UNIQUE(staff_no) added
+generated	m06_car_rental	mariadb	redundant unique on primary key (no semantic change)	car: UNIQUE(plate) added
+generated	m06_car_rental	mariadb	redundant unique on primary key (no semantic change)	company: UNIQUE(license_no) added
+generated	m06_car_rental	mariadb	redundant unique on primary key (no semantic change)	individual: UNIQUE(license_no) added
+generated	m06_car_rental	mariadb	redundant unique on primary key (no semantic change)	truck: UNIQUE(plate) added
+generated	m10_hotel	mariadb	redundant unique on primary key (no semantic change)	accessible_room: UNIQUE(room_no) added
+generated	m10_hotel	mariadb	redundant unique on primary key (no semantic change)	suite: UNIQUE(room_no) added
+hand-written	h04_unique_one_to_one	mariadb	unique	person: UNIQUE(email) lost
+hand-written	h04_unique_one_to_one	mariadb	composite unique	person: UNIQUE(first_name,last_name) lost
+generated	m03_hospital	sqlite	redundant unique on primary key (no semantic change)	doctor: UNIQUE(staff_no) added
+generated	m03_hospital	sqlite	redundant unique on primary key (no semantic change)	nurse: UNIQUE(staff_no) added
+generated	m10_hotel	sqlite	redundant unique on primary key (no semantic change)	accessible_room: UNIQUE(room_no) added
+generated	m10_hotel	sqlite	redundant unique on primary key (no semantic change)	suite: UNIQUE(room_no) added
+hand-written	h01_basic_fk	sqlite	column type	publisher.founded: date -> text
+hand-written	h02_composite_fk	sqlite	column type	exam.exam_date: date -> text
+hand-written	h04_unique_one_to_one	sqlite	column type	passport.issued: date -> text
+hand-written	h04_unique_one_to_one	sqlite	unique	person: UNIQUE(email) lost
+hand-written	h04_unique_one_to_one	sqlite	composite unique	person: UNIQUE(first_name,last_name) lost
+hand-written	h08_ternary_and_weak	sqlite	column type	purchase_order.placed: date -> text

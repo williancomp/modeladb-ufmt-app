@@ -1,0 +1,134 @@
+# First evaluation run of the DDL conformance experiment, BEFORE the four exporter fixes (reserved words, single-table surrogate id, duplicate FKs, accents).
+# Produced by the development runner; kept verbatim as a record of the failures the experiment found.
+===== postgres
+m01_library ddlerr 0 struct 59/59 behav 31/31
+m02_university ddlerr 0 struct 44/44 behav 27/27
+m03_hospital ddlerr 0 struct 67/67 behav 41/41
+m04_airline ddlerr 0 struct 61/61 behav 40/40
+m05_ecommerce ddlerr 4 struct 42/49 behav 24/24
+   DDL syntax error at or near "order" | CREATE TABLE order ( order_no INTEGER NOT NULL, pl
+   DDL syntax error at or near "order" | ALTER TABLE order ADD FOREIGN KEY (customer_custom
+   DDL syntax error at or near "order" | ALTER TABLE order_line ADD FOREIGN KEY (order_orde
+   DDL syntax error at or near "order" | ALTER TABLE payment ADD FOREIGN KEY (order_order_n
+   FAIL tables:set - missing: [order] unexpected: []
+   FAIL order:exists - table not created
+   FAIL order_line:fk0->order:exists - no foreign key to order
+   FAIL order_line:columns:exact - unexpected columns: [order_order_no] missing: []
+   FAIL order_line:pk - PK is (line_no,order_order_no) expected (line_no)
+   FAIL payment:fk0->order:exists - no foreign key to order
+   FAIL payment:columns:exact - unexpected columns: [id,order_order_no] missing: []
+m06_car_rental ddlerr 0 struct 68/68 behav 40/40
+m07_music ddlerr 0 struct 52/52 behav 33/33
+m08_timetable ddlerr 0 struct 47/47 behav 27/27
+m09_projects ddlerr 0 struct 55/55 behav 33/33
+m10_hotel ddlerr 0 struct 52/52 behav 30/30
+m11_registry ddlerr 0 struct 36/36 behav 19/19
+m12_league ddlerr 0 struct 38/39 behav 24/24
+   FAIL fixture:fk1->team:exists - no foreign key to team
+m13_academico ddlerr 0 struct 27/34 behav 20/20
+   FAIL aluno:col:matricula - missing column
+   FAIL aluno:columns:exact - unexpected columns: [matr_cula] missing: [matricula]
+   FAIL aluno:pk - PK is (matr_cula) expected (matricula)
+   FAIL disciplina:col:codigo_disciplina - missing column
+   FAIL disciplina:col:carga_horaria - missing column
+   FAIL disciplina:columns:exact - unexpected columns: [c_digo_disciplina,carga_hor_ria] missing: [codigo_disciplina,carga_horaria]
+   FAIL disciplina:pk - PK is (c_digo_disciplina) expected (codigo_disciplina)
+m14_identity ddlerr 0 struct 24/24 behav 9/9
+===== mysql
+m01_library ddlerr 0 struct 59/59 behav 31/31
+m02_university ddlerr 0 struct 44/44 behav 27/27
+m03_hospital ddlerr 0 struct 67/67 behav 41/41
+m04_airline ddlerr 0 struct 61/61 behav 40/40
+m05_ecommerce ddlerr 5 struct 33/39 behav 19/19
+   DDL You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version | CREATE TABLE order ( order_no INTEGER NOT NULL, pl
+   DDL Incorrect table definition; there can be only one auto column and it must be defined as a key | CREATE TABLE payment ( payment_no INTEGER NOT NULL
+   DDL You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version | ALTER TABLE order ADD FOREIGN KEY (customer_custom
+   DDL You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version | ALTER TABLE order_line ADD FOREIGN KEY (order_orde
+   DDL You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version | ALTER TABLE payment ADD FOREIGN KEY (order_order_n
+   FAIL tables:set - missing: [order,payment] unexpected: []
+   FAIL order:exists - table not created
+   FAIL order_line:fk0->order:exists - no foreign key to order
+   FAIL order_line:columns:exact - unexpected columns: [order_order_no] missing: []
+   FAIL order_line:pk - PK is (line_no,order_order_no) expected (line_no)
+   FAIL payment:exists - table not created
+m06_car_rental ddlerr 0 struct 68/68 behav 40/40
+m07_music ddlerr 0 struct 52/52 behav 33/33
+m08_timetable ddlerr 0 struct 47/47 behav 27/27
+m09_projects ddlerr 0 struct 55/55 behav 33/33
+m10_hotel ddlerr 0 struct 52/52 behav 30/30
+m11_registry ddlerr 0 struct 36/36 behav 18/18
+m12_league ddlerr 0 struct 38/39 behav 24/24
+   FAIL fixture:fk1->team:exists - no foreign key to team
+m13_academico ddlerr 0 struct 27/34 behav 20/20
+   FAIL aluno:col:matricula - missing column
+   FAIL aluno:columns:exact - unexpected columns: [matr_cula] missing: [matricula]
+   FAIL aluno:pk - PK is (matr_cula) expected (matricula)
+   FAIL disciplina:col:codigo_disciplina - missing column
+   FAIL disciplina:col:carga_horaria - missing column
+   FAIL disciplina:columns:exact - unexpected columns: [c_digo_disciplina,carga_hor_ria] missing: [codigo_disciplina,carga_horaria]
+   FAIL disciplina:pk - PK is (c_digo_disciplina) expected (codigo_disciplina)
+m14_identity ddlerr 0 struct 24/24 behav 9/9
+===== mariadb
+m01_library ddlerr 0 struct 59/59 behav 31/31
+m02_university ddlerr 0 struct 44/44 behav 27/27
+m03_hospital ddlerr 0 struct 67/67 behav 41/41
+m04_airline ddlerr 0 struct 61/61 behav 40/40
+m05_ecommerce ddlerr 5 struct 33/39 behav 19/19
+   DDL You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server versi | CREATE TABLE order ( order_no INTEGER NOT NULL, pl
+   DDL Incorrect table definition; there can be only one auto column and it must be defined as a key | CREATE TABLE payment ( payment_no INTEGER NOT NULL
+   DDL You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server versi | ALTER TABLE order ADD FOREIGN KEY (customer_custom
+   DDL You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server versi | ALTER TABLE order_line ADD FOREIGN KEY (order_orde
+   DDL You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server versi | ALTER TABLE payment ADD FOREIGN KEY (order_order_n
+   FAIL tables:set - missing: [order,payment] unexpected: []
+   FAIL order:exists - table not created
+   FAIL order_line:fk0->order:exists - no foreign key to order
+   FAIL order_line:columns:exact - unexpected columns: [order_order_no] missing: []
+   FAIL order_line:pk - PK is (line_no,order_order_no) expected (line_no)
+   FAIL payment:exists - table not created
+m06_car_rental ddlerr 0 struct 68/68 behav 40/40
+m07_music ddlerr 0 struct 52/52 behav 33/33
+m08_timetable ddlerr 0 struct 47/47 behav 27/27
+m09_projects ddlerr 0 struct 55/55 behav 33/33
+m10_hotel ddlerr 0 struct 52/52 behav 30/30
+m11_registry ddlerr 0 struct 36/36 behav 18/18
+m12_league ddlerr 0 struct 38/39 behav 24/24
+   FAIL fixture:fk1->team:exists - no foreign key to team
+m13_academico ddlerr 0 struct 27/34 behav 20/20
+   FAIL aluno:col:matricula - missing column
+   FAIL aluno:columns:exact - unexpected columns: [matr_cula] missing: [matricula]
+   FAIL aluno:pk - PK is (matr_cula) expected (matricula)
+   FAIL disciplina:col:codigo_disciplina - missing column
+   FAIL disciplina:col:carga_horaria - missing column
+   FAIL disciplina:columns:exact - unexpected columns: [c_digo_disciplina,carga_hor_ria] missing: [codigo_disciplina,carga_horaria]
+   FAIL disciplina:pk - PK is (c_digo_disciplina) expected (codigo_disciplina)
+m14_identity ddlerr 0 struct 24/24 behav 9/9
+===== sqlite
+m01_library ddlerr 0 struct 59/59 behav 28/28
+m02_university ddlerr 0 struct 44/44 behav 24/24
+m03_hospital ddlerr 0 struct 67/67 behav 35/35
+m04_airline ddlerr 0 struct 61/61 behav 39/39
+m05_ecommerce ddlerr 3 struct 26/30 behav 10/10
+   DDL near "order": syntax error | CREATE TABLE order ( order_no INTEGER NOT NULL, pl
+   DDL near "order": syntax error | CREATE TABLE order_line ( line_no INTEGER NOT NULL
+   DDL near "order": syntax error | CREATE TABLE payment ( payment_no INTEGER NOT NULL
+   FAIL tables:set - missing: [order,order_line,payment] unexpected: []
+   FAIL order:exists - table not created
+   FAIL order_line:exists - table not created
+   FAIL payment:exists - table not created
+m06_car_rental ddlerr 0 struct 68/68 behav 39/39
+m07_music ddlerr 0 struct 52/52 behav 30/30
+m08_timetable ddlerr 0 struct 47/47 behav 23/23
+m09_projects ddlerr 0 struct 55/55 behav 29/29
+m10_hotel ddlerr 0 struct 52/52 behav 25/25
+m11_registry ddlerr 0 struct 36/36 behav 18/18
+m12_league ddlerr 0 struct 38/39 behav 23/23
+   FAIL fixture:fk1->team:exists - no foreign key to team
+m13_academico ddlerr 0 struct 27/34 behav 18/18
+   FAIL aluno:col:matricula - missing column
+   FAIL aluno:columns:exact - unexpected columns: [matr_cula] missing: [matricula]
+   FAIL aluno:pk - PK is (matr_cula) expected (matricula)
+   FAIL disciplina:col:codigo_disciplina - missing column
+   FAIL disciplina:col:carga_horaria - missing column
+   FAIL disciplina:columns:exact - unexpected columns: [c_digo_disciplina,carga_hor_ria] missing: [codigo_disciplina,carga_horaria]
+   FAIL disciplina:pk - PK is (c_digo_disciplina) expected (codigo_disciplina)
+m14_identity ddlerr 0 struct 24/24 behav 9/9

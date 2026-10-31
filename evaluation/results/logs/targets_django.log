@@ -1,0 +1,18 @@
+$ docker run --rm -w /work -v <repo>/evaluation/results/.tmp/django:/work:rw -e PIP_DISABLE_PIP_VERSION_CHECK=1 -e PYTHONDONTWRITEBYTECODE=1 python@sha256:aa943ce411423c7582288f18707ff66eddcbaeb510502d747a72aeb34f30d159 sh -c sh /work/run.sh
+--- exit 0
+RESULT	m01_library	ok	System check identified no issues (0 silenced).
+RESULT	m02_university	ok	System check identified no issues (0 silenced).
+RESULT	m03_hospital	ok	System check identified some issues:
+RESULT	m04_airline	ok	System check identified no issues (0 silenced).
+RESULT	m05_ecommerce	ok	System check identified no issues (0 silenced).
+RESULT	m06_car_rental	ok	System check identified some issues:
+RESULT	m07_music	ok	System check identified no issues (0 silenced).
+RESULT	m08_timetable	ok	System check identified no issues (0 silenced).
+RESULT	m09_projects	ok	System check identified no issues (0 silenced).
+RESULT	m10_hotel	ok	System check identified some issues:
+RESULT	m11_registry	ok	System check identified no issues (0 silenced).
+RESULT	m12_league	ok	System check identified no issues (0 silenced).
+RESULT	m13_academico	ok	System check identified no issues (0 silenced).
+RESULT	m14_identity	ok	System check identified no issues (0 silenced).
+
+--- stderr

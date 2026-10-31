@@ -1,0 +1,6 @@
+SQL feature outside the conceptual model,In input DDL,In regenerated DDL,Outcome
+CHECK constraint,4,0,dropped
+DEFAULT value,12,0,dropped
+secondary index,4,0,dropped
+ON DELETE RESTRICT/SET NULL/NO ACTION,8,0,dropped
+ON DELETE CASCADE,272,332,added or rewritten by the exporter

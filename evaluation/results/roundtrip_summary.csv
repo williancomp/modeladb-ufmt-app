@@ -1,0 +1,9 @@
+DDL source,Dialect,Cases,Identical catalog,Catalog differs,Failed to round-trip
+generated,postgres,14,14,0,0
+generated,mysql,14,11,3,0
+generated,mariadb,14,11,3,0
+generated,sqlite,14,12,2,0
+hand-written,postgres,8,7,1,0
+hand-written,mysql,8,7,1,0
+hand-written,mariadb,8,7,1,0
+hand-written,sqlite,8,4,4,0

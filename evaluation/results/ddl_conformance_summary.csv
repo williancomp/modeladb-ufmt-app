@@ -1,0 +1,5 @@
+Dialect,Models,Passed,Failed
+postgres,14,14,0
+mysql,14,14,0
+mariadb,14,14,0
+sqlite,14,14,0

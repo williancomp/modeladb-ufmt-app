@@ -1,0 +1,5 @@
+seed=20260101
+per operator per model=3
+PRNG=mulberry32
+models=14
+operators=22

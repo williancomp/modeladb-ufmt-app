@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use ModelaDB, please cite it using the metadata below."
+title: "ModelaDB"
+type: software
+version: 2.3.0
+license: MIT
+repository-code: "https://github.com/williancomp/modeladb-ufmt-app"
+abstract: >-
+  ModelaDB is a browser-based editor for Chen-style and Crow's Foot ER/EER diagrams with rule-based
+  validation and code generation for SQL (PostgreSQL, MySQL, MariaDB, SQLite), Laravel, Prisma, Django,
+  GraphQL and JSON Schema.
+keywords:
+  - entity-relationship model
+  - conceptual modelling
+  - EER
+  - database design
+authors:
+  - family-names: "Garcias de Assunção"
+    given-names: "Willian"
+    email: "willian.assuncao@ufmt.br"
+    affiliation: "Federal University of Mato Grosso (UFMT), Department of Computing and Technology"

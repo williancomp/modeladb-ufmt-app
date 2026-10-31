@@ -1,0 +1,495 @@
+{
+  "version": "2.0",
+  "meta": {
+    "createdAt": "2026-10-30T00:00:00.000Z",
+    "lastModifiedAt": "2026-10-30T00:00:00.000Z",
+    "tool": "ModelaDB",
+    "toolVersion": "2.2.0",
+    "notation": "chen"
+  },
+  "domain": {
+    "entities": [
+      {
+        "id": 0,
+        "objType": "entity",
+        "name": "Vehicle",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 1,
+        "objType": "entity",
+        "name": "Car",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 2,
+        "objType": "entity",
+        "name": "Truck",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 3,
+        "objType": "entity",
+        "name": "Customer",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 4,
+        "objType": "entity",
+        "name": "Individual",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 5,
+        "objType": "entity",
+        "name": "Company",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 6,
+        "objType": "entity",
+        "name": "Branch",
+        "resizeHandles": [],
+        "selected": false
+      }
+    ],
+    "attributes": [
+      {
+        "id": 0,
+        "objType": "attribute",
+        "name": "plate",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 1,
+        "objType": "attribute",
+        "name": "brand",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 2,
+        "objType": "attribute",
+        "name": "model_year",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 3,
+        "objType": "attribute",
+        "name": "doors",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 4,
+        "objType": "attribute",
+        "name": "payload",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Real",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 5,
+        "objType": "attribute",
+        "name": "license_no",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": true,
+        "derived": false,
+        "multivalued": false,
+        "keyStyle": "filled"
+      },
+      {
+        "id": 6,
+        "objType": "attribute",
+        "name": "full_name",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 7,
+        "objType": "attribute",
+        "name": "birth_date",
+        "parentType": "entity",
+        "parentId": 4,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 8,
+        "objType": "attribute",
+        "name": "vat_no",
+        "parentType": "entity",
+        "parentId": 5,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 9,
+        "objType": "attribute",
+        "name": "branch_no",
+        "parentType": "entity",
+        "parentId": 6,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 10,
+        "objType": "attribute",
+        "name": "city",
+        "parentType": "entity",
+        "parentId": 6,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 11,
+        "objType": "attribute",
+        "name": "start_date",
+        "parentType": "relationship",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 12,
+        "objType": "attribute",
+        "name": "end_date",
+        "parentType": "relationship",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 13,
+        "objType": "attribute",
+        "name": "daily_rate",
+        "parentType": "relationship",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Real",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      }
+    ],
+    "relationships": [
+      {
+        "id": 0,
+        "objType": "relationship",
+        "name": "stationed at",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 6,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 0,
+            "cardinality": "1,N",
+            "weak": false
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "objType": "relationship",
+        "name": "rents",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 3,
+            "cardinality": "0,N",
+            "weak": false
+          },
+          {
+            "entityId": 0,
+            "cardinality": "0,N",
+            "weak": false
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "id": 0,
+        "objType": "specialization",
+        "genType": "T,C",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 0,
+            "vertex": 0,
+            "breakpoints": []
+          },
+          {
+            "entityId": 1,
+            "vertex": 1,
+            "breakpoints": []
+          },
+          {
+            "entityId": 2,
+            "vertex": 2,
+            "breakpoints": []
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "objType": "specialization",
+        "genType": "P,C",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 3,
+            "vertex": 0,
+            "breakpoints": []
+          },
+          {
+            "entityId": 4,
+            "vertex": 1,
+            "breakpoints": []
+          },
+          {
+            "entityId": 5,
+            "vertex": 2,
+            "breakpoints": []
+          }
+        ]
+      }
+    ],
+    "aggregations": [],
+    "postits": [],
+    "counters": {
+      "entityIdCounter": 7,
+      "attributeIdCounter": 14,
+      "relationshipIdCounter": 2,
+      "specializationIdCounter": 2,
+      "aggregationIdCounter": 0,
+      "postitIdCounter": 0
+    }
+  },
+  "view": {
+    "positions": {
+      "entity_0": {
+        "x": 550,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_1": {
+        "x": 120,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "entity_2": {
+        "x": 980,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "entity_3": {
+        "x": 1410,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_4": {
+        "x": 1410,
+        "y": 800,
+        "width": 160,
+        "height": 80
+      },
+      "entity_5": {
+        "x": 1840,
+        "y": 800,
+        "width": 160,
+        "height": 80
+      },
+      "entity_6": {
+        "x": 120,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "rel_0": {
+        "x": 415,
+        "y": 160,
+        "size": 120
+      },
+      "rel_1": {
+        "x": 1060,
+        "y": 160,
+        "size": 120
+      },
+      "spec_0": {
+        "x": 630,
+        "y": 415,
+        "size": 100
+      },
+      "spec_1": {
+        "x": 1705,
+        "y": 568,
+        "size": 100
+      },
+      "attr_0": {
+        "x": 764,
+        "y": 227
+      },
+      "attr_1": {
+        "x": 630,
+        "y": 55
+      },
+      "attr_2": {
+        "x": 742,
+        "y": 80
+      },
+      "attr_3": {
+        "x": 170,
+        "y": 603
+      },
+      "attr_4": {
+        "x": 1232,
+        "y": 518
+      },
+      "attr_5": {
+        "x": 1665,
+        "y": 160
+      },
+      "attr_6": {
+        "x": 1578,
+        "y": 69
+      },
+      "attr_7": {
+        "x": 1460,
+        "y": 943
+      },
+      "attr_8": {
+        "x": 2032,
+        "y": 920
+      },
+      "attr_9": {
+        "x": 170,
+        "y": 263
+      },
+      "attr_10": {
+        "x": 170,
+        "y": 57
+      },
+      "attr_11": {
+        "x": 1167,
+        "y": 231
+      },
+      "attr_12": {
+        "x": 1060,
+        "y": 270
+      },
+      "attr_13": {
+        "x": 1060,
+        "y": 50
+      }
+    },
+    "breakpoints": {},
+    "panOffset": {
+      "x": 0,
+      "y": 0
+    },
+    "zoom": 0.8,
+    "fontSize": 18
+  }
+}

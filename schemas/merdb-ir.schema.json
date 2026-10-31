@@ -1,0 +1,333 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/williancomp/modeladb-ufmt-app/schemas/merdb-ir.schema.json",
+  "title": "MerDB-IR — Intermediate Representation",
+  "description": "Framework-neutral canonical representation of an EER diagram. Contains only semantic/domain information — zero visual/layout data. Can be used to generate SQL DDL, ORM schemas, documentation, etc.",
+  "type": "object",
+  "required": [
+    "$schema",
+    "entities",
+    "relationships",
+    "generalizations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this JSON Schema"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Entity"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Relationship"
+      }
+    },
+    "generalizations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Generalization"
+      }
+    },
+    "aggregations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Aggregation"
+      }
+    }
+  },
+  "$defs": {
+    "Entity": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "attributes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable slug derived from entity name (e.g. 'cliente', 'pedido_item')"
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable entity name"
+        },
+        "weak": {
+          "type": "boolean",
+          "description": "True if this entity is identified through a relationship"
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Attribute"
+          }
+        }
+      }
+    },
+    "Attribute": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable slug (e.g. 'cliente.nome', 'pedido.data_criacao')"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "simple",
+            "derived",
+            "multivalued",
+            "composite"
+          ],
+          "description": "EER attribute classification"
+        },
+        "dataType": {
+          "type": "string",
+          "description": "Tipo conceitual ou SQL importado"
+        },
+        "primaryKey": {
+          "type": "boolean",
+          "description": "Whether this attribute is part of the primary key"
+        },
+        "subAttributes": {
+          "type": "array",
+          "description": "Child attributes (for composite attributes)",
+          "items": {
+            "$ref": "#/$defs/Attribute"
+          }
+        },
+        "partialKey": {
+          "type": "boolean"
+        },
+        "sqlType": {
+          "type": "string"
+        },
+        "nullable": {
+          "type": "boolean"
+        },
+        "isAutoIncrement": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Relationship": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "participants"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable slug (e.g. 'rel_cliente_pedido')"
+        },
+        "name": {
+          "type": "string"
+        },
+        "identifying": {
+          "type": "boolean",
+          "description": "True for identifying relationships (weak entity identification)"
+        },
+        "participants": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/Participant"
+          }
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Attribute"
+          }
+        },
+        "sqlTableName": {
+          "type": "string"
+        }
+      }
+    },
+    "Participant": {
+      "type": "object",
+      "required": [
+        "entityId",
+        "cardinality"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "entityId": {
+          "type": "string",
+          "description": "References Entity.id"
+        },
+        "role": {
+          "type": "string",
+          "description": "Optional role name for the entity in this relationship"
+        },
+        "cardinality": {
+          "$ref": "#/$defs/Cardinality"
+        },
+        "weak": {
+          "type": "boolean"
+        },
+        "foreignKeyColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "referencedColumns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Cardinality": {
+      "type": "object",
+      "required": [
+        "min",
+        "max"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "min": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max": {
+          "oneOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "const": "N"
+            }
+          ]
+        }
+      }
+    },
+    "Generalization": {
+      "type": "object",
+      "required": [
+        "id",
+        "superEntityId",
+        "subEntityIds",
+        "totality",
+        "disjointness"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "superEntityId": {
+          "type": "string",
+          "description": "References Entity.id of the superclass"
+        },
+        "subEntityIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "References Entity.id of each subclass"
+        },
+        "totality": {
+          "type": "string",
+          "enum": [
+            "total",
+            "partial"
+          ],
+          "description": "Total: every instance of superclass belongs to at least one subclass"
+        },
+        "disjointness": {
+          "type": "string",
+          "enum": [
+            "disjoint",
+            "overlapping"
+          ],
+          "description": "Disjoint: an instance can belong to at most one subclass"
+        },
+        "isUnion": {
+          "type": "boolean"
+        },
+        "categoryEntityId": {
+          "type": "string"
+        },
+        "memberEntityIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Aggregation": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "participants"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "entityId": {
+                "type": "string"
+              },
+              "relationshipId": {
+                "type": "string"
+              },
+              "cardinality": {
+                "$ref": "#/$defs/Cardinality"
+              },
+              "weak": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Attribute"
+          }
+        },
+        "identifying": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+Construct that changed,Occurrences,In generated DDL,In hand-written DDL,Example
+column type,4,0,4,h01_basic_fk (sqlite): publisher.founded: date -> text
+composite unique,4,0,4,"h04_unique_one_to_one (postgres): person: UNIQUE(first_name,last_name) lost"
+redundant unique on primary key (no semantic change),20,20,0,m03_hospital (mysql): doctor: UNIQUE(staff_no) added
+unique,4,0,4,h04_unique_one_to_one (postgres): person: UNIQUE(email) lost

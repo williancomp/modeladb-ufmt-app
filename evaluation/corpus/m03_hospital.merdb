@@ -1,0 +1,438 @@
+{
+  "version": "2.0",
+  "meta": {
+    "createdAt": "2026-10-30T00:00:00.000Z",
+    "lastModifiedAt": "2026-10-30T00:00:00.000Z",
+    "tool": "ModelaDB",
+    "toolVersion": "2.2.0",
+    "notation": "chen"
+  },
+  "domain": {
+    "entities": [
+      {
+        "id": 0,
+        "objType": "entity",
+        "name": "Staff",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 1,
+        "objType": "entity",
+        "name": "Doctor",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 2,
+        "objType": "entity",
+        "name": "Nurse",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 3,
+        "objType": "entity",
+        "name": "Patient",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 4,
+        "objType": "entity",
+        "name": "Diagnosis",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 5,
+        "objType": "entity",
+        "name": "Room",
+        "resizeHandles": [],
+        "selected": false
+      }
+    ],
+    "attributes": [
+      {
+        "id": 0,
+        "objType": "attribute",
+        "name": "staff_no",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 1,
+        "objType": "attribute",
+        "name": "full_name",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 2,
+        "objType": "attribute",
+        "name": "hired",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 3,
+        "objType": "attribute",
+        "name": "license_no",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 4,
+        "objType": "attribute",
+        "name": "ward",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 5,
+        "objType": "attribute",
+        "name": "patient_no",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 6,
+        "objType": "attribute",
+        "name": "full_name",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 7,
+        "objType": "attribute",
+        "name": "phones",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": true
+      },
+      {
+        "id": 8,
+        "objType": "attribute",
+        "name": "diagnosis_no",
+        "parentType": "entity",
+        "parentId": 4,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 9,
+        "objType": "attribute",
+        "name": "label",
+        "parentType": "entity",
+        "parentId": 4,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 10,
+        "objType": "attribute",
+        "name": "room_no",
+        "parentType": "entity",
+        "parentId": 5,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 11,
+        "objType": "attribute",
+        "name": "floor",
+        "parentType": "entity",
+        "parentId": 5,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 12,
+        "objType": "attribute",
+        "name": "treated_on",
+        "parentType": "relationship",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      }
+    ],
+    "relationships": [
+      {
+        "id": 0,
+        "objType": "relationship",
+        "name": "treats",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 1,
+            "cardinality": "0,N",
+            "weak": false
+          },
+          {
+            "entityId": 3,
+            "cardinality": "0,N",
+            "weak": false
+          },
+          {
+            "entityId": 4,
+            "cardinality": "0,N",
+            "weak": false
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "objType": "relationship",
+        "name": "occupies",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 5,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 3,
+            "cardinality": "0,N",
+            "weak": false
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "id": 0,
+        "objType": "specialization",
+        "genType": "P,D",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 0,
+            "vertex": 0,
+            "breakpoints": []
+          },
+          {
+            "entityId": 1,
+            "vertex": 1,
+            "breakpoints": []
+          },
+          {
+            "entityId": 2,
+            "vertex": 2,
+            "breakpoints": []
+          }
+        ]
+      }
+    ],
+    "aggregations": [],
+    "postits": [],
+    "counters": {
+      "entityIdCounter": 6,
+      "attributeIdCounter": 13,
+      "relationshipIdCounter": 2,
+      "specializationIdCounter": 1,
+      "aggregationIdCounter": 0,
+      "postitIdCounter": 0
+    }
+  },
+  "view": {
+    "positions": {
+      "entity_0": {
+        "x": 120,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_1": {
+        "x": 120,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "entity_2": {
+        "x": 550,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "entity_3": {
+        "x": 980,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_4": {
+        "x": 1410,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "entity_5": {
+        "x": 1410,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "rel_0": {
+        "x": 1060,
+        "y": 500,
+        "size": 120
+      },
+      "rel_1": {
+        "x": 1275,
+        "y": 160,
+        "size": 120
+      },
+      "spec_0": {
+        "x": 415,
+        "y": 347,
+        "size": 100
+      },
+      "attr_0": {
+        "x": 170,
+        "y": 263
+      },
+      "attr_1": {
+        "x": 170,
+        "y": 57
+      },
+      "attr_2": {
+        "x": 352,
+        "y": 107
+      },
+      "attr_3": {
+        "x": 170,
+        "y": 603
+      },
+      "attr_4": {
+        "x": 764,
+        "y": 567
+      },
+      "attr_5": {
+        "x": 1194,
+        "y": 227
+      },
+      "attr_6": {
+        "x": 1030,
+        "y": 57
+      },
+      "attr_7": {
+        "x": 1172,
+        "y": 80
+      },
+      "attr_8": {
+        "x": 1665,
+        "y": 500
+      },
+      "attr_9": {
+        "x": 1490,
+        "y": 605
+      },
+      "attr_10": {
+        "x": 1665,
+        "y": 160
+      },
+      "attr_11": {
+        "x": 1490,
+        "y": 265
+      },
+      "attr_12": {
+        "x": 1060,
+        "y": 610
+      }
+    },
+    "breakpoints": {},
+    "panOffset": {
+      "x": 0,
+      "y": 0
+    },
+    "zoom": 0.8,
+    "fontSize": 18
+  }
+}

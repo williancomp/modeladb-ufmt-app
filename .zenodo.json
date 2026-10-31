@@ -1,0 +1,27 @@
+{
+  "title": "ModelaDB",
+  "upload_type": "software",
+  "description": "ModelaDB is a browser-based editor for Chen-style and Crow's Foot ER/EER diagrams with rule-based validation and code generation for SQL (PostgreSQL, MySQL, MariaDB, SQLite), Laravel, Prisma, Django, GraphQL and JSON Schema.",
+  "version": "2.3.0",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Garcias de Assunção, Willian",
+      "affiliation": "Federal University of Mato Grosso (UFMT), Department of Computing and Technology"
+    }
+  ],
+  "keywords": [
+    "entity-relationship model",
+    "conceptual modelling",
+    "EER",
+    "database design"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/williancomp/modeladb-ufmt-app",
+      "scheme": "url"
+    }
+  ],
+  "access_right": "open"
+}

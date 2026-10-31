@@ -1,0 +1,454 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/williancomp/modeladb-ufmt-app/schemas/merdb-v2.schema.json",
+  "title": "MerDB v2.0 — ModelaDB Diagram File",
+  "description": "ModelaDB writes only version 2.0. Domain holds semantic objects and counters; view.positions holds x/y/width/height/size, and view.breakpoints holds connection bend points. Readers migrate unversioned/1.0 flat files and accept geometry in older experimental v2 domain objects; view is authoritative. Notation and optional research metadata live in meta.",
+  "type": "object",
+  "required": [
+    "version",
+    "meta",
+    "domain",
+    "view"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "2.0",
+      "description": "File format version"
+    },
+    "meta": {
+      "type": "object",
+      "required": [
+        "createdAt",
+        "lastModifiedAt",
+        "tool",
+        "toolVersion"
+      ],
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastModifiedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "tool": {
+          "type": "string",
+          "const": "ModelaDB"
+        },
+        "toolVersion": {
+          "type": "string"
+        },
+        "notation": {
+          "enum": [
+            "chen",
+            "crow"
+          ]
+        },
+        "student": {
+          "type": "string"
+        },
+        "processLog": {
+          "type": "object"
+        },
+        "sourceAppVersion": {
+          "type": "string"
+        }
+      }
+    },
+    "domain": {
+      "type": "object",
+      "required": [
+        "entities",
+        "attributes",
+        "relationships",
+        "specializations",
+        "aggregations",
+        "postits"
+      ],
+      "properties": {
+        "entities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "objType"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "objType": {
+                "const": "entity"
+              },
+              "selected": {
+                "type": "boolean"
+              },
+              "locked": {
+                "type": "boolean"
+              },
+              "width": {
+                "type": "number"
+              },
+              "height": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "objType",
+              "parentType",
+              "parentId"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "objType": {
+                "type": "string",
+                "enum": [
+                  "attribute",
+                  "derivedAttribute",
+                  "multivaluedAttribute"
+                ]
+              },
+              "parentType": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "entity",
+                  "relationship",
+                  "attribute",
+                  "aggregation",
+                  null
+                ]
+              },
+              "parentId": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "primary": {
+                "type": "boolean"
+              },
+              "derived": {
+                "type": "boolean"
+              },
+              "multivalued": {
+                "type": "boolean"
+              },
+              "collapsed": {
+                "type": "boolean"
+              },
+              "selected": {
+                "type": "boolean"
+              },
+              "locked": {
+                "type": "boolean"
+              },
+              "partialKey": {
+                "type": "boolean"
+              },
+              "keyStyle": {
+                "enum": [
+                  "underline",
+                  "filled"
+                ]
+              },
+              "sqlType": {
+                "type": "string"
+              },
+              "nullable": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "relationships": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "objType",
+              "connections"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "objType": {
+                "const": "relationship"
+              },
+              "size": {
+                "type": "number"
+              },
+              "connections": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "entityId"
+                  ],
+                  "properties": {
+                    "entityId": {
+                      "type": "integer"
+                    },
+                    "cardinality": {
+                      "type": "string"
+                    },
+                    "weak": {
+                      "type": "boolean"
+                    },
+                    "role": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "selected": {
+                "type": "boolean"
+              },
+              "locked": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "specializations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "objType"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "objType": {
+                "const": "specialization"
+              },
+              "genType": {
+                "type": "string",
+                "enum": [
+                  "T,C",
+                  "T,D",
+                  "P,C",
+                  "P,D",
+                  "U"
+                ]
+              },
+              "size": {
+                "type": "number"
+              },
+              "connections": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityId": {
+                      "type": "integer"
+                    },
+                    "isGeneralization": {
+                      "type": "boolean"
+                    },
+                    "vertex": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 2
+                    }
+                  }
+                }
+              },
+              "selected": {
+                "type": "boolean"
+              },
+              "locked": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "aggregations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "objType"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "objType": {
+                "const": "aggregation"
+              },
+              "size": {
+                "type": "number"
+              },
+              "connections": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "entityId": {
+                      "type": "integer"
+                    },
+                    "relationshipId": {
+                      "type": "integer"
+                    },
+                    "cardinality": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "selected": {
+                "type": "boolean"
+              },
+              "locked": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "postits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "objType",
+              "text"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "objType": {
+                "const": "postit"
+              },
+              "text": {
+                "type": "string"
+              },
+              "color": {
+                "type": "string"
+              },
+              "selected": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "counters": {
+          "type": "object",
+          "properties": {
+            "entityIdCounter": {
+              "type": "integer"
+            },
+            "attributeIdCounter": {
+              "type": "integer"
+            },
+            "relationshipIdCounter": {
+              "type": "integer"
+            },
+            "specializationIdCounter": {
+              "type": "integer"
+            },
+            "aggregationIdCounter": {
+              "type": "integer"
+            },
+            "postitIdCounter": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "view": {
+      "type": "object",
+      "properties": {
+        "positions": {
+          "type": "object",
+          "description": "Map of element key to {x, y} position",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "breakpoints": {
+          "type": "object",
+          "description": "Map of connection key to array of breakpoint positions",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "panOffset": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            }
+          }
+        },
+        "zoom": {
+          "type": "number"
+        },
+        "fontSize": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+Conceptual construct,In the 14 corpus models,In the models recovered from their DDL,Outcome
+strong entity,59,49,under-reported
+weak entity (dependent connection),5,16,over-reported (constructs inferred that the model did not have)
+binary N:M relationship,8,10,over-reported (constructs inferred that the model did not have)
+ternary or higher relationship,2,2,same count
+recursive relationship,3,3,same count
+relationship with its own attributes,10,10,same count
+named role on a connection,8,0,not recovered
+total participation (min >= 1),26,33,over-reported (constructs inferred that the model did not have)
+arbitrary bound (max > 1 and not N),2,0,not recovered
+composite attribute,4,0,not recovered
+multivalued attribute,2,0,not recovered
+derived attribute,5,0,not recovered
+"specialization (T/P, D/C)",5,0,not recovered
+category (U),1,0,not recovered
+aggregation,1,0,not recovered
+post-it note,1,0,not recovered

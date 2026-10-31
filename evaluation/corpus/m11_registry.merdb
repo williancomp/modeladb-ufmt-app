@@ -1,0 +1,274 @@
+{
+  "version": "2.0",
+  "meta": {
+    "createdAt": "2026-10-30T00:00:00.000Z",
+    "lastModifiedAt": "2026-10-30T00:00:00.000Z",
+    "tool": "ModelaDB",
+    "toolVersion": "2.2.0",
+    "notation": "chen"
+  },
+  "domain": {
+    "entities": [
+      {
+        "id": 0,
+        "objType": "entity",
+        "name": "Person",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 1,
+        "objType": "entity",
+        "name": "Company",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 2,
+        "objType": "entity",
+        "name": "Owner",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 3,
+        "objType": "entity",
+        "name": "Vehicle",
+        "resizeHandles": [],
+        "selected": false
+      }
+    ],
+    "attributes": [
+      {
+        "id": 0,
+        "objType": "attribute",
+        "name": "cpf",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 1,
+        "objType": "attribute",
+        "name": "full_name",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 2,
+        "objType": "attribute",
+        "name": "cnpj",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 3,
+        "objType": "attribute",
+        "name": "legal_name",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 4,
+        "objType": "attribute",
+        "name": "owner_since",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 5,
+        "objType": "attribute",
+        "name": "plate",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 6,
+        "objType": "attribute",
+        "name": "color",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      }
+    ],
+    "relationships": [
+      {
+        "id": 0,
+        "objType": "relationship",
+        "name": "owned by",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 2,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 3,
+            "cardinality": "1,N",
+            "weak": false
+          }
+        ]
+      }
+    ],
+    "specializations": [
+      {
+        "id": 0,
+        "objType": "specialization",
+        "genType": "U",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 2,
+            "vertex": 0,
+            "breakpoints": []
+          },
+          {
+            "entityId": 0,
+            "vertex": 1,
+            "breakpoints": []
+          },
+          {
+            "entityId": 1,
+            "vertex": 2,
+            "breakpoints": []
+          }
+        ]
+      }
+    ],
+    "aggregations": [],
+    "postits": [],
+    "counters": {
+      "entityIdCounter": 4,
+      "attributeIdCounter": 7,
+      "relationshipIdCounter": 1,
+      "specializationIdCounter": 1,
+      "aggregationIdCounter": 0,
+      "postitIdCounter": 0
+    }
+  },
+  "view": {
+    "positions": {
+      "entity_0": {
+        "x": 120,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "entity_1": {
+        "x": 980,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "entity_2": {
+        "x": 550,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_3": {
+        "x": 1410,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "rel_0": {
+        "x": 1060,
+        "y": 160,
+        "size": 120
+      },
+      "spec_0": {
+        "x": 630,
+        "y": 415,
+        "size": 100
+      },
+      "attr_0": {
+        "x": 170,
+        "y": 603
+      },
+      "attr_1": {
+        "x": 170,
+        "y": 397
+      },
+      "attr_2": {
+        "x": 1232,
+        "y": 518
+      },
+      "attr_3": {
+        "x": 1030,
+        "y": 603
+      },
+      "attr_4": {
+        "x": 600,
+        "y": 57
+      },
+      "attr_5": {
+        "x": 1665,
+        "y": 160
+      },
+      "attr_6": {
+        "x": 1490,
+        "y": 265
+      }
+    },
+    "breakpoints": {},
+    "panOffset": {
+      "x": 0,
+      "y": 0
+    },
+    "zoom": 0.8,
+    "fontSize": 18
+  }
+}

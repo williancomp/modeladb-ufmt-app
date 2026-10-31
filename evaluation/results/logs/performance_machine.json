@@ -1,0 +1,11 @@
+{
+  "cpu": "Apple M4",
+  "logicalCores": 10,
+  "memoryGB": 16,
+  "os": "Darwin 27.0.0 (arm64)",
+  "browser": "Chromium-based 143.0.7499.4 headless",
+  "wheelMeasuredOn": "production build (vite preview)",
+  "node": "v24.13.1",
+  "samplesPerCell": 30,
+  "warmup": 5
+}

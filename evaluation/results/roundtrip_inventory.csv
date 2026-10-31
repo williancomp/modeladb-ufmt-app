@@ -1,0 +1,11 @@
+Relational construct,Instances in input DDL,Changed or lost,Preserved
+table,392,0,100.0%
+column,1220,0,100.0%
+column type,1220,4,99.7%
+nullability,1220,0,100.0%
+primary key,288,0,100.0%
+composite primary key,104,0,100.0%
+foreign key,308,0,100.0%
+composite foreign key,24,0,100.0%
+unique,28,4,85.7%
+composite unique,4,4,0.0%

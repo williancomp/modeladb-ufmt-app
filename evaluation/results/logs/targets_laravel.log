@@ -1,0 +1,18 @@
+$ docker run --rm -w /work -v <repo>/evaluation/results/.tmp/laravel:/work:rw php@sha256:d07db734bd519927010bbc66fa42c0d6f0207a4ee8419998df40931b884a5919 sh -c php /work/migrate.php
+--- exit 0
+RESULT	m01_library	ok	migrated 6 tables
+RESULT	m02_university	ok	migrated 5 tables
+RESULT	m03_hospital	ok	migrated 8 tables
+RESULT	m04_airline	ok	migrated 7 tables
+RESULT	m05_ecommerce	ok	migrated 6 tables
+RESULT	m06_car_rental	ok	migrated 8 tables
+RESULT	m07_music	ok	migrated 6 tables
+RESULT	m08_timetable	ok	migrated 5 tables
+RESULT	m09_projects	ok	migrated 6 tables
+RESULT	m10_hotel	ok	migrated 6 tables
+RESULT	m11_registry	ok	migrated 4 tables
+RESULT	m12_league	ok	migrated 4 tables
+RESULT	m13_academico	ok	migrated 4 tables
+RESULT	m14_identity	ok	migrated 2 tables
+
+--- stderr

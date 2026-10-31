@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModelaDB – Ferramenta para Modelagem Conceitual de Banco de Dados</title>
+  <link href="./fonts.css" rel="stylesheet">
+  <link rel="stylesheet" href="tailwind.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col h-screen">
+
+  <!-- ════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════ -->
+  <nav class="navbar" role="banner">
+
+    <!-- Hamburger (mobile only) -->
+    <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-sidebar">
+      <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+
+
+
+    <!-- Brand -->
+    <div class="navbar-brand" aria-label="ModelaDB">ModelaDB</div>
+
+    <!-- Desktop menu -->
+    <div class="desktop-menu" role="menubar">
+
+      <!-- ── ARQUIVO (dropdown) ── -->
+      <div class="menu-category" role="none">
+        <button class="menu-category-btn" role="menuitem" aria-haspopup="true" aria-expanded="false"
+                aria-label="Menu Arquivo" tabindex="0">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          <span>Arquivo</span>
+        </button>
+        <div class="menu-dropdown" role="menu">
+          <div id="btnOpenFile" class="menu-item tooltip" role="menuitem" tabindex="-1" aria-label="Abrir arquivo">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 002 2z"/>
+            </svg>
+            <span>Abrir</span>
+            <span class="tooltip-text">Abrir arquivo .merdb</span>
+          </div>
+          <div id="btnImportSQL" class="menu-item tooltip" role="menuitem" tabindex="-1" aria-label="Importar DDL SQL">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+            </svg>
+            <span>Importar SQL</span>
+            <span class="tooltip-text">Engenharia Reversa de DDL SQL</span>
+          </div>
+          <div id="btnSaveFile" class="menu-item tooltip" role="menuitem" tabindex="-1" aria-label="Salvar diagrama no formato .merdb">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/>
+            </svg>
+            <span>Salvar (.merdb)</span>
+            <span class="tooltip-text">Arquivo do modelo — entregue junto com o PNG</span>
+          </div>
+          <div id="btnShareLink" class="menu-item tooltip" role="menuitem" tabindex="-1" aria-label="Compartilhar link">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.1-1.1m-.757-4.9a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+            </svg>
+            <span>Compartilhar</span>
+            <span class="tooltip-text">Gerar URL compartilhável</span>
+          </div>
+          <div id="btnExport" class="menu-item tooltip" role="menuitem" tabindex="-1" aria-label="Exportar PNG">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span>Exportar PNG</span>
+            <span class="tooltip-text">Exportar diagrama como imagem</span>
+          </div>
+          <div id="btnExportSVG" class="menu-item tooltip" role="menuitem" tabindex="-1" aria-label="Exportar SVG">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+            <span>Exportar SVG</span>
+            <span class="tooltip-text">Exportar diagrama como SVG vetorial</span>
+          </div>
+          <div id="btnExportSQL" class="menu-item tooltip" role="menuitem" tabindex="-1" aria-label="Exportar Código">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span>Exportar Código</span>
+            <span class="tooltip-text">DDL SQL, ORM (Django, Laravel, Prisma) ou Schema</span>
+          </div>
+          <div id="btnExportPDF" class="menu-item tooltip" role="menuitem" tabindex="-1" aria-label="Exportar PDF">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+            <span>Exportar PDF</span>
+            <span class="tooltip-text">Exportar diagrama em PDF</span>
+          </div>
+          <div id="btnAbout" class="menu-item tooltip" role="menuitem" tabindex="-1" aria-label="Sobre o ModelaDB">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>Sobre</span>
+            <span class="tooltip-text">Sobre o ModelaDB</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VISUALIZAÇÃO (dropdown) ── -->
+      <div class="menu-category" role="none">
+        <button class="menu-category-btn" role="menuitem" aria-haspopup="true" aria-expanded="false"
+                aria-label="Menu Visualização" tabindex="0">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.065 7-9.542 7S3.732 16.057 2.458 12z"/>
+          </svg>
+          <span>Visualização</span>
+        </button>
+        <div class="menu-dropdown" role="menu">
+          <div id="btnToggleGrid" class="menu-item tooltip" role="menuitem" tabindex="-1" aria-label="Grade">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm10 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zm10 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/>
+            </svg>
+            <span>Mostrar grade</span>
+            <span class="tooltip-text">Ativar / Desativar grade (G)</span>
+          </div>
+          <!-- Grupo: seleção de notação conceitual -->
+          <div class="menu-group-label" aria-hidden="true">Notação conceitual</div>
+
+          <div id="btnNotationChen" class="menu-item notation-option" role="menuitemradio"
+               aria-checked="true" tabindex="-1" aria-label="Notação EER estilo Chen">
+            <span class="notation-check" aria-hidden="true">✓</span>
+            <div class="notation-info">
+              <span class="notation-name">EER estilo Chen</span>
+              <span class="notation-desc">Retângulos, losangos e atributos em círculos</span>
+            </div>
+            <span class="notation-tag" style="background:#3b82f6">ER</span>
+          </div>
+
+          <div id="btnNotationCrow" class="menu-item notation-option" role="menuitemradio"
+               aria-checked="false" tabindex="-1" aria-label="Notação Crow's Foot — Information Engineering">
+            <span class="notation-check" aria-hidden="true">✓</span>
+            <div class="notation-info">
+              <span class="notation-name">Crow's Foot <span class="notation-year">(IE)</span></span>
+              <span class="notation-desc">Entidades com atributos internos</span>
+            </div>
+            <span class="notation-tag" style="background:#10b981">CF</span>
+          </div>
+
+          <div id="btnTutorial" class="menu-item tooltip" role="menuitem" tabindex="-1" aria-label="Tutorial">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            <span>Tutorial guiado</span>
+            <span class="tooltip-text">Abrir tutorial passo a passo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SEPARADOR ── -->
+      <div class="navbar-separator" aria-hidden="true"></div>
+
+      <!-- ── TOOLS STRIP (scrollable) ── -->
+      <div class="tools-strip" role="toolbar" aria-label="Ferramentas de modelagem">
+
+        <!-- Entidade -->
+        <div id="btnEntity" class="main-menu-item tooltip entity-btn"
+             role="button" tabindex="0" aria-label="Adicionar entidade (E)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <rect x="3" y="6" width="18" height="12" rx="2"/>
+          </svg>
+          <span>Entidade</span>
+          <span class="tooltip-text">Entidade — arrastar ou pressionar E</span>
+        </div>
+
+        <!-- Atributo Simples -->
+        <div id="btnAttribute" class="main-menu-item tooltip attribute-btn"
+             role="button" tabindex="0" aria-label="Adicionar atributo simples (A)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <ellipse cx="12" cy="12" rx="9" ry="5"/>
+          </svg>
+          <span>Atributo</span>
+          <span class="tooltip-text">Atributo Simples — arrastar ou pressionar A</span>
+        </div>
+
+        <!-- Atributo Derivado -->
+        <div id="btnDerivedAttribute" class="main-menu-item tooltip derived-btn"
+             role="button" tabindex="0" aria-label="Adicionar atributo derivado">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" stroke-dasharray="4 2">
+            <ellipse cx="12" cy="12" rx="9" ry="5"/>
+          </svg>
+          <span>Derivado</span>
+          <span class="tooltip-text">Atributo Derivado (elipse tracejada)</span>
+        </div>
+
+        <!-- Atributo Multivalorado -->
+        <div id="btnMultivaluedAttribute" class="main-menu-item tooltip multivalued-btn"
+             role="button" tabindex="0" aria-label="Adicionar atributo multivalorado">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <ellipse cx="12" cy="12" rx="9" ry="5"/>
+            <ellipse cx="12" cy="12" rx="6" ry="3"/>
+          </svg>
+          <span>Multivalorado</span>
+          <span class="tooltip-text">Atributo Multivalorado (elipse dupla)</span>
+        </div>
+
+        <!-- Relacionamento -->
+        <div id="btnRelationship" class="main-menu-item tooltip relationship-btn"
+             role="button" tabindex="0" aria-label="Adicionar relacionamento (R)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <polygon points="12 3 21 12 12 21 3 12"/>
+          </svg>
+          <span>Relac.</span>
+          <span class="tooltip-text">Relacionamento — arrastar ou pressionar R</span>
+        </div>
+
+        <!-- Especialização / Generalização -->
+        <div id="btnSpecialization" class="main-menu-item tooltip specialization-btn"
+             role="button" tabindex="0" aria-label="Adicionar especialização/generalização (S)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <polygon points="12 3 3 21 21 21"/>
+          </svg>
+          <span>Gen./Esp.</span>
+          <span class="tooltip-text">Generalização/Especialização — pressionar S</span>
+        </div>
+
+        <!-- Agregação -->
+        <div id="btnAggregation" class="main-menu-item tooltip aggregation-btn"
+             role="button" tabindex="0" aria-label="Adicionar agregação">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <rect x="5" y="5" width="14" height="14" rx="1"/>
+            <polygon points="12 8 16 12 12 16 8 12"/>
+          </svg>
+          <span>Agregação</span>
+          <span class="tooltip-text">Relacionamento de Agregação</span>
+        </div>
+
+        <!-- Post-it -->
+        <div id="btnPostit" class="main-menu-item tooltip postit-btn"
+             role="button" tabindex="0" aria-label="Adicionar anotação (Post-it)">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+            <path stroke-linecap="round" d="M8 10h8M8 14h5"/>
+          </svg>
+          <span>Post-it</span>
+          <span class="tooltip-text">Anotação / Post-it no diagrama</span>
+        </div>
+
+      </div><!-- /.tools-strip -->
+
+    </div><!-- /.desktop-menu -->
+    <label for="language-switch" class="sr-only">Idioma</label>
+    <select id="language-switch" aria-label="Idioma" class="bg-gray-800 text-white border border-gray-600 rounded px-2 py-1 text-sm">
+      <option value="pt">Português</option><option value="en">English</option>
+    </select>
+  </nav>
+
+  <!-- ════════════════════════════════════════
+       MOBILE SIDEBAR
+  ════════════════════════════════════════ -->
+  <div id="mobile-sidebar" role="navigation" aria-label="Menu mobile">
+
+    <div class="mobile-menu-section">
+      <div class="mobile-menu-title">Componentes</div>
+
+      <div id="btnEntity-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-entity">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <rect x="3" y="6" width="18" height="12" rx="2"/>
+          </svg>
+        </div>
+        <span>Entidade</span>
+      </div>
+
+      <div id="btnAttribute-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-attribute">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <ellipse cx="12" cy="12" rx="9" ry="5"/>
+          </svg>
+        </div>
+        <span>Atributo Simples</span>
+      </div>
+
+      <div id="btnDerivedAttribute-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-derived">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5" stroke-dasharray="4 2">
+            <ellipse cx="12" cy="12" rx="9" ry="5"/>
+          </svg>
+        </div>
+        <span>Atributo Derivado</span>
+      </div>
+
+      <div id="btnMultivaluedAttribute-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-multivalued">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <ellipse cx="12" cy="12" rx="9" ry="5"/>
+            <ellipse cx="12" cy="12" rx="6" ry="3"/>
+          </svg>
+        </div>
+        <span>Atributo Multivalorado</span>
+      </div>
+
+      <div id="btnRelationship-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-relationship">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <polygon points="12 3 21 12 12 21 3 12"/>
+          </svg>
+        </div>
+        <span>Relacionamento</span>
+      </div>
+
+      <div id="btnSpecialization-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-specialization">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <polygon points="12 3 3 21 21 21"/>
+          </svg>
+        </div>
+        <span>Gen. / Especialização</span>
+      </div>
+
+      <div id="btnAggregation-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-aggregation">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <rect x="5" y="5" width="14" height="14" rx="1"/>
+            <polygon points="12 8 16 12 12 16 8 12"/>
+          </svg>
+        </div>
+        <span>Agregação</span>
+      </div>
+
+      <div id="btnPostit-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-postit">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/>
+            <path stroke-linecap="round" d="M8 10h8M8 14h5"/>
+          </svg>
+        </div>
+        <span>Post-it</span>
+      </div>
+    </div>
+
+    <div class="mobile-menu-section">
+      <div class="mobile-menu-title">Histórico</div>
+
+      <div id="btnUndo-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-undo">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 14l-5-5 5-5M4 9h11a4 4 0 010 8H4"/>
+          </svg>
+        </div>
+        <span>Desfazer (Ctrl+Z)</span>
+      </div>
+
+      <div id="btnRedo-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-redo">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 14l5-5-5-5M20 9H9a4 4 0 000 8h11"/>
+          </svg>
+        </div>
+        <span>Refazer (Ctrl+Y)</span>
+      </div>
+
+      <div id="btnClear-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-clear">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </div>
+        <span>Limpar tudo</span>
+      </div>
+    </div>
+
+    <div class="mobile-menu-section">
+      <div class="mobile-menu-title">Arquivos</div>
+
+      <div id="btnSaveFile-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-save">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/>
+          </svg>
+        </div>
+        <span>Salvar arquivo</span>
+      </div>
+
+      <div id="btnOpenFile-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-open">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <span>Abrir arquivo</span>
+      </div>
+
+      <div id="btnExport-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-export">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <span>Exportar imagem</span>
+      </div>
+
+      <div id="btnExportSVG-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-export">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+          </svg>
+        </div>
+        <span>Exportar SVG</span>
+      </div>
+    </div>
+
+    <div class="mobile-menu-section">
+      <div class="mobile-menu-title">Texto</div>
+      <div id="btnIncreaseFont-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-increase">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m-8-8h16"/>
+          </svg>
+        </div>
+        <span>Aumentar texto</span>
+      </div>
+      <div id="btnDecreaseFont-mobile" class="mobile-menu-button" role="button" tabindex="0">
+        <div class="toolbar-button tool-decrease">
+          <svg width="22" height="22" fill="none" stroke="white" viewBox="0 0 24 24" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 12h16"/>
+          </svg>
+        </div>
+        <span>Diminuir texto</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════════════
+       CANVAS (área principal)
+  ════════════════════════════════════════ -->
+  <main class="flex-grow" role="main">
+    <div id="canvas" data-user-content tabindex="0" aria-label="Canvas de modelagem EER — use as ferramentas do menu para adicionar elementos"></div>
+
+    <!-- Badge de notação ativa (canto superior direito do canvas) -->
+    <div id="notation-badge" role="status" aria-live="polite" aria-label="Notação ativa">
+      <span id="notation-badge-tag">ER</span>
+      <span id="notation-badge-label">EER estilo Chen</span>
+      <span id="notation-badge-sub">ER/EER</span>
+    </div>
+
+    <!-- Indicador de autosave -->
+    <div id="autosave-indicator"
+         class="fixed bottom-14 left-1/2 transform -translate-x-1/2 bg-gray-800 text-green-400 px-4 py-2 rounded-lg shadow-lg z-[70] opacity-0 transition-opacity duration-300"
+         role="status" aria-live="polite">
+      Salvando...
+    </div>
+
+    <!-- FAB zona (bottom-right) -->
+    <div class="fixed bottom-4 right-4 flex flex-col items-end gap-2 z-50">
+
+      <!-- Botões que aparecem acima do toggle -->
+      <div id="extraButtons" class="hidden flex flex-col gap-2 opacity-0 translate-y-4 transition-all duration-300">
+        <button id="btnIncreaseFont"
+          class="flex items-center justify-center w-11 h-11 rounded-lg shadow bg-gray-700 hover:bg-gray-600 text-white transition-colors text-sm font-bold"
+          title="Aumentar Fonte (A+)" aria-label="Aumentar tamanho da fonte">
+          A+
+        </button>
+        <button id="btnDecreaseFont"
+          class="flex items-center justify-center w-11 h-11 rounded-lg shadow bg-gray-700 hover:bg-gray-600 text-white transition-colors text-sm font-bold"
+          title="Diminuir Fonte (A-)" aria-label="Diminuir tamanho da fonte">
+          A−
+        </button>
+        <button id="btnIncreaseZoom"
+          class="flex items-center justify-center w-11 h-11 rounded-lg shadow bg-gray-700 hover:bg-gray-600 text-white transition-colors text-sm"
+          title="Ampliar (Ctrl+scroll)" aria-label="Ampliar zoom">
+          🔍+
+        </button>
+        <button id="btnDecreaseZoom"
+          class="flex items-center justify-center w-11 h-11 rounded-lg shadow bg-gray-700 hover:bg-gray-600 text-white transition-colors text-sm"
+          title="Reduzir (Ctrl+scroll)" aria-label="Reduzir zoom">
+          🔍−
+        </button>
+      </div>
+
+      <!-- Toggle FAB -->
+      <button id="btnToggle"
+        class="relative flex items-center justify-center w-11 h-11 rounded-lg shadow bg-indigo-600 hover:bg-indigo-500 text-white transition-all duration-300"
+        aria-label="Opções adicionais" aria-expanded="false">
+        <svg id="iconPlus" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform duration-300"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+        </svg>
+        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 absolute opacity-0 transition-opacity duration-300"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <!-- Undo / Redo / Clear -->
+      <div class="flex flex-row gap-2">
+        <button id="btnUndoFloating"
+          class="flex items-center justify-center w-11 h-11 rounded-lg shadow bg-gray-700 hover:bg-gray-600 text-white transition-colors"
+          title="Desfazer (Ctrl+Z)" aria-label="Desfazer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 14l-5-5 5-5M4 9h11a4 4 0 010 8H4"/>
+          </svg>
+        </button>
+        <button id="btnRedoFloating"
+          class="flex items-center justify-center w-11 h-11 rounded-lg shadow bg-gray-700 hover:bg-gray-600 text-white transition-colors"
+          title="Refazer (Ctrl+Y)" aria-label="Refazer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 14l5-5-5-5M20 9H9a4 4 0 000 8h11"/>
+          </svg>
+        </button>
+        <button id="btnClearFloating"
+          class="flex items-center justify-center px-3 h-11 rounded-lg shadow bg-gray-700 hover:bg-red-600 text-white transition-colors text-sm font-medium"
+          title="Limpar tudo" aria-label="Limpar todo o diagrama">
+          Limpar
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Créditos -->
+    <div id="credits" class="fixed bottom-2 left-2 text-xs text-gray-400 bg-gray-900 bg-opacity-90 px-2 py-1 rounded z-40" role="contentinfo">
+      © ModelaDB · Prof. Dr. Willian Garcias de Assunção · UFMT
+    </div>
+  </main>
+
+  <!-- Painel fixo de validação (atualiza em tempo real) -->
+  <aside id="validationDock" role="complementary" aria-label="Problemas do modelo" aria-live="polite">
+    <header id="validationDockHeader">
+      <span id="validationDockIcon" aria-hidden="true">✓</span>
+      <span id="validationDockTitle">Modelo sem problemas</span>
+      <span id="validationDockCounts"></span>
+      <button id="validationDockToggle" type="button"
+              aria-expanded="true" aria-controls="validationDockBody"
+              title="Recolher/expandir painel de problemas">▾</button>
+    </header>
+    <div id="validationDockBody">
+      <ul id="validationDockList"></ul>
+    </div>
+  </aside>
+
+  <!-- Controles de visualização (zoom / ajustar) -->
+  <div id="viewControls" role="group" aria-label="Controles de visualização">
+    <button id="btnZoomOut" type="button" title="Diminuir zoom (Ctrl -)" aria-label="Diminuir zoom">−</button>
+    <button id="btnZoomLevel" type="button" title="Voltar para 100% (Ctrl 0)" aria-label="Nível de zoom, clique para voltar a 100 por cento">100%</button>
+    <button id="btnZoomIn" type="button" title="Aumentar zoom (Ctrl +)" aria-label="Aumentar zoom">+</button>
+    <span class="view-sep" aria-hidden="true"></span>
+    <button id="btnZoomFit" type="button" title="Ajustar diagrama à tela (Shift F)" aria-label="Ajustar diagrama à tela">⤢</button>
+  </div>
+
+  <!-- Dicas fixas de navegação do canvas -->
+  <div id="canvasHints" role="note" aria-label="Atalhos de navegação">
+    <span class="hint" id="hintPan"><kbd>Espaço</kbd> + arrastar <em>mover a tela</em></span>
+    <span class="hint-dot" aria-hidden="true">·</span>
+    <span class="hint" id="hintZoom"><kbd>Scroll</kbd> <em>zoom</em></span>
+    <span class="hint-dot" aria-hidden="true">·</span>
+    <span class="hint" id="hintMiddle"><kbd>Botão do meio</kbd> <em>mover a tela</em></span>
+  </div>
+
+  <!-- Side Panel -->
+  <div id="sidePanel"
+    style="position:fixed; right:12px; top:64px; width:320px; max-height:70vh; overflow:auto; background:#111827; border:1px solid #374151; border-radius:10px; z-index:70; display:none;"
+    role="complementary" aria-label="Painel lateral">
+    <div style="display:flex; gap:6px; padding:8px; border-bottom:1px solid #374151;">
+      <button id="panelTabTutorial" class="px-3 py-2 bg-blue-600 text-white text-sm rounded-lg font-medium">Tutorial</button>
+      <button id="panelClose" class="ml-auto px-3 py-2 bg-gray-800 text-gray-300 text-sm rounded-lg hover:bg-gray-700 transition-colors">✕</button>
+    </div>
+    <div id="panelContent" style="padding:12px; color:#e5e7eb; font-size:14px;"></div>
+  </div>
+
+  <aside id="researchConsent" hidden style="position:fixed;left:50%;transform:translateX(-50%);bottom:12px;max-width:660px;padding:10px 14px;background:#fff7ed;color:#7c2d12;border:1px solid #fdba74;border-radius:8px;z-index:450;font-size:12px" role="note">
+    <strong>Modo de pesquisa.</strong> São registrados localmente seu nome, ações de edição, alterações de notação, avisos de validação e exportações, com tempos relativos. O nome e o registro acompanham o arquivo .merdb; o nome também aparece nas imagens e nos nomes dos arquivos. Nada desses dados é enviado pela ferramenta pela rede. Exporte e compartilhe o arquivo apenas se concordar em participar.
+  </aside>
+
+  <!-- Modal: identificação do aluno (pedida uma vez por sessão) -->
+  <div id="participantModal" class="fixed inset-0 flex items-center justify-center hidden z-[600]"
+       style="background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)"
+       role="dialog" aria-modal="true" aria-labelledby="participantTitle">
+    <div class="bg-gray-800 p-6 rounded-xl shadow-2xl max-w-md w-full mx-4">
+      <h3 id="participantTitle" class="text-lg font-bold text-white mb-2">Identifique-se antes de salvar</h3>
+      <p class="text-gray-300 text-sm mb-4">
+        Digite seu nome completo. Ele será usado no nome do arquivo para que o professor
+        saiba de quem é a atividade. Você só precisa informar uma vez por sessão.
+        O arquivo .merdb inclui seu nome e um registro local das ações de edição, avisos,
+        notação e exportações, com os tempos relativos. Seu nome também aparece nas imagens.
+        Nada desses dados é enviado pela ferramenta pela rede. Ao confirmar, você concorda
+        em incluir esses dados nos arquivos exportados para o estudo.
+      </p>
+      <label for="participantInput" class="sr-only">Nome completo</label>
+      <input id="participantInput" type="text" autocomplete="name" placeholder="Ex.: Maria José de Assunção"
+             class="w-full px-3 py-2 rounded-lg bg-gray-900 text-white border border-gray-600 focus:border-blue-500 focus:outline-none text-sm"/>
+      <p id="participantError" class="hidden text-red-400 text-xs mt-2">Digite seu nome completo (ao menos 3 letras).</p>
+      <div class="flex justify-end gap-3 mt-6">
+        <button id="participantCancel" class="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-500 transition text-sm">Cancelar</button>
+        <button id="participantConfirm" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition text-sm font-medium">Concordo e salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload oculto -->
+  <input type="file" id="fileInput" accept=".merdb" style="display:none;" aria-hidden="true"/>
+
+  <!-- Modal: Confirmar carregamento -->
+  <div id="loadModal" class="fixed inset-0 flex items-center justify-center hidden z-[500]"
+       style="background:rgba(0,0,0,0.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)"
+       role="dialog" aria-modal="true" aria-labelledby="loadModalTitle">
+    <div class="bg-gray-800 p-6 rounded-xl shadow-2xl max-w-md w-full mx-4">
+      <h3 id="loadModalTitle" class="text-lg font-bold text-white mb-3">Carregar diagrama</h3>
+      <p class="text-gray-300 text-sm mb-6">O diagrama atual será substituído. Deseja continuar?</p>
+      <div class="flex justify-end gap-3">
+        <button id="loadCancelBtn" class="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-500 transition text-sm">Cancelar</button>
+        <button id="loadConfirmBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition text-sm font-medium">Carregar</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/app.js"></script>
+
+  <!-- Modal: Boas-vindas -->
+  <div id="welcomeModal" class="fixed inset-0 flex items-center justify-center z-[1100] hidden"
+       style="background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)"
+       role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+    <div class="bg-gray-800 p-6 rounded-xl shadow-2xl max-w-md w-full mx-4">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <h3 id="welcomeTitle" class="text-xl font-bold text-white">Bem-vindo ao ModelaDB</h3>
+          <p class="text-blue-400 text-sm mt-1">Ferramenta para Modelagem Conceitual EER</p>
+        </div>
+        <button id="closeWelcomeBtn" class="text-gray-400 hover:text-white ml-4 flex-shrink-0" aria-label="Fechar">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="text-gray-300 text-sm space-y-3 border-t border-gray-700 pt-4">
+        <p>Suporte completo às notações <strong class="text-white">EER estilo Chen e Crow's Foot (IE)</strong>, exportação SQL/ORM, engenharia reversa e validação semântica.</p>
+        <p class="text-gray-400">
+          <strong class="text-gray-300">Dica:</strong> Use <kbd class="bg-gray-700 px-1 rounded text-xs">E</kbd> entidade,
+          <kbd class="bg-gray-700 px-1 rounded text-xs">A</kbd> atributo,
+          <kbd class="bg-gray-700 px-1 rounded text-xs">R</kbd> relacionamento,
+          <kbd class="bg-gray-700 px-1 rounded text-xs">Espaço+arrastar</kbd> para mover o canvas.
+        </p>
+        <div class="border-t border-gray-700 pt-3">
+          <p class="text-xs text-gray-500">Desenvolvido por <strong class="text-gray-300">Prof. Dr. Willian Garcias de Assunção</strong></p>
+          <p class="text-xs text-blue-400">Universidade Federal de Mato Grosso (UFMT)</p>
+          <p class="text-xs text-gray-400">Departamento de Computação e Tecnologia</p>
+          <p class="text-xs"><a href="mailto:willian.assuncao@ufmt.br" class="text-blue-400 underline">willian.assuncao@ufmt.br</a></p>
+        </div>
+      </div>
+      <button id="startUsingBtn" class="mt-5 w-full bg-blue-600 text-white py-2.5 rounded-lg hover:bg-blue-500 transition font-medium text-sm">
+        Começar a modelar →
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal: Sobre -->
+  <div id="aboutModal" class="fixed inset-0 flex items-center justify-center hidden z-[500]"
+       style="background:rgba(0,0,0,0.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)"
+       role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+    <div class="bg-gray-800 p-6 rounded-xl shadow-2xl max-w-md w-full mx-4">
+      <h3 id="aboutTitle" class="text-xl font-bold text-white mb-2">Sobre o ModelaDB</h3>
+      <p class="text-blue-400 text-sm mb-1"><span data-app-version></span></p>
+      <p class="text-gray-300 text-sm mb-4">Ferramenta acadêmica para Modelagem Conceitual de Banco de Dados com suporte às notações EER estilo Chen e Crow's Foot (IE), exportação SQL/ORM e validação semântica.</p>
+      <div class="border-t border-gray-700 pt-4 space-y-1 text-sm">
+        <p class="text-gray-300"><strong class="text-white">Prof. Dr. Willian Garcias de Assunção</strong></p>
+        <p class="text-blue-400">Universidade Federal de Mato Grosso (UFMT)</p>
+        <p class="text-gray-400">Departamento de Computação e Tecnologia</p>
+        <p><a href="mailto:willian.assuncao@ufmt.br" class="text-blue-400 underline">willian.assuncao@ufmt.br</a></p>
+      </div>
+      <p class="mt-4 text-sm"><a id="aboutLicensesLink" href="./THIRD_PARTY_LICENSES.txt" target="_blank" rel="noopener" class="text-blue-400 underline">Licenças de terceiros</a></p>
+      <div class="flex justify-end mt-5">
+        <button id="aboutCloseBtn" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition text-sm font-medium">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,480 @@
+{
+  "version": "2.0",
+  "meta": {
+    "createdAt": "2026-10-30T00:00:00.000Z",
+    "lastModifiedAt": "2026-10-30T00:00:00.000Z",
+    "tool": "ModelaDB",
+    "toolVersion": "2.2.0",
+    "notation": "chen"
+  },
+  "domain": {
+    "entities": [
+      {
+        "id": 0,
+        "objType": "entity",
+        "name": "Airport",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 1,
+        "objType": "entity",
+        "name": "Flight",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 2,
+        "objType": "entity",
+        "name": "Pilot",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 3,
+        "objType": "entity",
+        "name": "Passport",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 4,
+        "objType": "entity",
+        "name": "Aircraft",
+        "resizeHandles": [],
+        "selected": false
+      },
+      {
+        "id": 5,
+        "objType": "entity",
+        "name": "Seat",
+        "resizeHandles": [],
+        "selected": false
+      }
+    ],
+    "attributes": [
+      {
+        "id": 0,
+        "objType": "attribute",
+        "name": "iata",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 1,
+        "objType": "attribute",
+        "name": "city",
+        "parentType": "entity",
+        "parentId": 0,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 2,
+        "objType": "attribute",
+        "name": "flight_no",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 3,
+        "objType": "attribute",
+        "name": "flight_date",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 4,
+        "objType": "attribute",
+        "name": "gate",
+        "parentType": "entity",
+        "parentId": 1,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 5,
+        "objType": "attribute",
+        "name": "pilot_no",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Numérico Inteiro",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 6,
+        "objType": "attribute",
+        "name": "full_name",
+        "parentType": "entity",
+        "parentId": 2,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 7,
+        "objType": "attribute",
+        "name": "passport_no",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 8,
+        "objType": "attribute",
+        "name": "expires",
+        "parentType": "entity",
+        "parentId": 3,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Data",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 9,
+        "objType": "attribute",
+        "name": "tail_no",
+        "parentType": "entity",
+        "parentId": 4,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": true,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 10,
+        "objType": "attribute",
+        "name": "model",
+        "parentType": "entity",
+        "parentId": 4,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      },
+      {
+        "id": 11,
+        "objType": "attribute",
+        "name": "seat_label",
+        "parentType": "entity",
+        "parentId": 5,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false,
+        "partialKey": true
+      },
+      {
+        "id": 12,
+        "objType": "attribute",
+        "name": "cabin",
+        "parentType": "entity",
+        "parentId": 5,
+        "selected": false,
+        "collapsed": false,
+        "resizeHandles": [],
+        "dataType": "Texto",
+        "primary": false,
+        "derived": false,
+        "multivalued": false
+      }
+    ],
+    "relationships": [
+      {
+        "id": 0,
+        "objType": "relationship",
+        "name": "departs from",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 0,
+            "cardinality": "0,1",
+            "weak": false,
+            "role": "origin"
+          },
+          {
+            "entityId": 1,
+            "cardinality": "1,N",
+            "weak": false
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "objType": "relationship",
+        "name": "arrives at",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 0,
+            "cardinality": "0,1",
+            "weak": false,
+            "role": "destination"
+          },
+          {
+            "entityId": 1,
+            "cardinality": "1,N",
+            "weak": false
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "objType": "relationship",
+        "name": "crews",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 1,
+            "cardinality": "0,N",
+            "weak": false
+          },
+          {
+            "entityId": 2,
+            "cardinality": "2,5",
+            "weak": false
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "objType": "relationship",
+        "name": "holds",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 2,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 3,
+            "cardinality": "1,1",
+            "weak": false
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "objType": "relationship",
+        "name": "installed in",
+        "selected": false,
+        "locked": false,
+        "resizeHandles": [],
+        "connections": [
+          {
+            "entityId": 4,
+            "cardinality": "0,1",
+            "weak": false
+          },
+          {
+            "entityId": 5,
+            "cardinality": "1,N",
+            "weak": true
+          }
+        ]
+      }
+    ],
+    "specializations": [],
+    "aggregations": [],
+    "postits": [],
+    "counters": {
+      "entityIdCounter": 6,
+      "attributeIdCounter": 13,
+      "relationshipIdCounter": 5,
+      "specializationIdCounter": 0,
+      "aggregationIdCounter": 0,
+      "postitIdCounter": 0
+    }
+  },
+  "view": {
+    "positions": {
+      "entity_0": {
+        "x": 120,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_1": {
+        "x": 550,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_2": {
+        "x": 980,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_3": {
+        "x": 1410,
+        "y": 120,
+        "width": 160,
+        "height": 80
+      },
+      "entity_4": {
+        "x": 550,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "entity_5": {
+        "x": 980,
+        "y": 460,
+        "width": 160,
+        "height": 80
+      },
+      "rel_0": {
+        "x": 415,
+        "y": 330,
+        "size": 120
+      },
+      "rel_1": {
+        "x": 415,
+        "y": 7,
+        "size": 120
+      },
+      "rel_2": {
+        "x": 845,
+        "y": 160,
+        "size": 120
+      },
+      "rel_3": {
+        "x": 1275,
+        "y": 160,
+        "size": 120
+      },
+      "rel_4": {
+        "x": 845,
+        "y": 500,
+        "size": 120
+      },
+      "attr_0": {
+        "x": 170,
+        "y": 263
+      },
+      "attr_1": {
+        "x": 170,
+        "y": 57
+      },
+      "attr_2": {
+        "x": 782,
+        "y": 213
+      },
+      "attr_3": {
+        "x": 690,
+        "y": 259
+      },
+      "attr_4": {
+        "x": 690,
+        "y": 61
+      },
+      "attr_5": {
+        "x": 1060,
+        "y": 265
+      },
+      "attr_6": {
+        "x": 1060,
+        "y": 55
+      },
+      "attr_7": {
+        "x": 1665,
+        "y": 160
+      },
+      "attr_8": {
+        "x": 1490,
+        "y": 265
+      },
+      "attr_9": {
+        "x": 600,
+        "y": 603
+      },
+      "attr_10": {
+        "x": 600,
+        "y": 397
+      },
+      "attr_11": {
+        "x": 1235,
+        "y": 500
+      },
+      "attr_12": {
+        "x": 1060,
+        "y": 605
+      }
+    },
+    "breakpoints": {},
+    "panOffset": {
+      "x": 0,
+      "y": 0
+    },
+    "zoom": 0.8,
+    "fontSize": 18
+  }
+}

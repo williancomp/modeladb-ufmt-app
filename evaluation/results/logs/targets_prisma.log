@@ -1,0 +1,18 @@
+$ docker run --rm -w /work -v <repo>/evaluation/results/.tmp/prisma:/work:rw -e DATABASE_URL=postgresql://u:p@localhost:5432/db -e npm_config_update_notifier=false -e npm_config_cache=/work/.npm node@sha256:4b150b48b4116e2a22f2c39cc27025fbf4f153e2078fd3b14d159fdb5c7279da sh -c sh /work/run.sh
+--- exit 0
+RESULT	m01_library	ok	Prisma schema loaded from schema.prisma
+RESULT	m02_university	ok	Prisma schema loaded from schema.prisma
+RESULT	m03_hospital	ok	Prisma schema loaded from schema.prisma
+RESULT	m04_airline	ok	Prisma schema loaded from schema.prisma
+RESULT	m05_ecommerce	ok	Prisma schema loaded from schema.prisma
+RESULT	m06_car_rental	ok	Prisma schema loaded from schema.prisma
+RESULT	m07_music	ok	Prisma schema loaded from schema.prisma
+RESULT	m08_timetable	ok	Prisma schema loaded from schema.prisma
+RESULT	m09_projects	ok	Prisma schema loaded from schema.prisma
+RESULT	m10_hotel	ok	Prisma schema loaded from schema.prisma
+RESULT	m11_registry	ok	Prisma schema loaded from schema.prisma
+RESULT	m12_league	ok	Prisma schema loaded from schema.prisma
+RESULT	m13_academico	ok	Prisma schema loaded from schema.prisma
+RESULT	m14_identity	ok	Prisma schema loaded from schema.prisma
+
+--- stderr
