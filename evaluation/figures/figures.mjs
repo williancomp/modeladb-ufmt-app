@@ -149,6 +149,7 @@ export async function generateFigures({ only } = {}) {
       if (shot.after) await shot.after(page);
       await page.waitForTimeout(400);
       const clip = shot.clip === 'canvas' ? { x: 16, y: NAVBAR + 6, width: full.width - 16, height: full.height - NAVBAR - 6 } : undefined;
+      await page.evaluate(() => window.getSelection()?.removeAllRanges());
       await page.screenshot({ path: join(here, shot.file), clip });
       await context.close();
       console.log(`figure: ${shot.file}`);
