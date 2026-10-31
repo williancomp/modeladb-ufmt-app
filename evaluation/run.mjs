@@ -14,6 +14,7 @@ import { runMutationExperiment } from './experiments/mutation.mjs';
 import { runPerformanceExperiment } from './experiments/performance.mjs';
 import { runRoundTripExperiment } from './experiments/roundtrip.mjs';
 import { runTargetsExperiment } from './experiments/targets.mjs';
+import { snapshotResults, compareResults, writeReproductionCheck } from './lib/reproduction.mjs';
 
 const only = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 const wants = (name) => only.length === 0 || only.includes(name);
@@ -25,6 +26,8 @@ const log = (text) => {
 };
 
 // A full run starts from an empty results directory; a partial run keeps the other experiments' files.
+// The committed results are kept aside so the fresh run can be compared with them at the end.
+const committed = only.length === 0 ? snapshotResults(RESULTS_DIR) : null;
 if (only.length === 0) rmSync(RESULTS_DIR, { recursive: true, force: true });
 mkdirSync(RESULTS_DIR, { recursive: true });
 const servers = await startServers(['postgres', 'mysql', 'mariadb'], log);
@@ -52,6 +55,10 @@ try {
   if (wants('performance')) outcome.performance = await runPerformanceExperiment({ log });
   if (wants('mutation')) outcome.mutation = runMutationExperiment({ log });
   writeLog('run.log', lines.join('\n'));
+  if (committed) {
+    const verdict = writeReproductionCheck(compareResults(committed, RESULTS_DIR), RESULTS_DIR);
+    console.log(`reproduction check: ${verdict} (results/reproduction_check.csv)`);
+  }
   const failed = outcome.ddl?.summary.reduce((n, s) => n + s.failed, 0) ?? 0;
   log(`done. DDL conformance failures: ${failed} (failures are results; see results/logs/ddl_failures.txt)`);
 } finally {

@@ -3,7 +3,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ROOT } from './pipeline.mjs';
 
-export const RESULTS_DIR = join(ROOT, 'evaluation', 'results');
+export const RESULTS_DIR = process.env.EVAL_RESULTS_DIR || join(ROOT, 'evaluation', 'results');
 export const LOGS_DIR = join(RESULTS_DIR, 'logs');
 
 const csvCell = (value) => {

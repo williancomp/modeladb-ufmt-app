@@ -117,7 +117,8 @@ export async function runRoundTripExperiment({ config, log }) {
   const rows = [];
   const diffs = [];
   const featureTotals = {};
-  const inventory = { table: 0, column: 0, 'column type': 0, nullability: 0, 'primary key': 0, 'composite primary key': 0, 'foreign key': 0, 'composite foreign key': 0, unique: 0, 'composite unique': 0 };
+  const emptyInventory = () => ({ table: 0, column: 0, 'column type': 0, nullability: 0, 'primary key': 0, 'composite primary key': 0, 'foreign key': 0, 'composite foreign key': 0, unique: 0, 'composite unique': 0 });
+  const inventories = { generated: emptyInventory(), 'hand-written': emptyInventory() };
   const adapters = {};
   for (const dialect of DIALECTS) adapters[dialect] = await openDialect(dialect, config);
   for (const input of inputs) {
@@ -130,6 +131,7 @@ export async function runRoundTripExperiment({ config, log }) {
       row.original_ddl = run1.errors.length ? `error: ${run1.errors[0].message}` : 'ok';
       if (run1.errors.length) { row.verdict = 'input DDL rejected by the engine'; rows.push(row); continue; }
       const before = view(await db1.introspect());
+      const inventory = inventories[input.source];
       for (const t of Object.values(before)) {
         inventory.table++;
         const n = Object.keys(t.columns).length;
@@ -160,9 +162,9 @@ export async function runRoundTripExperiment({ config, log }) {
       for (const d of found) diffs.push({ ...input, ...d });
       // Features the catalog view does not cover: count them textually in input and output.
       for (const [name, pattern] of Object.entries(COUNTS)) {
-        featureTotals[name] ||= { input: 0, output: 0 };
-        featureTotals[name].input += count(input.ddl, pattern);
-        featureTotals[name].output += count(regenerated, pattern);
+        const slot = (featureTotals[`${input.source}|${name}`] ||= { source: input.source, name, input: 0, output: 0 });
+        slot.input += count(input.ddl, pattern);
+        slot.output += count(regenerated, pattern);
       }
     } finally {
       await db1.close();
@@ -222,11 +224,12 @@ export async function runRoundTripExperiment({ config, log }) {
     { key: 'hand_written_inputs', header: 'In hand-written DDL', align: 'r' },
     { key: 'example', header: 'Example' },
   ]);
-  const inventoryRows = Object.entries(inventory).map(([construct, instances]) => {
-    const changed = diffs.filter((d) => d.construct === construct).length;
-    return { construct, instances, changed_or_lost: changed, preserved: instances ? `${(((instances - changed) / instances) * 100).toFixed(1)}%` : 'n/a' };
-  });
+  const inventoryRows = Object.entries(inventories).flatMap(([source, inventory]) => Object.entries(inventory).map(([construct, instances]) => {
+    const changed = diffs.filter((d) => d.construct === construct && d.source === source).length;
+    return { source, construct, instances, changed_or_lost: changed, preserved: instances ? `${(((instances - changed) / instances) * 100).toFixed(1)}%` : 'n/a' };
+  }));
   writeTable('roundtrip_inventory', inventoryRows, [
+    { key: 'source', header: 'DDL source' },
     { key: 'construct', header: 'Relational construct' },
     { key: 'instances', header: 'Instances in input DDL', align: 'r' },
     { key: 'changed_or_lost', header: 'Changed or lost', align: 'r' },
@@ -253,17 +256,33 @@ export async function runRoundTripExperiment({ config, log }) {
     { key: 'in_recovered_models', header: 'In the models recovered from their DDL', align: 'r' },
     { key: 'outcome', header: 'Outcome' },
   ]);
-  const unrecoverable = Object.entries(featureTotals).map(([feature, t]) => ({
-    feature,
+  const unrecoverable = Object.values(featureTotals).map((t) => ({
+    source: t.source,
+    feature: t.name,
     in_inputs: t.input,
     in_regenerated: t.output,
     outcome: t.input === 0 ? 'not exercised' : t.output === 0 ? 'dropped' : t.output === t.input ? 'kept' : t.output > t.input ? 'added or rewritten by the exporter' : 'partly dropped',
   }));
   writeTable('roundtrip_not_recovered', unrecoverable, [
+    { key: 'source', header: 'DDL source' },
     { key: 'feature', header: 'SQL feature outside the conceptual model' },
     { key: 'in_inputs', header: 'In input DDL', align: 'r' },
     { key: 'in_regenerated', header: 'In regenerated DDL', align: 'r' },
     { key: 'outcome', header: 'Outcome' },
+  ]);
+  // The catalogue fields the comparison looks at (everything else is outside the round-trip verdict).
+  writeTable('roundtrip_compared_fields', [
+    { field: 'tables', comparison: 'set of table names (case-insensitive)' },
+    { field: 'columns', comparison: 'set of column names per table' },
+    { field: 'column type', comparison: 'type family: int, num, bool, uuid, date, timestamp or text (length and precision ignored)' },
+    { field: 'nullability', comparison: 'nullable or NOT NULL per column' },
+    { field: 'primary key', comparison: 'ordered column list' },
+    { field: 'foreign keys', comparison: 'columns -> referenced table(columns); referential actions are not compared' },
+    { field: 'unique constraints', comparison: 'column lists; a UNIQUE equal to the primary key is reported as redundant, not semantic' },
+    { field: 'not compared', comparison: 'CHECK, DEFAULT, indexes, referential actions, comments, column order, constraint names' },
+  ], [
+    { key: 'field', header: 'Catalogue field' },
+    { key: 'comparison', header: 'How it is compared' },
   ]);
   writeLog('roundtrip_differences.tsv', ['source\tinput\tdialect\tconstruct\tdetail', ...diffs.map((d) => `${d.source}\t${d.id}\t${d.dialect}\t${d.construct}\t${d.detail}`)].join('\n'));
   log(`roundtrip: ${rows.length} cases, ${diffs.length} differences`);

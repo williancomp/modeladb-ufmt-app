@@ -37,6 +37,16 @@ defect, not a declared consequence of the mutation, and not an annotated defect 
 unmutated models are validated too; the annotations are in the source). Precision = TP/(TP+FP),
 recall = TP/(TP+FN).
 
+True-positive matching rule: a defect mutant is a TP when every finding the operator declares as expected (rule id,
+element type, element id; an operator may list alternative element ids for the same defect) is present among the
+findings of the mutated model for the operator's notation. The reported element must be the mutated element (or a
+declared alternative); a finding of the same rule on another element does not count as a TP. Otherwise the
+mutant is an FN. A negative control is an FP when the forbidden finding appears on the rewritten element.
+
+Precision is reported as `not assessed` for a rule with zero negative controls: without legitimate inputs
+that the rule could wrongly flag, the false-positive rate is not measured, so a value of 1.000 would be an
+artefact. Recall is still reported. The same value appears in `mutation_rules.csv` and `.tex`.
+
 Threat to validity: the operators, the negative controls, the name lists inside the rules and the rules
 themselves were all written by the same author, so results for structural rules (which the operators were
 designed from) are optimistic and say little about real student models; name-heuristic rules show how much the
@@ -46,9 +56,26 @@ word lists matter in both directions. No real-user model is involved.
 
 Generated DDL for every corpus model and dialect, and 8 hand-written dialect-neutral DDL files
 (`roundtrip/*.sql`, written before any output was seen) are executed, reverse-engineered by the importer,
-exported again for the same dialect, executed again, and the catalogs compared. Tables report per-case verdicts,
-a per-construct inventory, the constructs that changed, SQL features that do not survive, and which conceptual
-constructs the importer recovers from the DDL of the corpus models.
+exported again for the same dialect, executed again, and the catalogs compared. Generated cases (DDL produced by
+the tool from corpus models) and hand-written cases are never pooled: `roundtrip_cases`, `roundtrip_summary`,
+`roundtrip_inventory` and `roundtrip_not_recovered` carry a source column, and `roundtrip_information_loss` splits
+its occurrences by source. Further tables report which conceptual constructs the importer recovers from the DDL of
+the corpus models.
+
+Catalogue fields compared (`roundtrip_compared_fields.csv`): table names; column names per table; column type family
+(int, num, bool, uuid, date, timestamp, text; length and precision ignored); nullability; primary key (ordered
+columns); foreign keys as columns -> referenced table(columns) (referential actions are not part of the
+comparison); unique constraints as column lists (a UNIQUE equal to the primary key is reported as redundant).
+Not compared: CHECK, DEFAULT, indexes, referential actions, comments, column order, constraint names. Referential
+actions and the other uncompared features are only counted textually in `roundtrip_not_recovered`.
+
+## Reproduction check
+
+A full `npm run evaluate` keeps the committed results aside, regenerates everything and compares the two. Timings
+(`performance.*`, `logs/performance_machine.json`) are ignored and the `node` and `platform` fields of
+`environment.json` are excluded; every other file is compared byte for byte. `results/reproduction_check.csv` lists
+each file with its status (`identical`, `differs`, `new`, `missing`, `ignored`) and the first differing line, and its
+first line summarises the counts. Running `npm run evaluate` twice on an unchanged tree must report no differences.
 
 ## 4. Performance (`experiments/performance.mjs`)
 

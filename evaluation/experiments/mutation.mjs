@@ -371,7 +371,8 @@ export function runMutationExperiment({ log }) {
       FN: s.fn,
       FP: fp,
       FP_clean_models: s.cleanFp,
-      precision: pct(tp + fp === 0 ? NaN : tp / (tp + fp)),
+      // Without negative controls the false-positive rate cannot be measured, so precision is not assessed.
+      precision: s.controls === 0 ? 'not assessed' : pct(tp + fp === 0 ? NaN : tp / (tp + fp)),
       recall: pct(tp + s.fn === 0 ? NaN : tp / (tp + s.fn)),
     };
   });
