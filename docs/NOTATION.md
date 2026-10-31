@@ -83,6 +83,13 @@ Bounds outside this set (e.g. `2,5`) have no Crow's Foot symbol; rule CF001 flag
 Foot is never drawn with a double line. Crow's Foot is an engineering notation with several dialects; this tool
 implements a simplified style and does not reproduce a specific dialect.
 
+### Specialization labels
+
+The triangle label is `T` or `P` (total or partial participation of the supertype) followed by `D` or `C`/`O`.
+The stored code in `.merdb` files is always `T,D`, `T,C`, `P,D`, `P,C` or `U` and does not depend on the language.
+The Portuguese UI shows it as stored (`D` disjunta, `C` com sobreposição). The English UI shows `D` (disjoint) and
+`O` (overlapping), so `T,C` is displayed as `T,O` and `P,C` as `P,O`; `U` is the category (union).
+
 ## Delete policy of generated foreign keys
 
 Only the dependent connection of a weak entity (an identifying relationship) deletes its rows with the owner:

@@ -17,6 +17,16 @@ export function detectLanguage(stored, browserLanguage = 'en') {
   return browserLanguage.toLowerCase().startsWith('pt') ? 'pt' : 'en';
 }
 export function getLanguage() { return language; }
+
+/**
+ * Display label of a specialization type. The stored code (T,D / T,C / P,D / P,C / U) is the file format and never
+ * changes; the Portuguese UI shows it as is (D = disjunta, C = com sobreposição) and the English UI shows the
+ * documented English letters (D = disjoint, O = overlapping), after Elmasri and Navathe.
+ */
+export function displayGenType(code) {
+  if (typeof code !== 'string' || language === 'pt') return code;
+  return code.replace(/,C$/, ',O');
+}
 export function getLocale() { return language === 'pt' ? 'pt-BR' : 'en-US'; }
 
 /** Translate a UI message while preserving interpolated user content verbatim. */

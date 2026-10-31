@@ -33,7 +33,7 @@ import {
 } from './geometry.js';
 import { researchMode } from '../research/config.js';
 import { getParticipantName, slugifyName } from '../research/participant.js';
-import { t, getLocale } from '../i18n/index.js';
+import { t, getLocale, displayGenType } from '../i18n/index.js';
 import { showNotification } from '../ui/notifications.js';
 import { diagram as stateDiagram } from '../domain/state.js';
 
@@ -420,7 +420,7 @@ export function generateDiagramSVG(diagramInput) {
       );
     }
     shapeParts.push(
-      `<text x="${spec.x - minX}" y="${spec.y - minY}" fill="#ffffff" font-family="Poppins" font-size="${fontSize}" text-anchor="middle" dominant-baseline="middle">${(spec.genType || '').replace(/&/g, '&amp;')}</text>`
+      `<text x="${spec.x - minX}" y="${spec.y - minY}" fill="#ffffff" font-family="Poppins" font-size="${fontSize}" text-anchor="middle" dominant-baseline="middle">${displayGenType(spec.genType || '').replace(/&/g, '&amp;')}</text>`
     );
   });
 
@@ -873,7 +873,7 @@ export function renderDiagramToPNGDataURL(diagramInput) {
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText(spec.genType || '', spec.x, spec.y);
+    ctx.fillText(displayGenType(spec.genType || ''), spec.x, spec.y);
     ctx.restore();
   });
 

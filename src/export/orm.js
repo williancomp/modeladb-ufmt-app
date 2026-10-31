@@ -1,4 +1,4 @@
-import { t } from '../i18n/index.js';
+import { t, displayGenType } from '../i18n/index.js';
 import { mapToRelational } from './logicalMapper.js';
 
 function genStrategyComment(ir, prefix = '//') {
@@ -8,7 +8,7 @@ function genStrategyComment(ir, prefix = '//') {
       out += `${prefix} ${t(`Categoria [U] ${gen.categoryEntityId || gen.superEntityId}: chave substituta; membros com FK opcional para a categoria.`)}\n`;
       return;
     }
-    const typeLabel = `${gen.totality === 'total' ? 'T' : 'P'},${gen.disjointness === 'disjoint' ? 'D' : 'C'}`;
+    const typeLabel = displayGenType(`${gen.totality === 'total' ? 'T' : 'P'},${gen.disjointness === 'disjoint' ? 'D' : 'C'}`);
     const isTD = gen.totality === 'total' && gen.disjointness === 'disjoint';
     const strategy = isTD ? t('Single Table Inheritance (coluna "tipo" discriminadora)') : 'Table-per-Type (Joined Tables)';
     out += `${prefix} ${t(`Generalização [${typeLabel}] ${gen.superEntityId} → {${gen.subEntityIds.join(', ')}}: ${strategy}`)}\n`;

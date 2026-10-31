@@ -1,4 +1,5 @@
 import React from 'react';
+import { displayGenType } from '../../i18n/index.js';
 import {
   DEFAULT_SPECIALIZATION_SIZE,
   NORMAL_COLORS,
@@ -85,7 +86,7 @@ export function SpecializationNode({ data }) {
           fontWeight: 500,
           fontSize,
         },
-        spec.genType || 'T,C'
+        displayGenType(spec.genType || 'T,C')
       )
     ),
     renderLockBadge(spec.locked, { left: 2, top: 2 }),

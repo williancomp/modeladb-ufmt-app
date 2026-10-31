@@ -1,4 +1,4 @@
-import { t } from '../i18n/index.js';
+import { t, displayGenType } from '../i18n/index.js';
 import { mapToRelational } from './logicalMapper.js';
 
 // Palavras reservadas de PostgreSQL, MySQL/MariaDB e SQLite: nomes iguais a elas são citados no DDL.
@@ -51,7 +51,7 @@ function generateGenericSQL(ir, dialect = 'postgres') {
         ddl += `-- ${t(`[U] Categoria ${gen.categoryEntityId || gen.superEntityId}: chave substituta; membros com FK opcional para a categoria.`)}\n`;
         return;
       }
-      const typeLabel = `${gen.totality === 'total' ? 'T' : 'P'},${gen.disjointness === 'disjoint' ? 'D' : 'C'}`;
+      const typeLabel = displayGenType(`${gen.totality === 'total' ? 'T' : 'P'},${gen.disjointness === 'disjoint' ? 'D' : 'C'}`);
       const isTD = gen.totality === 'total' && gen.disjointness === 'disjoint';
       const strategy = isTD
         ? t(

@@ -19,7 +19,7 @@ import {
   isAttributeOwnerWeak,
   relationshipConnectionGeometry,
 } from './geometry.js';
-import { t } from '../i18n/index.js';
+import { t, displayGenType } from '../i18n/index.js';
 import { logEvent } from '../research/processLog.js';
 
 let activeOutsidePointerListener = null;
@@ -975,7 +975,7 @@ export function showSpecTypeEditor(spec, compX, compY, callbacks = {}) {
   ['T,C', 'T,D', 'P,C', 'P,D', 'U'].forEach((opt) => {
     const option = document.createElement('option');
     option.value = opt;
-    option.textContent = opt;
+    option.textContent = displayGenType(opt);
     if (opt === spec.genType) option.selected = true;
     sel.appendChild(option);
   });
