@@ -1,4 +1,4 @@
-# 52 files: 48 identical, 1 differ, 0 new, 0 missing, 3 ignored (timings)
+# 52 files: 49 identical, 0 differ, 0 new, 0 missing, 3 ignored (timings)
 file,status,detail
 ddl_conformance.csv,identical,compared byte for byte
 ddl_conformance.tex,identical,compared byte for byte
@@ -14,7 +14,7 @@ logs/mutation_cases.tsv,identical,compared byte for byte
 logs/mutation_seed.txt,identical,compared byte for byte
 logs/performance_machine.json,ignored,timing or machine description; not compared
 logs/roundtrip_differences.tsv,identical,compared byte for byte
-logs/run.log,differs,"compared byte for byte; line 9: committed """" vs fresh ""targets: prisma"""
+logs/run.log,identical,compared byte for byte
 logs/targets_django.log,identical,compared byte for byte
 logs/targets_django_pip-list.txt,identical,compared byte for byte
 logs/targets_graphql.log,identical,compared byte for byte
