@@ -59,7 +59,10 @@ A cardinality is written `min,max` on each connection, for example `1,N`.
 
 ### Limits of the Chen-style drawing in this tool
 
-* A specialization triangle has one supertype vertex and two subtype vertices (three in total).
+* A specialization triangle is drawn with one supertype vertex and two subtype vertices, but this is a drawing
+  feature, not a limit on the model: any number of subtypes can be attached (several connections may share a
+  subtype vertex) and the canonical IR, validation and all generators handle them (covered by
+  `src/export/__tests__/subtypeCount.test.js`).
 * Relationships to aggregations are supported for drawing, but dropped from the canonical IR and generated code.
 * Attribute and entity names are free text; the code generators transliterate accents and lower-case identifiers
   (`Matrícula` -> `matricula`).
