@@ -1,0 +1,54 @@
+# 52 files: 48 identical, 1 differ, 0 new, 0 missing, 3 ignored (timings)
+file,status,detail
+ddl_conformance.csv,identical,compared byte for byte
+ddl_conformance.tex,identical,compared byte for byte
+ddl_conformance_summary.csv,identical,compared byte for byte
+ddl_conformance_summary.tex,identical,compared byte for byte
+environment.json,identical,"compared without node, platform"
+harness_sensitivity.csv,identical,compared byte for byte
+harness_sensitivity.tex,identical,compared byte for byte
+logs/ddl_assertions.tsv,identical,compared byte for byte
+logs/ddl_failures.txt,identical,compared byte for byte
+logs/harness_sensitivity_cases.tsv,identical,compared byte for byte
+logs/mutation_cases.tsv,identical,compared byte for byte
+logs/mutation_seed.txt,identical,compared byte for byte
+logs/performance_machine.json,ignored,timing or machine description; not compared
+logs/roundtrip_differences.tsv,identical,compared byte for byte
+logs/run.log,differs,"compared byte for byte; line 9: committed """" vs fresh ""targets: prisma"""
+logs/targets_django.log,identical,compared byte for byte
+logs/targets_django_pip-list.txt,identical,compared byte for byte
+logs/targets_graphql.log,identical,compared byte for byte
+logs/targets_graphql_package-lock.json,identical,compared byte for byte
+logs/targets_graphql_package.json,identical,compared byte for byte
+logs/targets_jsonschema.log,identical,compared byte for byte
+logs/targets_jsonschema_package-lock.json,identical,compared byte for byte
+logs/targets_jsonschema_package.json,identical,compared byte for byte
+logs/targets_laravel.log,identical,compared byte for byte
+logs/targets_laravel_composer.log,identical,compared byte for byte
+logs/targets_prisma.log,identical,compared byte for byte
+logs/targets_prisma_package-lock.json,identical,compared byte for byte
+logs/targets_prisma_package.json,identical,compared byte for byte
+mutation_operators.csv,identical,compared byte for byte
+mutation_operators.tex,identical,compared byte for byte
+mutation_rules.csv,identical,compared byte for byte
+mutation_rules.tex,identical,compared byte for byte
+performance.csv,ignored,timing or machine description; not compared
+performance.tex,ignored,timing or machine description; not compared
+roundtrip_cases.csv,identical,compared byte for byte
+roundtrip_cases.tex,identical,compared byte for byte
+roundtrip_compared_fields.csv,identical,compared byte for byte
+roundtrip_compared_fields.tex,identical,compared byte for byte
+roundtrip_conceptual_recovery.csv,identical,compared byte for byte
+roundtrip_conceptual_recovery.tex,identical,compared byte for byte
+roundtrip_information_loss.csv,identical,compared byte for byte
+roundtrip_information_loss.tex,identical,compared byte for byte
+roundtrip_inventory.csv,identical,compared byte for byte
+roundtrip_inventory.tex,identical,compared byte for byte
+roundtrip_not_recovered.csv,identical,compared byte for byte
+roundtrip_not_recovered.tex,identical,compared byte for byte
+roundtrip_summary.csv,identical,compared byte for byte
+roundtrip_summary.tex,identical,compared byte for byte
+targets_detail.csv,identical,compared byte for byte
+targets_detail.tex,identical,compared byte for byte
+targets_summary.csv,identical,compared byte for byte
+targets_summary.tex,identical,compared byte for byte

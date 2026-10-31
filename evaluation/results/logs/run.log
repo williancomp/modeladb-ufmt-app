@@ -6,3 +6,10 @@ ddl: postgres
 ddl: mysql
 ddl: mariadb
 ddl: sqlite
+targets: prisma
+targets: django
+targets: laravel
+targets: graphql
+targets: jsonschema
+roundtrip: 88 cases, 32 differences
+mutation: seed 20260101, 671 cases
